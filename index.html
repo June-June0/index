@@ -321,7 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -513,7 +513,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -556,7 +556,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
   function money(n) {
     const v = Number(n) || 0;
-    return '¥' + v.toLocaleString('zh-CN', { maximumFractionDigits: 2 });
+    // 不加分隔逗号，最多两位小数，无小数时省略 .00
+    const s = v.toFixed(2).replace(/\.00$/, '');
+    return '¥' + s;
   }
 
   function fmtDate(ts) {
@@ -694,7 +696,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1125,7 +1127,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1294,7 +1296,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1627,7 +1629,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1904,7 +1906,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2181,7 +2183,7 @@ ul { margin: 0; padding: 0; list-style: none; }
         const size = 160;
         const cx = size / 2, cy = size / 2, r = 70;
         const svg = UI.el('svg', { viewBox: '0 0 ' + size + ' ' + size, style: 'width:160px;height:160px;margin:0 auto;display:block' });
-        const cuteFont = '"Nunito", "Quicksand", "Comic Sans MS", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+        const cuteFont = '"Nunito", "Quicksand", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
         let startDeg = 0;
         entries.forEach(cat => {
           const v = byCat[cat];
@@ -2196,7 +2198,7 @@ ul { margin: 0; padding: 0; list-style: none; }
             const labelPct = Math.round(pct * 100);
             svg.appendChild(UI.el('text', {
               x: pos.x, y: pos.y, 'text-anchor': 'middle', 'dominant-baseline': 'middle',
-              style: 'font-family:' + cuteFont + ';font-size:12px;font-weight:800;fill:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)'
+              style: 'font-family:' + cuteFont + ';font-size:10px;font-weight:600;fill:#fff;text-shadow:0 1px 1px rgba(0,0,0,.25)'
             }, [document.createTextNode(labelPct + '%')]));
           }
           startDeg = endDeg;
@@ -2537,7 +2539,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2627,7 +2629,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:29:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:38:10';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
