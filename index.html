@@ -249,10 +249,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* 预算分类占比 */
 .bdg { margin-top: 4px; }
 .bdg__row { display: flex; align-items: center; gap: 8px; margin: 7px 0; font-size: 13px; }
-.bdg__label { width: 66px; flex-shrink: 0; color: var(--text-2); }
+.bdg__label { flex: 1; min-width: 0; color: var(--text-2); display: flex; align-items: center; gap: 6px; }
 .bdg__track { flex: 1; height: 10px; background: var(--bg-2); border-radius: 999px; overflow: hidden; }
 .bdg__fill { height: 100%; border-radius: 999px; transition: width .3s ease; }
-.bdg__val { width: 96px; text-align: right; flex-shrink: 0; font-weight: 600; }
+.bdg__val { text-align: right; flex-shrink: 0; font-weight: 600; white-space: nowrap; }
 
 /* 自动备份提醒 */
 .backup-banner {
@@ -321,7 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -513,7 +513,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -691,7 +691,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1122,7 +1122,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1291,7 +1291,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1624,7 +1624,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1901,7 +1901,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2163,14 +2163,47 @@ ul { margin: 0; padding: 0; list-style: none; }
         const entries = Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]);
         const wrap = UI.el('div', { class: 'bdg' });
         wrap.appendChild(UI.el('div', { class: 'section-title', text: '📊 分类占比', style: 'font-size:14px;margin:14px 0 8px' }));
+
+        // 饼图
+        function polar(cx, cy, r, deg) {
+          const rad = (deg - 90) * Math.PI / 180;
+          return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+        }
+        function arc(cx, cy, r, startDeg, endDeg) {
+          const s = polar(cx, cy, r, startDeg);
+          const e = polar(cx, cy, r, endDeg);
+          const large = (endDeg - startDeg) > 180 ? 1 : 0;
+          return 'M ' + cx + ' ' + cy + ' L ' + s.x + ' ' + s.y + ' A ' + r + ' ' + r + ' 0 ' + large + ' 1 ' + e.x + ' ' + e.y + ' Z';
+        }
+        const size = 160;
+        const cx = size / 2, cy = size / 2, r = 70;
+        const svg = UI.el('svg', { viewBox: '0 0 ' + size + ' ' + size, style: 'width:160px;height:160px;margin:0 auto;display:block' });
+        let startDeg = 0;
+        entries.forEach(cat => {
+          const v = byCat[cat];
+          const pct = v / catTotal;
+          const endDeg = startDeg + pct * 360;
+          const color = BUDGET_COLORS[cat] || '#b0a8b8';
+          svg.appendChild(UI.el('path', { d: arc(cx, cy, r, startDeg, endDeg), fill: color, stroke: '#fff', 'stroke-width': '2' }));
+          startDeg = endDeg;
+        });
+        // 中心镂空成环形图
+        svg.appendChild(UI.el('circle', { cx: cx, cy: cy, r: 42, fill: 'var(--card, #ffffff)' }));
+        svg.appendChild(UI.el('text', { x: cx, y: cy - 2, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:11px;fill:var(--text-2)' }, [document.createTextNode('总花费')]));
+        svg.appendChild(UI.el('text', { x: cx, y: cy + 14, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:14px;font-weight:700;fill:var(--text)' }, [document.createTextNode(UI.money(total))]));
+        wrap.appendChild(svg);
+
+        // 图例
         entries.forEach(cat => {
           const v = byCat[cat];
           const pct = Math.round(v / catTotal * 100);
           const color = BUDGET_COLORS[cat] || '#b0a8b8';
           wrap.appendChild(UI.el('div', { class: 'bdg__row' }, [
-            UI.el('div', { class: 'bdg__label', text: (BUDGET_CATS[cat] || {}).icon + ' ' + (BUDGET_CATS[cat] || {}).label }),
-            UI.el('div', { class: 'bdg__track' }, [UI.el('div', { class: 'bdg__fill', style: 'width:' + pct + '%;background:' + color })]),
-            UI.el('div', { class: 'bdg__val', text: UI.money(v) + ' ' + pct + '%' })
+            UI.el('div', { class: 'bdg__label' }, [
+              UI.el('span', { style: 'display:inline-block;width:10px;height:10px;border-radius:50%;background:' + color + ';margin-right:6px' }),
+              document.createTextNode((BUDGET_CATS[cat] || {}).icon + ' ' + (BUDGET_CATS[cat] || {}).label)
+            ]),
+            UI.el('div', { class: 'bdg__val', text: UI.money(v) + ' · ' + pct + '%' })
           ]));
         });
         budgetBox.appendChild(wrap);
@@ -2490,7 +2523,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2580,7 +2613,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
