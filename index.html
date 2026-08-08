@@ -321,7 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -513,13 +513,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
 
+  const SVG_TAGS = new Set(['svg','path','circle','rect','line','polyline','polygon','ellipse','g','text','tspan','defs','use','image','clipPath','mask','pattern','linearGradient','radialGradient','stop']);
   function el(tag, attrs, children) {
-    const node = document.createElement(tag);
+    const node = SVG_TAGS.has(tag)
+      ? document.createElementNS('http://www.w3.org/2000/svg', tag)
+      : document.createElement(tag);
     if (attrs) {
       for (const k in attrs) {
         if (k === 'class') node.className = attrs[k];
@@ -691,7 +694,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1122,7 +1125,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1291,7 +1294,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1624,7 +1627,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1901,7 +1904,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2523,7 +2526,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2613,7 +2616,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:07:35';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 17:20:00';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
