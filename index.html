@@ -321,7 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -513,7 +513,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -691,7 +691,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1122,7 +1122,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1291,7 +1291,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1624,7 +1624,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1647,20 +1647,118 @@ ul { margin: 0; padding: 0; list-style: none; }
     return UI.el('span', { class: 'cat-pill', text: c.icon + ' ' + c.label });
   }
 
+  // 把订单按 tripId 分组
+  function groupOrdersByTrip() {
+    const map = new Map();
+    map.set(null, []); // 未关联
+    Store.getOrders().forEach(o => {
+      const key = o.tripId || null;
+      if (!map.has(key)) map.set(key, []);
+      map.get(key).push(o);
+    });
+    return map;
+  }
+
+  function sumOrders(list) {
+    return list.reduce((s, o) => s + (Number(o.amount) || 0), 0);
+  }
+
+  // 行程分组列表页
   function listView(main) {
     const orders = Store.getOrders();
     main.innerHTML = '';
 
+    const unlinked = orders.filter(o => !o.tripId);
     const header = UI.el('div', { class: 'card' }, [
       UI.el('div', { class: 'stat-row' }, [
         UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: String(orders.length) }), UI.el('div', { class: 'stat__lbl', text: '全部订单' })]),
         UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: UI.money(Store.orderTotal()) }), UI.el('div', { class: 'stat__lbl', text: '累计支出' })]),
-        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: String(orders.filter(o => !o.tripId).length) }), UI.el('div', { class: 'stat__lbl', text: '未关联' })])
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: String(unlinked.length) }), UI.el('div', { class: 'stat__lbl', text: '未关联' })])
       ])
     ]);
     main.appendChild(header);
 
-    // 分类快捷筛选
+    const listBox = UI.el('div', {});
+    main.appendChild(listBox);
+
+    function renderGroups() {
+      listBox.innerHTML = '';
+      if (!orders.length) {
+        listBox.appendChild(UI.el('div', { class: 'empty' }, [
+          UI.el('div', { class: 'empty__emoji', text: '🧾' }),
+          UI.el('div', { text: '还没有订单' }),
+          UI.el('div', { class: 'empty__tip', text: '点击右下角 + 录入携程/去哪儿订单' })
+        ]));
+        return;
+      }
+
+      // 有订单的行程优先，按最近更新排
+      const groups = [];
+      Store.getTrips().forEach(t => {
+        const list = Store.getOrdersByTrip(t.id);
+        if (list.length) groups.push({ trip: t, list });
+      });
+      groups.sort((a, b) => (b.trip.updatedAt || 0) - (a.trip.updatedAt || 0));
+
+      groups.forEach(g => {
+        const t = g.trip;
+        const total = sumOrders(g.list);
+        const cats = [...new Set(g.list.map(o => (CATS[o.category] || {}).icon || '📄'))].slice(0, 4).join(' ');
+        const row = UI.el('div', { class: 'list-row', onclick: () => App.navigate('#/orders/trip/' + t.id) }, [
+          UI.el('div', { class: 'list-row__icon', style: 'font-size:26px', text: t.emoji || '🧳' }),
+          UI.el('div', { class: 'list-row__body' }, [
+            UI.el('div', { class: 'list-row__title', text: t.name || '未命名行程' }),
+            UI.el('div', { class: 'list-row__sub', text: (t.destination || '') + ' · ' + g.list.length + ' 笔订单 · ' + cats })
+          ]),
+          UI.el('div', { style: 'text-align:right' }, [
+            UI.el('div', { class: 'list-row__amount', text: UI.money(total) }),
+            UI.el('div', { class: 'cat-pill', text: '查看' })
+          ])
+        ]);
+        listBox.appendChild(row);
+      });
+
+      if (unlinked.length) {
+        const total = sumOrders(unlinked);
+        const cats = [...new Set(unlinked.map(o => (CATS[o.category] || {}).icon || '📄'))].slice(0, 4).join(' ');
+        listBox.appendChild(UI.el('div', { class: 'list-row', onclick: () => App.navigate('#/orders/trip/none') }, [
+          UI.el('div', { class: 'list-row__icon', style: 'font-size:26px', text: '📂' }),
+          UI.el('div', { class: 'list-row__body' }, [
+            UI.el('div', { class: 'list-row__title', text: '未关联订单' }),
+            UI.el('div', { class: 'list-row__sub', text: unlinked.length + ' 笔 · ' + cats })
+          ]),
+          UI.el('div', { style: 'text-align:right' }, [
+            UI.el('div', { class: 'list-row__amount', text: UI.money(total) }),
+            UI.el('div', { class: 'cat-pill', text: '查看' })
+          ])
+        ]));
+      }
+    }
+    renderGroups();
+  }
+
+  // 某个行程下的订单列表
+  function tripOrdersListView(main, opts) {
+    opts = opts || {};
+    const tripId = opts.tripId;
+    const trip = tripId && tripId !== 'none' ? Store.getTrip(tripId) : null;
+    const allList = tripId === 'none' || !tripId ? Store.getOrders().filter(o => !o.tripId) : Store.getOrdersByTrip(tripId);
+    main.innerHTML = '';
+
+    // 头部行程信息
+    const header = UI.el('div', { class: 'card' }, [
+      UI.el('div', { class: 'flex', style: 'align-items:center;gap:12px' }, [
+        UI.el('div', { style: 'font-size:42px' }, trip ? (trip.emoji || '🧳') : '📂'),
+        UI.el('div', { style: 'flex:1' }, [
+          UI.el('div', { style: 'font-weight:700;font-size:18px', text: trip ? (trip.name || '未命名行程') : '未关联订单' }),
+          UI.el('div', { class: 'muted', style: 'font-size:13px;margin-top:2px', text: trip ? ((trip.destination || '') + ' · ' + allList.length + ' 笔订单') : (allList.length + ' 笔未关联订单') })
+        ]),
+        UI.el('div', { class: 'list-row__amount', style: 'font-size:20px', text: UI.money(sumOrders(allList)) })
+      ])
+    ]);
+    main.appendChild(header);
+
+    // 分类筛选
     let activeCat = 'all';
     const catsBar = UI.el('div', { class: 'chips mb' });
     const mkChip = (val, label) => {
@@ -1676,27 +1774,22 @@ ul { margin: 0; padding: 0; list-style: none; }
 
     function renderRows() {
       listBox.innerHTML = '';
-      const filtered = orders.filter(o => activeCat === 'all' || o.category === activeCat);
+      const filtered = allList.filter(o => activeCat === 'all' || o.category === activeCat);
       if (!filtered.length) {
         listBox.appendChild(UI.el('div', { class: 'empty' }, [
           UI.el('div', { class: 'empty__emoji', text: '🧾' }),
-          UI.el('div', { text: '还没有订单' }),
-          UI.el('div', { class: 'empty__tip', text: '点击右下角 + 录入携程/去哪儿订单' })
+          UI.el('div', { text: '没有符合条件的订单' })
         ]));
         return;
       }
       filtered.forEach(o => {
-        const trip = o.tripId ? Store.getTrip(o.tripId) : null;
         const row = UI.el('div', { class: 'list-row', onclick: () => App.navigate('#/orders/edit/' + o.id) }, [
           UI.el('div', { class: 'list-row__icon', text: (CATS[o.category] || {}).icon || '📄' }),
           UI.el('div', { class: 'list-row__body' }, [
             UI.el('div', { class: 'list-row__title', text: o.name || (CATS[o.category] || {}).label || '订单' }),
             UI.el('div', { class: 'list-row__sub', text: PLATFORMS[o.platform] + ' · ' + (o.orderNo || '无编号') + (o.date ? ' · ' + o.date : '') })
           ]),
-          UI.el('div', { style: 'text-align:right' }, [
-            UI.el('div', { class: 'list-row__amount', text: UI.money(o.amount) }),
-            trip ? UI.el('div', { class: 'cat-pill', text: '🔗' + trip.name }) : UI.el('div', { class: 'cat-pill', text: '未关联' })
-          ])
+          UI.el('div', { class: 'list-row__amount', text: UI.money(o.amount) })
         ]);
         listBox.appendChild(row);
       });
@@ -1805,10 +1898,10 @@ ul { margin: 0; padding: 0; list-style: none; }
     main.appendChild(UI.el('img', { src: o.screenshot, style: 'width:100%;border-radius:14px' }));
   }
 
-  global.Orders = { CATS, PLATFORMS, listView, formView, tripOrdersView, shotView, catPill };
+  global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2397,7 +2490,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2487,7 +2580,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 10:06:17';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
@@ -2534,12 +2627,17 @@ ul { margin: 0; padding: 0; list-style: none; }
       (nodes || []).forEach(n => box.appendChild(n));
     },
     showBack(show) { document.getElementById('backBtn').hidden = !show; },
-    updateFab(section) {
+    updateFab(section, parts) {
       const fab = document.getElementById('fab');
       if (!fab) return;
+      const isTripOrders = section === 'orders' && parts[1] === 'trip' && parts[2];
       if (section === 'trips' || section === 'map') {
         fab.hidden = false; fab.textContent = '＋';
         fab.onclick = () => this.navigate('#/trip/new');
+      } else if (isTripOrders) {
+        fab.hidden = false; fab.textContent = '＋';
+        const tripId = parts[2];
+        fab.onclick = () => this.navigate(tripId === 'none' ? '#/orders/new' : '#/orders/new/' + encodeURIComponent(tripId));
       } else if (section === 'orders') {
         fab.hidden = false; fab.textContent = '＋';
         fab.onclick = () => this.navigate('#/orders/new');
@@ -2564,6 +2662,7 @@ ul { margin: 0; padding: 0; list-style: none; }
         if (hash.indexOf('#/trip/') === 0) this.navigate('#/trips');
         else if (hash.indexOf('#/orders/edit/') === 0) this.navigate('#/orders');
         else if (hash.indexOf('#/orders/new') === 0) this.navigate('#/orders');
+        else if (hash.indexOf('#/orders/trip/') === 0) this.navigate('#/orders');
         else if (hash.indexOf('/shot') >= 0) this.navigate('#/orders');
         else if (hash === '#/trip/new') this.navigate('#/trips');
         else if (hash === '#/map') this.navigate('#/trips');
@@ -2592,7 +2691,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       const needsBack = ['trip/new', 'orders/new'].includes(path) ||
         /^(trip|orders)\/.+/.test(path);
       this.showBack(needsBack);
-      this.updateFab(parts[0]);
+      this.updateFab(parts[0], parts);
 
       try {
         if (parts[0] === 'trips' || parts[0] === '') {
@@ -2610,6 +2709,11 @@ ul { margin: 0; padding: 0; list-style: none; }
         } else if (parts[0] === 'orders' && (parts[1] === undefined)) {
           this.setHeaderTitle('订单管理');
           Orders.listView(main);
+        } else if (parts[0] === 'orders' && parts[1] === 'trip' && parts[2]) {
+          const tripId = decodeURIComponent(parts[2]);
+          const trip = tripId === 'none' ? null : Store.getTrip(tripId);
+          this.setHeaderTitle(trip ? (trip.name || '行程订单') : '未关联订单');
+          Orders.tripOrdersListView(main, { tripId });
         } else if (parts[0] === 'orders' && parts[1] === 'new') {
           this.setHeaderTitle('新增订单');
           Orders.formView(main, { tripId: parts[2] ? decodeURIComponent(parts[2]) : null });
