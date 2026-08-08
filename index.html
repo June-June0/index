@@ -1,0 +1,2945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff8fab" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="小游记" />
+  <title>小游记 · 旅行攻略</title>
+  <link rel="manifest" href="data:application/manifest+json,eyJuYW1lIjogIuWwj+a4uOiusCDCtyDml4XooYzmlLvnlaUiLCAic2hvcnRfbmFtZSI6ICLlsI/muLjorrAiLCAiZGVzY3JpcHRpb24iOiAi6Ieq55So5peF6KGM5pS755Wl77ya5pm66IO955Sf5oiQ6KGM56iL44CB566h55CG6K6i5Y2V44CB6auY5b635Zyw5Zu+5LiO5omL57uY5Zyw5Zu+IiwgInN0YXJ0X3VybCI6ICIuLyIsICJzY29wZSI6ICIuLyIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmNmY5IiwgInRoZW1lX2NvbG9yIjogIiNmZjhmYWIiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FZQUFBQlMzR3dIQUFBRytrbEVRVlI0bk8zZDIzSVRSeERHOGRGS0Y1VDFWSG1Ia0xQekFJQUpCOXNrd2JtTEU0Z05tSVRUUFNFbmVJYzhsVk4yRmJKeVlXVExzbmExaDVudDd1bi9yMm92Y0JudDFPN1gyek1yclR3SXlreWZ2SjFLandIcERHNWZIVWlQWVo3b1lFNGUvMFBZblN2dWZDS2F3ZDUzVHVoUlJxSVlldHNod1VjVGZSVkQ4cDBRZkhTUnVoQ1N2VGpCUjB5cENpSDZpNTQ4SXZoSXA3Z2J0eENpdnRqSm83OEpQNUlyN240YUxiZFJYb2pnUTBLTVFpaTZ2Z0RoaDVRWTJldFVBSVFmMHJwbXNIVUxPZGtuL05DajJHdzNIV3JWQVFnL3RHbWJ5Y1lGUVBpaFZadHNObW9iSi90L0VYNm9WMngrVmp2WHRUc0E0WWNWVGJKYXExSk85Z2cvN0NtMlZuZUNsUjJBOE1PcU90bnQvRVlZWUZsbEFYRDFoM1dyTWx3NlI1cnMvVW40a1kzaDF1ZExzejRxL1IvRUh3NHNuUUpOZnVIcWo3eVVaWnBGTUZ5N1ZBQmMvWkdyWmRtbUE4QzFDeXZqeVVPdS9zamY4Tjc1SGFHRnUwRGtINzZjVFlFbUQvOGcvWEJoUHV1c0FlQWFCUURYQmlHRU1IbkE5QWYrREwvOVlrQUhnR3NmN2dMUkFPQVRIUUN1VVFCd2JUQjU4SWI1RDl3YU1mMkhaMHlCNE5xSUJnRFBSdHdDaFdkTWdlQWFpK0JJaHQ5OTJmcytKeisvNlgyZnVTbi9WZ2pVSWhIOHhYMVRDTzB4QmVwQU12enp0SXpESWdxZ0pXMmgwelllSzVnQ1JkVG5WSVRBeHpGNHYvdWFaWEJEdysrL3V2U3p5VSsvdXgySFpVeUJJcEFLSFdIdmpnS0FheFFBWEtNQUlsZzJGODk1dnprWnZQOHh6MFh3OEQ3aGlHMnltOSthSTZzUHd3M3ZyMHNQSVd2ekY1WEo3bXZCa2NTVHhmc0FCTDkvczJOdXZSRE1yd0VJdnl6cng5OXNCN0IrNEhOaXVSc1VZUnFDdFkzdzZ6Uzh2eTZlamFaYm9XQU1qYmJoRHVIWGJMaXpMcDZSSnB2NU5RRFFSU0ZmZy9XM0VWZC9FMDdQazN4ZTZteG1Pc0JvNTJ2cElhQUJLK2VMWjRLUmpvRnNtZWdBb3g5c1hFMXdrWVh6WnFJQWdGUW9BTGltL2k2UWhUYUtjcWZuVHo1SDV1OENBU2x3RndqcEtjNFlIUUN1VVFCd2pRS0FhMmFmQitqZHdidUwvNzcxc2N3NHltZ2ZuMUtqTUZXOFF0RmdNVmlMUDVjT212YnhoUkEwWjR3cFVKV3ljRFg5blZTMGo4OEFDZ0N1VVFCbG1sdzVKYTZ5MnNkbkJIOGxFc2xwemxnZTd3Uy8vVmQ2QkRyR1VDWEYrSzUrVk8vM0ZHZU1LUkJjeStPckVldGVpWnFxTzNlV3V0V29mWHhuOUdhTURnRFhLSUFxZGE2Y2tsZFg3ZU16SUk5RmNFcXpBR245cUlIMjhZV2dlUWJFWjRGcTB4U29aYlNQVHltbVFIQXRqN3RBVUU1dnh1Z0FjSTFGTU5KVG5ERTZBRnlqQU9BYUJkQVhQcjZzRWdYUWgxbWdtenpCUlJIMG9nalRhVkM5V2JjWTVLcGdOL2xkUzZRelZMSFJBU1Fjdk1zMzdNWlFBQ210Q25XZDZRNkZrWlQ2dnhKcFZ0M2dPdmhtQitrTVZXMTBnQlJTQk5aNEVXaEZBYVNRNHBPWmZOb3pDZTRDcFJJenNOYkRMNTBoN2dJSnNSNWNCeWdBN1NpaXBDaUExTG9FbVBBblJ3SDBvVTJRQ1g4dkN2RWJzYXUyWEhnT3RIU0dLalk2UUovcUZvSG5ZdW1aK3I4VG5KMVY0YzR5L05JWkt0L29BSnBrR1g3ZEtBQUpCRjBORnNGU0Zvc2c1NktRemxERlJnZVFOQXQ5enVGWGpnS1FSdmhGOGMxdzZJSGVqTkVCNEJyZkRJZjBGR2VNdnhLSjVEUm5qQ2tRWEtNQTRCb0ZBTmRHcHArN2hRMktNMFlIZ0dzVUFGeWpBT0FhQlFEWGVDY1k2U25PR0IwQXJ2RnBVUFJBYjhiVWQ0RGplNitraDRBT3RKOC85UVVBcEVRQndEWDlEOFZQUXpqZTF0MUdzZHp4OWl2eDdQQlFQRkRCd0RmRG5XN0gyeStUSFFURWQzcSs1SE96YWpQVkFTZ0NHeXlkSng2SlJGUkhoc0lmZ3BGRjhQeDJ0R1hyQUh0eXRQVlNQQjlOTjFOVG9CbUtRQityNThSa0FZUndlc0N0SHZUY1dENFBaZ3RneHZMQno0SDE0NS9GaCtHT3RsNkVFRUs0c25kTmVDUit6STY1ZFZrOUQzQzBlWDVTcnV4VERMSE5IOTljaktRSGtFcU9Kd3Z4bVY4REFGMVFBSENOQW9CcmZETWNYS01Ed0RVS0FLNVJBSENOQW9CcldiMFRERFJGQjRCcldYd1lEbWlMUnlMaEdsTWd1TVlpR0c2dEhXd01pcldEallIMFFBQXBUSUhnR2dVQTF6NDhFY1pDQUQ0VklZU3dkbkNUZFFCY21XWCsvSmxnbWdBY1lnMEExODRLWU8wcDB5RDRNSjkxT2dCY1cvaGVJQllDOE9YU3RPZS9tMCtwQW1ScjdkZHZMbVNlS1JCY3UxUUFpeFVDNUdKWnR1a0FjRzFwQWRBRmtKdXlUSmQvT3pSTFlUaFFlYVUvM0RpZ0RHRGUrTGRicFRtdlhBTlUvVWZBZ2xVWlpoR01iTlc1Z0s4c0FMb0FjbFk3M0ljM1dBL0Fqdkd6ZWhmdTJsT2d1aThJU0d1UzFjYWhQcnp4aEU0QXRjYlBiamZLZE9ORmNOTWRBSDFwazgxV2Q0RW9BbWpUTnBPZGdueDRuZWtRNUkyZnQ3OGdkM29mb011T2dSaTZaakJLZ09rRTZGdXNpMi9VS3ppRmdEN0VuSGxFbjhJY1huOU1FU0NaOGZNN1VUT2JiQTUvZUkxQ1FEempGM0dEUDVOOEVVc2hvSXRVd1ovcDdTNE9oWUFtVWdkL3B2ZmJtQlFDeXZRVitubWk5L0VwQmtpRWZwNjZON0lvaW54SmgzMlovd0dVNFlpSmlRUkY3d0FBQUFCSlJVNUVya0pnZ2c9PSIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAiYW55In0sIHsic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBWUFBQUQwZU5UNkFBQVNsVWxFUVZSNG5PM2QzNUlrUjMwRjRKeVp1bERzUHBYZlFmaFBDT0ZyQThJcjBFcVdKZTZRQlVpZ2xRWEl2Z1ZqRzhNNytLbFdzWXJRN1BwaWFUd3pPejNUWFoxVmxabm4reUk2Z3BEUWJuVjJWSjFUdjZydU9pczA2Y1ZuZjN5eDlUWUFuT3JzN1crZGJiME4zTTRIczZIbnYvd2ZJUTlFTy8vaFg4dWhqVmo0RlFoNmdNTXBCZXV3eUFzUStBRDFLQVRMc0tpVkNIMkFkU2dFZFZqRW1RUSt3UGFVZ2ZrczNCR0VQa0M3bElIaldLd0RDSDZBdmlnRDk3TkFld2g5Z0RFb0E3ZXpLRGNJZm9BeEtRTFhXWXcvRS93QUdSU0JsNklYUWVnRDVFb3ZBcEZ2WHZBRHNKTmFCT0xldFBBSDREWnBSU0RtelQ3L2hlQUg0SDduUDhvb0FzTy9TY0VQd0J5akY0RmgzNXpnQitCVUk1ZUFJZCtZOEFlZ3BoR0x3RkJ2NlBrdi9pRDRBVmpNK1kvK1pwamNQTjk2QTJvUi9nQXNiYVNzNmI3SmpQUmhBTkNQM3FjQlhVOEFoRDhBVytrOWc3b3RBTDB2UEFEOTZ6bUx1aHRmOUx6WUFJeXJ0MHNDWFUwQWhEOEFyZW90bzdvcEFMMHRMQUI1ZXNxcTVzY1ZQUzBtQUpUU3grV0FwamRRK0FQUXM1YUxRTE1iOXZ4VDRROUEvODdmYWJNRU5Ia1BnUEFIWUJTdFpscHpCYURWaFFLQXVWck10cVlLUUlzTEJBQTF0Slp4elJTQTFoWUdBR3ByS2V1YUtBQXRMUWdBTEttVnpOdThBTFN5RUFDd2xoYXliOU1DME1JQ0FNQVd0czdBemI2YitQelQveGIrQU1RN2YrZHZOOG5pVFNZQXdoOEFYdG9xRTFjdkFNSWZBSzdiSWh0WExRRENId0J1dDNaR3JsWUFoRDhBdEdQenJ3RUNBQyt0ZWJLOHlwMkh6ejl4OWc4QWh6cC92UHczQXhhZkFBaC9BRGpPR3RtNWFBRVEvZ0F3ejlJWjZoNEFBQWkwV0FGdzlnOEFwMWt5U3hjcEFNSWZBT3BZS2xPckZ3RGhEd0IxTFpHdDdnRUFnRUJWQzRDemZ3QllSdTJNclZZQWhEOEFMS3RtMWs2MS9pRHBEd0Q5cVBKVGc1ZWYvSmY4QjRDVlhEeit1NVB6KytSTEFNSWZBTlpWSTN0OUN3QUFBcDAwUXJqOHViTi9BTmpLeGJ2ekx3V1lBQUJBb05rRndOay9BR3pybEN3MkFRQ0FRTE1LZ0xOL0FHakQzRXcrdWdBSWZ3RG9uMHNBQU5DNU9TZm5SeFVBWi84QU1BWVRBQUFZd0xFbjZRb0FBQVE2dUFBWS93TkEyNDdKYWhNQUFBaDBVQUZ3OWc4QWZUZzBzMDBBQUNEUXZVOFJ1dnlaczM4QTZNM0ZlM2MvS1hDNi80K1Evd0F3R3BjQUFDRFFuUVhnOG1mLzZmUWZBRHAwWDRhYkFBQkFvTDBGd05rL0FQVHRyaXczQVFDQVFBb0FBQVM2dFFBWS93UEFHUFpsdWdrQUFBUlNBQUFna0FJQUFJRmVLUUN1L3dQQVdHN0w5bGVmQlNEK0FXQjRMZ0VBUUtCckJlRHlwOGIvQURDaW14bHZBZ0FBZ1JRQUFBaWtBQUJBb0xQZC83ajg2ZTlkL3dlQXdWMzgweHRucFpnQUFFQWtCUUFBQWlrQUFCQklBUUNBUUFvQUFBUTZMOFUzQUFBZ3hTN3pUUUFBSU5ETHB3RTYvd2VBS0NZQUFCQklBUUNBUUFvQUFBUlNBQUFnME5ubHg3NENDQUJwSnVrUEFIbGNBZ0NBUUFvQUFBU2EvQW9RQU9ReEFRQ0FRQW9BQUFSU0FBQWdrQUlBQUlFbTl3QUNRSjVwNncyQU5CZnZ2N0gxSmpUcjh1UGZiNzBKRUVNQmdCVUkvY05jWFNkbEFKYWxBTUNDQlA5OHU3VlRCR0FaYmdLRWhRai9PcXdqTE1NRUFDb1RXUFdaQmtCOUpnQlFrZkJmbHZXRmVoUUFxRVE0cmNNNlF4MEtBRlFnbE5abHZlRjBDZ0FBQkZJQTRFVE9ScmRoM2VFMENnQ2NRQWh0eS9yRGZBb0FBQVNhaXFjQndTd1g3My83cFAvKzh1UC9xTFFsL1R0bExTL2VmOE5hd2d5ZUJnZ3J1L3dYWVhYVGJrMHUvbmxtRVhBY2c2TzVCQUFyRXY1M3N6NndIZ1VBWnBoenBpcmNEak5ubldaUERpQ1lBZ0FBZ1JRQVdJR3ovK05ZTDFpZUFnQUFnUlFBQUFpa0FBQkFJQVVBQUFJcEFMQUNYMU03anZXQzVTa0FBQkJJQVlBWi9Gak5jdnpJRXF4REFZQVZLUUYzc3o2d25yTnZQdnFkeDJoUWxZTTQxR2ZLUVcyZUJzaEpMajRROXJDRzI0cjE1VWRLQWZOTlcyOEEvUkg2MElhYis2SkN3REVtRDlMbUVCY2Z2TG4xSmdEM3VGb0lMai82M1laYlFnOU1BTGlUNEljKzdmWmRSWUI5RkFCdUpmaGhESW9BK3lnQVhDUDRZVXlLQURmNUhRQktLUzhQRHNJZnhtYy9aMGNCd0FFQndpajhsS0lBeEhNUWdGejIvMnp1QVFobHh3ZEtjVzlBTWhPQVFNSWZ1TWx4SVk4Q0VNWk9EdXpqK0pCRkFRaGk1d2J1NHppUnc4T0FRbHg4YUtjR0RuUHh3WnZsOGlmdUNSaWRDVUFBNFE4Y3kzRmpmSk1Cd05nbU96RXcwOFdIYjVadlRBS0daUUl3TU9FUG5NcHhaRndLd0tEc3RFQXRqaWRqVWdBQUlKQUNNQ0J0SGFqTmNXVThVL0U5d0tGTUgzNW42MDBBQmpWOStHYjU1aWUvM1hvenFNUUVZQ0RDSDRCREtRQUFITXlKeGpnVWdFSFlLWUcxT042TVFRRUFnRUFLd0FDMGNXQnRqanY5VXdBQUlOQjVlVkdLVjc4dkxSell5dlRoZHpZL0Juck5mNWtBQUVBZ0JhQmowNCtkL1FQYmNoenFsd0lBQUlFVUFBQUlwQUIweXRnTmFJWGpVWjhVQUFBSXBBQUFRQ0FGb0VQR2JVQnJISmY2b3dBQVFDQUZBQUFDVFM5L0V4QUFUaVZQZW1JQ0FBQ0JGSURPVEQvKys2MDNBZUJXams5OW1VeHNBS2hHcG5UREJBQUFBaWtBQUJCSUFRQ0FRQW9BQUFSU0FBQWdrQUlBQUlFVUFBQUlwQUFBUUNBRkFBQUNLUUFBRUVnQkFJQkFDZ0FBQkZJQUFDRFFWRjU0ZEJQYzZzbWY5dis3UjYrdnR4M2N6MmZWRHBuU2pXbnJEWUNtM0JVaysvNS9BbVliUGlzNGlRSUFwUndlSm5mOXQ4SmxIVDRycU1JOUFIQktvQ3p4NTdDZnp3cXFVUURJVmpzSUJNdHlmRlpRbFFKQXJxVUNRTERVNTdPQzZoUUFNaTE5NEJjczlmaXNZQkVLQUhuV091QUxsdFA1ckdBeENnQUFCRklBeUxMMm1aNHp5L2w4VnJBb0JRQUFBcDIvS0tWNDlmUGlCRnVkNFRtelBKN1BxbHRiSHlPOURuLzVKVUQrM3gvL2Qrc3RHSmUxN2Nmb245VzMvbXJyTGFBUkxnRUFRS0RKWEJtQWFtUktOMHdBQUNDUUFnQUFnUlFBQUFnMHVXRERYNHgrZC9DV1gvRWFmVzFyODFsMVRLYjB3Z1NBSEk5ZXovcDdlK2F6Z3NVcEFBQVFTQUVneTlwbmVNNG81L05ad2FJVUFBQUlwQUNRWjYwelBXZVVwL05ad1dJVUFESXRmY0FYS1BYNHJHQVJDZ0M1bGpyd0M1VDZmRlpRblFKQXR0b0JJRkNXNDdPQ3FzNDNmeUN4MTNFdjZxc1ZCQUpsZVQ2cjltMTlqUFE2K0RYdCt3d2h5aTRRNXZ3Q25UQlpsODhLcWxBQTRLcXJBWEZYd0FpUzdmbXM0Q1FLQU93ak9QcmhzNEtqdVFrUUFBSXBBQUFRU0FFQWdFQUtBQUFFVWdBQUlORGsxMlVBcUVlbTlNSUVBQUFDS1FBQUVFZ0JBSUJBQ2dBQUJKcmNyd0ZBTlRLbEd5WUFBQkJJQVFDQVFBb0FBQVJTQUFBZ2tBSUFBSUVVQUFBSXBBQUFRQ0FGQUVidzVFOWovbDNBWWhRQTZOMHVrTmNJNWpYL0xtQlJDZ0QwN0dZUUx4bk1hLzVkd09JVUFCak5Fc0VzN0dFNDV5OS91Tm1ybnhmODJWMmhYRE93MS9wN0dNVFd4MGl2UTE4bUFOQ2pRNEszUmppdjlmY0FxenR2b0lSNEhmT0NZd0wzbEhCZTYrOWhMRnNmSTcwT2Zwa0FRRS9tQk8xYTRhd0VRRmNVQUVod2JEZ0xjeGllQWdDOU9EV1VELzN2MTdwc0FHeEtBWUFlMUFyVysvNmN0VzRjQkRhbkFFRHJhZ2Zxdmo5dnJhOE9BazFRQUtCbFN3WHBHci9xcHdSQTA4NGIrQ2FDMXhFdmdpd2RvR3Y4cnI4U0VHZnJZNlRYNFM4VEFFZ21vQ0dXQWdBdEdpbVlSM292TUJBRkFGb3pZbUNPK0o2Z2N3b0F0T2JSNjF0dlFYMGp2aWZvbkFJQUxSS1l3TUlVQUdCWnlndzBhZkxkTW1qVW85Zjd2M1l1L1BQSWxHNllBRURMZWc3UW5yY2RBa3pxR2pSdWhFa0FRV1JLTDB3QWdQcWMvVVB6RkFEb1FVK0IydE8yUWpBRkFIclJRN0Qyc0kxQUtVVUJnTDRJV0tBU0JRQ29Rem1CcmlnQTBKc1dnN2JGYlFMdXBBQkFqMW9LM0phMkJUaVlBZ0M5RXJ6QUNSUUE2Tm5XSldEcnZ4K1lUUUVBNWhIKzBEVUZBSHEzUlJBTGYraWVwd0hDQ0R3dmdGYklsRzZZQU1BbzFqb3JkL1lQUTFBQWdNTUpmeGlHQWdBaldUS2doVDhNUlFHQTBRaHE0QUNUT3paZ1FMVnZDbFFxT0poTTZZVUpBSXlxVm1nTGZ4aVNBZ0RzSi94aFdBb0FqRXlBQTNzb0FEQzZ1U1ZBZVlDaEtRQ1E0Tmd3Ri80d1BBVUF1RTc0UXdRRkFGSUlkdUFLQlFDUzNGY0NsQVNJNFdtQWtHYmZqd1FKZjJxUUtkMHdBUUNFUHdSU0FDQ1J3SWQ0Q2dDazJwVUFaUUFpS1FDUVRQaERMQVVBQUFJcEFBQVFTQUVBZ0VBS0FBQUVtdnhxQXdEMXlKUmVtQUFBUUNBRkFBQUNLUUFBRU1qRGdBQ29SNlowd3dRQUFBSXBBQUFRYURLdEFhQVdtZElQRXdBQUNLUUFBRUFnQlFBQUFpa0FBQkJJQVFDQVFBb0FBQVJTQUFBZ2tBSUFBSUVVQUFBSXBBQUFRS0NwdlBERGpRQlVJbE82WVFJQUFJRVVBQUFJcEFBQVFDQUZBQUFDS1FBQUVFZ0JBSUJBQ2dBQUJGSUFBQ0NRQWdBQWdSUUFBQWlrQUFCQUlBVUFBQUlwQUFBUWFDb2UzQVJBTFRLbEd5WUFuZm42dlgvZmVoTUFidVg0MUJjRkFBQUNUZVkxQU5RaFQzcGlBZ0FBZ1JRQUFBaWtBSFRvNi9mK2JldE5BTGpHY2FrL0NnQUFCRklBQUNDUUFnQUFnUlNBVHJuZUJyVEM4YWhQQ2dBQUJGSUFBSmpOMlgrL0ZJQ08yZkVBbU12VEFBR1lUNFoweXdTZ2MxKy9hd29BYk1QeHAyOEtBQUFFVWdBR29JVURhM1BjNlo4Q0FBQ0JGSUJCYU9QQVdoeHZ4cUFBRE1ST0NTek5jV1ljays5d0FIQTRtVEVLRTREQmZQM3VsMXR2QWpBb3g1ZXhLQUFEc3BNQ3RUbXVqRWNCQU9CT3duOU1Dc0NnN0xBQTNHVnlPOGU0bnIzN1pYbnQ1Lyt3OVdZQUhYdm1aR0pZSmdDRHMvTUNjemwrak0zVEFBTThlL3hsZWUwVGt3RGdjTThlQy8vUm1RQ0VzRE1EaDNLOHlLQUFCTEZUQS9keG5NaWhBSVN4Y3dQN09ENWtVUUFDMmNtQnE1NDkvdEp4SVpBQ0VNb09ENVRpaENDWkFoRE96Zys1N1AvWnBxMDNnTzN0RGdLK0tnZ1pCRCtsbUFCd2hZTUNqTTkrem80SkFOZVlCc0NZQkQ4M0tRRGNTaEdBTVFoKzlwbUszd0xtRHM4ZS82YVVVc3BybjN4MzR5MEJEclhiYitFdUpnQWM1T29CUlJtQU5nbCtqdUZoUUJ6dDJUdFh5c0NueWdCczVlcStDTWN5QWVBa3R4MkFsQUtvVDloVG13SkFkUTVVQU8zek93QUFFRWdCQUlCQUNnQUFCRklBQUNDUUFnQUFnUlFBQUFpa0FBQkFJQVVBQUFJcEFBQVFTQUVBZ0VBS0FBQUU4alJBQUFnMEZRMEFBT0s0QkFBQWdSUUFBQWlrQUFCQUlBVUFBQUlwQUFBUVNBRUFnRUFLQUFBRVVnQUFJSkFDQUFDQkZBQUFDS1FBQUVBZ0JRQUFBbmthSUFBRU1nRUFnRUFLQUFBRVVnQUFJSkFDQUFDQnB1SXVRQUNJWXdJQUFJRVVBQUFJZEZaS0tWKzkvWVhyQUFBUTRzRm5iNTJaQUFCQUlBVUFBQUlwQUFBUVNBRUFnRUFLQUFBRW1rb3BmZ3NJQU1LWUFBQkFvUE5TU25udzVLMnpyVGNFQUZqZUx2Tk5BQUFna0FJQUFJRVVBQUFJcEFBQVFLQy9GQUEzQWdMQTJLNW0vWFQ5WC9sQkFBQkk0QklBQUFSU0FBQWcwTFVDOE9ESkQ5d0hBQUFEdXBueEpnQUFFRWdCQUlCQTB5di94QmNCQUdCNHIwd0FIbnp1UGdBQUdNbHQyZTRTQUFBRVVnQUFJTkN0QmNCbEFBQVl3NzVNTndFQWdFQUtBQUFFMmxzQVhBWUFnTDdkbGVVbUFBQVFTQUVBZ0VCM0ZnQ1hBUUNnVC9kbHVBa0FBQVI2OVZrQXIvQndBQURveVlQUC8vSGVDZjVCSS82dmZ2QzVGZ0FBblhqd3IvY1hBSmNBQUNEUVFRWGdrQ1lCQUd6djBNdzJBUUNBUUFjWEFGTUFBR2piTVZsdEFnQUFnWTRxQUtZQUFOQ21ZelBhQkFBQUFoMWRBRXdCQUtBdGM3TFpCQUFBQXMwcUFLWUFBTkNHdVpsc0FnQUFnV1lYQUZNQUFOaldLVmxzQWdBQWdVNCtpLy9xTFU4S0JJQzFQZmppdEVuOHlST0FVemNBQURoT2pleDFDUUFBQWxVN2UvL3FyU2N1QlFEQXdoNTg4YWhLZGs4MS9wQlNTcEgrQUxDc2g1WEN2NVNLbHdCcWJoUUFzS3lxOXdBb0FRQ3dqTm9aNnlaQUFHamNFaWZZMVF1QUtRQUF0RytSQ1lBU0FBQjFMSldwaTEwQ1VBSUE0RFJMWnFsN0FBQ2dRVXVmU0M5YUFFd0JBS0JOaTA4QWxBQUFPTTRhMmJsYU9ELzl2cDhLQm9EN1BQelZPaWZPcTkwRHNOWWJBb0JlclptVmJnSUVnQWFzZmFLOGFnRXdCUUNBTnF3K0FWQUNBT0M2TGJKeGswc0FTZ0FBdkxSVkptNGF4RSsvLzVsdkJnQVE2K0d2M3Q0c2h6ZTlDWERMTnc0QVc5bzZBemYvRnNEV0N3QUFhMnNoK3pZdkFLVzBzUkFBc0laV01xK0pBbEJLT3dzQ0FFdHBLZXVhS1FDbHRMVXdBRkJUYXhuWFZBRW9wYjBGQW9CVHRaaHR6UldBVXRwY0tBQ1lvOVZNYTNLamRwNSt6KzhFQU5Dbmg3OXVNL2gzbXQ2NEhVVUFnSjYwSHY2bE5Ib0o0S1llRmhJQVN1a25zN29vQUtYMHM2QUE1T29wcTdyWjBCMlhBd0JvVFUvQnY5UGRCdThvQWdDMG9NZndMNldqU3dBMzlicmdBSXlqNXl6cWRzTjNUQUlBV0Z2UHdiL1QvUnZZVVFRQVdNTUk0Vi9LUUFXZ0ZDVUFnT1dNRXZ3N1E3MlpuYWZmKzZVaUFFQTFEMy85dytIeWNyZzN0S01FQUhDcUVZTi9aOWczdHFNSUFEREh5T0ZmU2tBQjJGRUVBRGpFNk1HL0UvRW1yM3I2WFVVQWdGYzkvRTFHOE85RXZkbXJGQUVBU3NrTC9wM0lOMzJWSWdDUUtUWDRkNkxmL0ZXS0FFQ0c5T0Rmc1FnM0tBSUFZeEw4MTFtTVBSUUJnUDRKL2Ywc3pBR1VBWUMrQ1A3N1dhQWpLQUlBN1JMNng3RllNeWtEQU5zVCt2Tlp1RW9VQW9CMUNQMDZMT0lDbEFHQWVnVCtNaXpxQ2hRQ2dNTUovSFZZNUEwcEJrQTZZYjhkQzk4bzVRQVlnWUJ2MS84QnVFTmJ0cXBqQmdBQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogImFueSJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQU1BQUFBREFDQVlBQUFCUzNHd0hBQUFGa0VsRVFWUjRuTzNkejNMVFZoekZjY1hTZ3RmcU83UWJhSGlBcmpxZHBFMEpMUG16NkV4WmRBSjdTamZ3RG4yc21obFNzVEFpUXJFZDIvamUzL25wZkQ4emQ1Tmh5QjNwSEY5ZDJYSk8rai9mOVExZ3F1dDc4ZzlmaStnSkFKRW9BS3hSQUZpakFMRFdOZXlCWWF4cmFBQ01jUWtFYXhRQTFpZ0FyTEVKaGpWV0FGaWpBTERHYlZCWVl3V0FOVGJCc01ZS0FHc1VBTllvQUt4MVBac0FHR01UREd0Y0FzRWFCWUExQ2dCckZBRFcyQVRER2grR2d6VXVnV0NOQXNBYUJZQTFOc0d3eGdvQWE5d0ZnalZXQUZpakFMQkdBV0NOdTBCSHNyaTRYLzEzL3YvaW4rcS9jMjY2NkFsa0Z4SDg2ZSttQ0lkYjlNM3FQaEJqL3hFWi9ySEZ4ZjN3WTVGMUxPS25rSE8wSXVFZnJPWVRmMXl5RFM2QkR0QmVQTGoxcytzWGI4UG4wVjQ4Q0psSFpndUJFdVliRTlmUDM0Yk00L3I1bXJCSEg1dGtnOXVnZTJwLy8vcFZkMjBJSzVyKy91bjhzQjBGZ0RVS0FHc1VBTmE2cGwrenE4UHVGSStmNHB4RW5YeDgrbVkyUjZ0OTlHUDBGQ3hjUC9zN2VncEhrLzU5QUVKZjMvU1laeTVFMmdJUWZCM0R1Y2hZaEpTYllNS3ZLZU41U2ZWeDZQWXkzd0YyODJVMWVKcGpOVWp6WVRqQ244dnFmTVhuNXE2UjRoS292VHlObmdJT2tPRzh5UmNndzBIRVp1cm5UNzRBUUVuU0g0ZFdmL1hBYnRyTDAvQXNiUnF5ajBTMmp3bi9uTFNQVDhNenRXNXdDUVJya3JkQk8xNzlaMmwxWHVQek5SNnNBTENXNnAxZ3pJQlkzdVJXZ083SncrZ3BvQ0MxOHl0WEFLQW1DZ0JyL0lFTUJOREpIQ3NBckhFWENQVUpaWTRWQU5iU1BoTmN6Y3YzdDMvMjgvZjE1N0dMVEhNVndRcXd6YnBBYmZ0NXBFeHpGVUlCTnJrck9FckJ5alJYTVl1bTd4dXBvV0RYd0NnRUs5TmNCOUVaR3cxV2dLbDlneElackV4ekZVVUJZQzN2WGFCMy8wYlA0SWJTWE81U2FxNC9mRmZtL3kyc0U3bnFoaEdsek9WOUo3alVLODRoMThsUnIzNlo1am9tbERuMkFGUDd2bkVVK1VaVHBybUtFbndtV01DdVFWRUlWS2E1ZmhHZHNadkJDckRKWFlGUkNsU211WXFoQU50c0NvNWlvRExOVlVqZVRYQXRtUUtVWmE1Q21XTUZnRFVLQUdzOEU0d0FPcGxqQllBMU5zR29UeWh6ckFDd1JnRmdqUUxVc3M4SDEzaHdwUm9LVU1NUTZGMkN2YysveFRmam1lRFNwa0hlRnV4OS9tMW0wUm5qbWVCZ0w5LzdoRjBjQlNocDE2OHIyV2RWd0ZISi9aWEkyVGptMTVYTXJBVFJHUnNQVm9BU1NnUjJaaVZRUVFGS0tQR3g1Q3dmZFU2R3UwQ2xFTmpOb2pQR1hhQmtLRk14RktDa1l3U1g4QmRGQVVyN2xnQVQvdUlvUUEwRVdkWWkvRWJzZE13VlgySjFJenBqbzhFS29Hak80UmZETjhQVlJMQS9pODdZeldBRnFJMXZjWk5DQVNMd0xXNHllQ2hlaFZQNGhUTEhDaERGS2ZEQ0tFQ2tvUVNVSVF6ZkRCZk5Ndnc2bVdNRmdEVTJ3YWhQS0hQOGxVaFVwNVE1TG9GZ2pRTEFHZ1dBdFc1V3orRWlCNkhNc1FMQUdnV0FOUW9BYXhRQTFuZ25HUFVKWlk0VkFOYjROQ2dDNkdTT0ZRRFdLQUNzeVJYZ3cyK3ZvNmVBZ3RUT0wzZUJVSmRZM3VSV0FLQW03Z0tobWcrL3ZvcWV3aTJTSzREaWdjSTg4VWdrcWxITW10N1hvMzhleTNOV2dUbFpucjhLejlTNklYa0pOS0FFODZCOEhxVUxnUHlVdzk4MENRcWdmZ0NSbStBZnlMZzlsdWRYNVk0QWlsbWR0L2o4YkJ0cDNnbGVubDAxOS83NEtYb2EyTUh5TE04TGx2d2wwTmp5N0NyVndYV1U3ZnlrS3NBZzIwRjJrZkc4ZE5FVE9OUndzTGtzaXBVeDlHTnBDekFZbndES1VFZjIwSStkL1BmTFgwbTJ3Y0R4cGR3REFNZENBV0NOQXNBYUJZQzFOTzhFQXlXd0FzQWF6d1RER285RXdocVhRTERHSmhqV1dBRmdqUUxBR2dXQU5XNkR3aG9yQUt4eEZ3aldXQUZnalFMQUdnV0FOZTRDd1JxYllGampFZ2pXS0FDc1VRQllvd0N3eGlZWTFycWVCc0FZbDBDd1JnRmdqUUxBR3B0Z1dHTUZnRFUrREFkcnJBQ3dSZ0ZnalUwd3JMRUN3Qm9GZ0RVS0FHdmNCb1UxTnNHd3hpVVFyRkVBV0tNQXNFWUJZSTBDd05vblVoQ1pVS093UkxnQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiMTkyeDE5MiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogIm1hc2thYmxlIn0sIHsic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBWUFBQUQwZU5UNkFBQU91a2xFUVZSNG5PM2R2M0liMS9uSDRSV3hSVzRyOStBMGlad0xTT1ZDVWl4TEtXVzV5SXhkeWU2dHBMSHZJYmRGelpoaENnNHpOQ1ZTQVBiUGU4NzVQcy9NVnIvNGh4VXdlOTRQRGtEc2srdnZmN21lQUlBbzgvVzErUThBYVM2cVR3QUEySjhBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJTkUvdUJRUUFjZXdBQUVBZ0FRQUFnUVFBQUFTYUoxOENBSUE0ZGdBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUXV3RUNRQ0E3QUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlIbXlROEJBRUFjT3dBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUXlOMEFBU0NRSFFBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFnMCt5RkFBTWd6VDM0TEdBRGkrQWdBQUFJSkFBQUk1RzZBQUJESURnQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJISTNRQUFJTkU4S0FBRGkrQWdBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRbXdFQlFDQTdBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJvbnZ3WkFBREVzUU1BQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFReU4wQUFTQ1FIUUFBQ0RSWG53Q2t1UGo2ejlXbjBJMy9mdmZ2NmxPQTRRa0EySWlCZjc3N3o1MGdnUFVKQUZpWndiKysyK2RVQ01CNmZBY0FWbVQ0Yjh2ekMrdVovUkVBTEhjd21IWnpHd0ZYZGdOZ0VUc0FzSkRoWDhQekRzc0lBRmpBRUtybCtZZnp6Wk5mQW9LekhMNytTL1VwTU4xRXdOVjMvNm8rRGVpT0hRQTRnK0hmRnE4SG5FNEFBRUFnQVFBbjhtNnpUVjRYT0kwQWdCTVlNbTN6K3NEeDNBMFFkblQxMXBmVlB1ZndjdUVRdDZiQlVaNzg5dTE3bHdzY1ljbGdNdmhQNS9tR2Jma0lBRFptR0ozSDh3YmJFZ0N3SVVOc0djOGZiRWNBd0VZTXIzVjRIbUViQWdDT3NQaUxhZXpLNndXZkp3QmdBOTYxcnN2ekNlc1RBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQU1BRy9CbmF1anlmc0w3Wm5UUGc4NjdldnA4T0w1K2UrRis1dHFwY3ZYMWZmUXJRUEhjRGhJMGNYajZkcnI0MWlKWTZmSE5xZUUzYUM0N2dJd0RZMEZuRGkvL3ovTUYyQkFCc3pCQTdqK2NOdHZYa3R6Yy8yeXpqSkJabWFKT1BuRGpGWEgwQ3RNMndoMzU4Nm5vVkJUeEVBUEE3Qmo2TTVlNDFMUWE0U3dBd1RaUEJEd25FQUhjSmdHQ0dQdVFTQXdpQVFBWS9jTmZ0bWlBRXNnaUFJQVkvOEJnaGtNWHZBSVF3L0lGaldTOHkyQUVZbkFzWk9JZmRnUEhaQVJpWTRROHNaUjBabHgyQUFibGdnVFhaRFJpVHV3RU81dkRLOEFlMmNmam02WFQxUmdTTXdrY0FBekg4Z2ExWlo4WXh1M0gyR0E2dnZxdytCU0RFNGRYVDZlck56OVdud1VKMkFBWmcrQU43cys3MFR3QjB6a1VJVkxIKzlFMEFkTXpGQjFTekR2VkxBSFRLUlFlMHduclVKd0hRSVJjYjBCcnJVbjhFUUdkY1pFQ3JyRTk5RVFBZGNYRUJyYk5POVVNQUFFQWdBZEFKVlEzMHduclZCd0hRQVJjVDBCdnJWdnZjREFpQWJaZ3ZUYk1EMExqRGF4VU45TW42MWJhTDYra20waHp0SFM0ZW9IZUgxMStXcjZXT1R4OTJBQUFna0FCbzFPemRQekFJNjFtYkJBQUFCQklBRFZMTHdHaXNhKzJaYjc0S0FBQmJNMjlhWWdjQUFBSUpnTWJNci85YWZRb0FtN0MrdFVVQUFFQWdBZEFRZFF5TXpqclhEZ0VBQUlFRUFBQUVjamRBQVBabDdqVEJEa0FqNW4vNFhBeklZTDFyZ3dBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUdpQUw4UUFhYXg3OVFRQUFBUVNBQUFRU0FBQVFDQUJBQUNCWnIvSkNFQU44NmVTSFFBQUNDUUFBQ0NRdXdFQ1VNUDhLV1VIQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSU5CY2ZRTFFqQjkrZmZqLzl0VVgrNTBIeTNrdDRiTUVBTmtlR3hRUC9lOE1rRFo1TGVFa0FvQk14dzZMeC81Ync2TU5Ya3M0aSs4QWtHZkp3TmppL3cvbjgxckMyZXdBa0dPTFJkNDd5QnBlUzFqTURnQVp0bjZINXgza2ZyeVdzSXA1dW5ZN0pnQUttRCtsN0FBd3ZyM2UwWG5udUQydkpheEdBREMydlJkeWcyTTdYa3RZbFFBQWdFQUNnSEZWdllQenpuRjlYa3RZblFBQWdFQUNBQUFDQ1FER1ZMMTFXLzM0STZsK0xxc2ZIemJpbHdCVC9QS2Y2alBJNHprZlI5cHIrYWMvVnA4Qk83QURBQUNCQkFBQUJKcjlFQ01BRmN5ZlduWUFBQ0NRQUFDQVFMTTltQkNKMytxdC9QTXQ5NVJmbDlkeVRPWlBLVHNBQUJCSUFBQkFJQUhBdUtxMmJtMFpyODlyQ2F1YmZRZ0RRQTN6cDVJZEFNYTI5enM0N3hpMzQ3V0VWUWtBeHJmWFFtNWdiTTlyQ2FzUkFBQVFTQUNRWWV0M2RONHg3c2RyQ2F0d08yQnkzQzdzYS82b2pHRlJ3MnNKaTlrQklNOWFDNzJCVWM5ckNXZXpBMENtSmU4Z0RZdTJlQzNoTEFLQWJIY0h3R01EeEtCb245Y1NUdUptUUhETFlCaUgxN0lQNWs4cDN3RUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSU5Ec2x4Z0FxR0grVkxJREFBQ0JCQUFBQkJJQUFCQklBQUJBSUhjREJLQ0crVlBLRGdBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQzkrK0hYak1jRVZpVUFvR2UzZzNqUGdWenhtTURxQkFEMDZ2NEEzbU1nVnp3bXNBa0JBQ1BaY2lBYjlqQ1VpNXNmWTNiVUhuQ2l4NGJ4Rm9ONjc4Y2pSUFhhbTMzWUFZRGVIRE53MXh6S2V6OGVzSXVMQmlMRUFjYzZaZEN1TVpUM2ZqeXlWSys5NFljZEFPakZPUU4yeVZEZSsvR0FYUWtBNk1IU1FYN3FmNzkzT0FDN0V3Q1E0dGpCYklCREJBRUFyZHZ6QzMxclBaYUlnT1lKQUdqWm5uL1N0L1pqaVFCb21nQ0FWdTM1b3o1YlBaWUlnR1pkTlBDWENQRUhmR1RQbi9YZCtyRkVBQStvWG52VER6c0EwSnFLRy91TThqakEwUVFBQUFRU0FOQ1NrZDhwai94dmd3NEpBR2hGd29CTStEZENKd1FBdE9Lckw2clBZSHNKLzBib2hBQ0Fsb3c4SUVmK3QwR0habitIQmtBSjg2ZVVIUUJvellqdmxFZjhOMEhuTHVwL2lzQUJIeGxwWUk3MGIyRmwxV3R2OW1FSEFGbzF3dUFjNGQ4QWd4SUFBQkJJQUVETGVuNEgzZk81UXdBQkFLM3JjWkQyZU00UVJnQkFEM29hcUQyZEt3UVRBTkFMZ3hWWWtRQUExaU5Tb0JzQ0FIclM4b0J0K2R5QWp3Z0E2RTJMZzdiRmN3SWVKUUNnUndZdXNKQUFnRjYxRWdHdG5BZHdFbmNEQk01bitMT0UrVlBLRGdEMHJISUFHLzdRTlFFQXZUT0lnVE1JQUJqQjNoRWdPcUI3QWdBNGplRVBRN2k0K1JhR28vYUFGZXd4bUExL1ZsVzk5bVlmZGdCZ0pBWTBjQ1FCQUtQWktnTEVCUXhGQU1DSTFoN1doajhNUndBQWp6UDhZVWdDQUVabGNBT1BFQUF3c3FVUklDSmdXQUlBUm5mdUVEZjhZV2dDQUJLY09zd05meGlldXdFQ1VNUDhLV1VIQUZJYys2N2V1MytJSUFBZ3llZUd1K0VQTVFRQXBIbG95QnYrRUVVQUFFQWdBUUNKN3IvYjkrNGY0Z2dBU0hVNzlBMS9pQ1FBSUpuaEQ3RUVBQUFFbXYwU0F3QTF6SjlLZGdBQUlKQUFBSUJBQWdBQUFya1pFQUExeko5U2RnQUFJSkFBQUlCQXN4MFlBQ3FZUDdYc0FBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCNXVuYWp6RUNVTUQ4S1dVSEFBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ3paT2JNUUZRd2Z3cFpRY0FBQUlKQUFBSU5OdURBYUNHK1ZQSkRnQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FOK1BEM242cFBBV0JYMXIxNkFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBWDAvVTBPZXFQRHk5OElRYkk4T0hGVCtWcnJzTU9BQUJFRWdBQUVFZ0FOTVRIQU1Eb3JIUHRFQUFBRUVnQUFFQWdBZEFZMjJQQXFLeHZiWmx2L2g0QUFMWm0zclRFRGdBQW0vdnc0c2ZxVStBZUFkQWdGd29BV3hNQUFCQklBRFRLTGdBd0N1dFptMlpmeVFCZ0s1ZUdmN1BzQURUTWhRUEFWdHdOc1BIajhya0lBUHAwK2Z6SDhqWFU4ZkJoQndBQUFnbUFEdGdGQUhwajNXcWZBT2lFaXdub2hmV3FEd0lBZ05VWS92MFFBQjF4WVFHd0ZnSFFHUkVBdE1yNjFCY0IwQ0VYR2RBYTYxSi9CRUNuWEd4QUs2eEhmUklBSFhQUkFkV3NRLzBTQUoxejhRRlZyRDk5dXlqL0xVTEg0dVB5K2J1UFgxbUFEZDJzTy9Ycm4rUDh3dzdBSUVRQXNCZnJ6UmpjREdpZzQvS1ppeExZMXVXemQrVnJuV09kd3c3QVlFUUFzSVhMWisrc0w0TVJBQU55b1FKcnNwNk1TUUFNekVVTExHVWRHZGRjZlFKczYvYmkvY00vLzFaOEprQlBEUDd4MlFFSTRXSUdqdUVqeEJ3Q0lJZ0xHM2lNOVNHTGp3QUMrVmdBdUdYbzV4SUF3ZTVlK0dJQXNoajhDQUNtYWJJckFBa01mZTRTQVB6Ty9RVkNFRURmREgwZUlnQjQxS2NXRDFFQWJUTHNPWVVBNEdRV0dZRCsrVE5BQUFnMFQ5ZlZwd0FBN0cyZUZBQUF4UEVSQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJSGNEUkFBQXRrQkFJQkFBZ0FBQWdrQUFBZ2tBQUFnMER6NUZpQUF4TEVEQUFDQkJBQUFCSnA5QUFBQWVld0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0IzQXdTQVFIWUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBczJUSHdJQWdEaDJBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRdXdFQ1FDQTdBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnZWJKelFBQUlJNmJBUUZBSUI4QkFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ2R3TUVnRUIyQUFBZ2tBQUFnRUR6NURNQUFJZ3pHLzhBa01kSEFBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVNamRBQUVna0IwQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNEUlAvZ3dBQU9MWUFRQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBamtib0FBRU1nT0FBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJKb25Qd1VJQUhIc0FBQkFJQUVBQUlFRUFBQUVjamRBQUFoa0J3QUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUF2MFA2SmM4WjhZb3l6b0FBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJtYXNrYWJsZSJ9XX0=" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmY4ZmFiIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1NmE4ZSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSI0MiIgZmlsbD0idXJsKCNnKSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk2LDEwMCkiPgogICAgPHJlY3QgeD0iLTUyIiB5PSItMzQiIHdpZHRoPSIxMDQiIGhlaWdodD0iNzYiIHJ4PSIxNiIgZmlsbD0iI2ZmZiIvPgogICAgPGxpbmUgeDE9Ii00MiIgeTE9Ii04IiB4Mj0iNDIiIHkyPSItOCIgc3Ryb2tlPSIjZmZhYWJlIiBzdHJva2Utd2lkdGg9IjQiLz4KICAgIDxyZWN0IHg9Ii0xNiIgeT0iLTUwIiB3aWR0aD0iMzIiIGhlaWdodD0iMTgiIHJ4PSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIvPgogICAgPGNpcmNsZSBjeD0iLTE4IiBjeT0iLTgiIHI9IjYiIGZpbGw9IiNmZjhmYWIiLz4KICAgIDxjaXJjbGUgY3g9IjE4IiBjeT0iLTgiIHI9IjYiIGZpbGw9IiNmZjhmYWIiLz4KICAgIDxwYXRoIGQ9Ik0wIDYgTC0xMyAtNiBMLTYgLTE2IEwwIC05IEw2IC0xNiBMMTMgLTYgWiIgZmlsbD0iI2ZmOGZhYiIvPgogIDwvZz4KPC9zdmc+Cg==" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAG+klEQVR4nO3d23ITRxDG8dFKF5T1VHmHkLPzAIAJB9skwbmLE4gNmITTPSEneIc8lVN2FbJyYWTLsna1h5nt7un/r2ovcBnt1O7X2zMrrTwIykyfvJ1KjwHpDG5fHUiPYZ7oYE4e/0PYnSvufCKawd53TuhRRqIYetshwUcTfRVD8p0QfHSRuhCSvTjBR0ypCiH6i548IvhIp7gbtxCivtjJo78JP5Ir7n4aLbdRXojgQ0KMQii6vgDhh5QY2etUAIQf0rpmsHULOdkn/NCj2Gw3HWrVAQg/tGmbycYFQPihVZtsNmobJ/t/EX6oV2x+VjvXtTsA4YcVTbJaq1JO9gg/7Cm2VneClR2A8MOqOtnt/EYYYFllAXD1h3WrMlw6R5rs/Un4kY3h1udLsz4q/R/EHw4snQJNfuHqj7yUZZpFMFy7VABc/ZGrZdmmA8C1CyvjyUOu/sjf8N75HaGFu0DkH76cTYEmD/8g/XBhPuusAeAaBQDXBiGEMHnA9Af+DL/9YkAHgGsf7gLRAOATHQCuUQBwbTB58Ib5D9waMf2HZ0yB4NqIBgDPRtwChWdMgeAai+BIht992fs+Jz+/6X2fuSn/VgjUIhH8xX1TCO0xBepAMvzztIzDIgqgJW2h0zYeK5gCRdTnVITAxzF4v/uaZXBDw++/uvSzyU+/ux2HZUyBIpAKHWHvjgKAaxQAXKMAIlg2F895vzkZvP8xz0Xw8D7hiG2ym9+aI6sPww3vr0sPIWvzF5XJ7mvBkcSTxfsABL9/s2NuvRDMrwEIvyzrx99sB7B+4HNiuRsUYRqCtY3w6zS8vy6ejaZboWAMjbbhDuHXbLizLp6RJpv5NQDQRSFfg/W3EVd/E07Pk3xe6mxmOsBo52vpIaABK+eLZ4KRjoFsmegAox9sXE1wkYXzZqIAgFQoALim/i6QhTaKcqfnTz5H5u8CASlwFwjpKc4YHQCuUQBwjQKAa2afB+jdwbuL/771scw4ymgfn1KjMFW8QtFgMViLP5cOmvbxhRA0Z4wpUJWycDX9nVS0j88ACgCuUQBlmlw5Ja6y2sdnBH8lEslpzlge7wS//Vd6BDrGUCXF+K5+VO/3FGeMKRBcy+OrEeteiZqqO3eWutWofXxn9GaMDgDXKIAqda6ckldX7eMzII9FcEqzAGn9qIH28YWgeQbEZ4Fq0xSoZbSPTymmQHAtj7tAUE5vxugAcI1FMNJTnDE6AFyjAOAaBdAXPr6sEgXQh1mgmzzBRRH0ogjTaVC9WbcY5KpgN/ldS6QzVLHRASQcvMs37MZQACmtCnWd6Q6FkZT6vxJpVt3gOvhmB+kMVW10gBRSBNZ4EWhFAaSQ4pOZfNozCe4CpRIzsNbDL50h7gIJsR5cBygA7SiipCiA1LoEmPAnRwH0oU2QCX8vCvEbsau2XHgOtHSGKjY6QJ/qFoHnYumZ+r8TnJ1V4c4y/NIZKt/oAJpkGX7dKAAJBF0NFsFSFosg56KQzlDFRgeQNAt9zuFXjgKQRvhF8c1w6IHejNEB4BrfDIf0FGeMvxKJ5DRnjCkQXKMA4BoFANdGpp+7hQ2KM0YHgGsUAFyjAOAaBQDXeCcY6SnOGB0ArvFpUPRAb8bUd4Dje6+kh4AOtJ8/9QUApEQBwDX9D8VPQzje1t1Gsdzx9ivx7PBQPFDBwDfDnW7H2y+THQTEd3q+5HOzajPVASgCGyydJx6JRFRHhsIfgpFF8Px2tGXrAHtytPVSPB9NN1NToBmKQB+r58RkAYRwesCtHvTcWD4PZgtgxvLBz4H145/Fh+GOtl6EEEK4sndNeCR+zI65dVk9D3C0eX5SruxTDLHNH99cjKQHkEqOJwvxmV8DAF1QAHCNAoBrfDMcXKMDwDUKAK5RAHCNAoBrWb0TDDRFB4BrWXwYDmiLRyLhGlMguMYiGG6tHWwMirWDjYH0QAApTIHgGgUA1z48EcZCAD4VIYSwdnCTdQBcmWX+/JlgmgAcYg0A184KYO0p0yD4MJ91OgBcW/heIBYC8OXStOe/m0+pAmRr7ddvLmSeKRBcu1QAixUC5GJZtukAcG1pAdAFkJuyTJd/OzRLYThQeaU/3DigDGDe+LdbpTmvXANU/UfAglUZZhGMbNW5gK8sALoAclY73Ic3WA/AjvGzehfu2lOgui8ISGuS1cahPrzxhE4AtcbPbjfKdONFcNMdAH1pk81Wd4EoAmjTNpOdgnx4nekQ5I2ft78gd3ofoMuOgRi6ZjBKgOkE6Fusi2/UKziFgD7EnHlEn8IcXn9MESCZ8fM7UTObbA5/eI1CQDzjF3GDP5N8EUshoItUwZ/p7S4OhYAmUgd/pvfbmBQCyvQV+nmi9/EpBkiEfp66N7IoinxJh32Z/wGU4YiJiQRF7wAAAABJRU5ErkJggg==" />
+  <style>/* ===================== 小游记 · 全局样式 ===================== */
+:root {
+  --primary: #ff8fab;
+  --primary-dark: #f56a8e;
+  --primary-soft: #ffe3ec;
+  --accent: #7ad0c1;
+  --accent-soft: #e2f6f1;
+  --warn: #ffb454;
+  --bg: #fff6f9;
+  --bg-2: #fdeef4;
+  --card: #ffffff;
+  --text: #3a3340;
+  --text-2: #8a8190;
+  --line: #f1e3ea;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 6px 20px rgba(255, 143, 171, 0.16);
+  --shadow-sm: 0 3px 10px rgba(180, 150, 170, 0.14);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+  --header-h: 56px;
+  --nav-h: 64px;
+  --font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.5;
+  overscroll-behavior-y: none;
+}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { max-width: 100%; display: block; }
+input, select, textarea { font-family: inherit; font-size: 15px; color: var(--text); }
+ul { margin: 0; padding: 0; list-style: none; }
+
+#app { display: flex; flex-direction: column; min-height: 100vh; max-width: 480px; margin: 0 auto; background: var(--bg); position: relative; }
+
+/* ---------- Header ---------- */
+.app-header {
+  position: sticky; top: 0; z-index: 30;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  padding-top: var(--safe-t);
+}
+.app-header__inner { height: var(--header-h); display: flex; align-items: center; gap: 8px; padding: 0 12px; }
+.app-header__title { font-size: 18px; font-weight: 700; margin: 0; flex: 1; letter-spacing: .5px; }
+.app-header__actions { display: flex; gap: 6px; }
+.app-header__back { color: #fff; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; }
+.app-header__back:active { background: rgba(255,255,255,.18); }
+
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; color: #fff; }
+.icon-btn:active { background: rgba(255,255,255,.2); }
+.icon-btn--ghost { background: rgba(255,255,255,.2); }
+
+/* ---------- Main ---------- */
+.app-main { flex: 1; padding: 14px 14px calc(var(--nav-h) + var(--safe-b) + 16px); -webkit-overflow-scrolling: touch; }
+
+/* ---------- Bottom Nav ---------- */
+.app-nav {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 40;
+  width: 100%; max-width: 480px;
+  height: calc(var(--nav-h) + var(--safe-b));
+  padding-bottom: var(--safe-b);
+  background: rgba(255,255,255,.96);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-top: 1px solid var(--line);
+  display: flex;
+}
+.nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--text-2); font-size: 11px; position: relative; }
+.nav-item__icon { display: flex; }
+.nav-item.active { color: var(--primary-dark); font-weight: 700; }
+.nav-item.active .nav-item__icon { transform: translateY(-1px); }
+.nav-item.active::before { content: ""; position: absolute; top: 6px; width: 30px; height: 30px; border-radius: 50%; background: var(--primary-soft); z-index: -1; }
+
+/* ---------- Cards ---------- */
+.card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 14px; margin-bottom: 12px; }
+.card--flat { box-shadow: none; border: 1px solid var(--line); }
+.section-title { font-size: 16px; font-weight: 700; margin: 4px 0 12px; display: flex; align-items: center; gap: 6px; }
+.section-title small { font-weight: 400; color: var(--text-2); font-size: 12px; }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 11px 16px; border-radius: 999px; font-weight: 600; font-size: 15px; transition: transform .08s, box-shadow .2s; }
+.btn:active { transform: scale(.97); }
+.btn--primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; box-shadow: var(--shadow); }
+.btn--accent { background: var(--accent); color: #fff; }
+.btn--ghost { background: var(--primary-soft); color: var(--primary-dark); }
+.btn--line { background: #fff; border: 1.5px solid var(--primary); color: var(--primary-dark); }
+.btn--block { width: 100%; }
+.btn--sm { padding: 7px 12px; font-size: 13px; }
+.btn--danger { background: #ffe5e5; color: #e2575f; }
+.btn[disabled] { opacity: .5; pointer-events: none; }
+
+.fab { position: fixed; right: 18px; bottom: calc(var(--nav-h) + var(--safe-b) + 18px); left: auto; transform: none; z-index: 35; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; box-shadow: 0 8px 22px rgba(245,106,142,.45); display: flex; align-items: center; justify-content: center; font-size: 30px; line-height: 1; }
+.fab:active { transform: scale(.94); }
+
+/* ---------- Forms ---------- */
+.field { margin-bottom: 14px; }
+.field__label { display: block; font-size: 13px; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+.input, .select, .textarea {
+  width: 100%; border: 1.5px solid var(--line); background: #fff;
+  border-radius: var(--radius-sm); padding: 11px 12px; outline: none; transition: border-color .2s;
+}
+.input:focus, .select:focus, .textarea:focus { border-color: var(--primary); }
+.textarea { resize: vertical; min-height: 70px; }
+.row2 { display: flex; gap: 10px; }
+.row2 > * { flex: 1; }
+
+/* ---------- Chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 8px 14px; border-radius: 999px; background: #fff; border: 1.5px solid var(--line); color: var(--text-2); font-size: 13px; font-weight: 600; }
+.chip.active { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: var(--shadow-sm); }
+
+/* ---------- Empty / List ---------- */
+.empty { text-align: center; padding: 50px 20px; color: var(--text-2); }
+.empty__emoji { font-size: 44px; margin-bottom: 10px; }
+.empty__tip { font-size: 13px; margin-top: 6px; }
+
+.trip-card { position: relative; overflow: hidden; cursor: pointer; }
+.trip-card__cover { height: 92px; border-radius: 14px; margin: -14px -14px 12px; background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft)); display: flex; align-items: center; justify-content: center; font-size: 40px; }
+.trip-card__name { font-size: 17px; font-weight: 700; margin: 0 0 4px; }
+.trip-card__meta { color: var(--text-2); font-size: 13px; display: flex; gap: 10px; flex-wrap: wrap; }
+.trip-card__tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.tag { font-size: 11px; padding: 3px 9px; border-radius: 999px; background: var(--bg-2); color: var(--primary-dark); }
+.tag--accent { background: var(--accent-soft); color: #2f9c89; }
+
+.stat-row { display: flex; gap: 10px; }
+.stat { flex: 1; background: var(--bg-2); border-radius: var(--radius-sm); padding: 10px; text-align: center; }
+.stat__num { font-size: 18px; font-weight: 800; color: var(--primary-dark); }
+.stat__lbl { font-size: 11px; color: var(--text-2); }
+
+/* ---------- Timeline ---------- */
+.day-block { margin-bottom: 18px; }
+.day-head { display: flex; align-items: center; gap: 8px; margin: 6px 0 10px; }
+.day-head__badge { background: var(--primary); color: #fff; font-weight: 700; border-radius: 10px; padding: 4px 10px; font-size: 13px; }
+.day-head__date { color: var(--text-2); font-size: 13px; }
+
+.timeline { position: relative; padding-left: 26px; }
+.timeline::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--primary-soft), var(--accent-soft)); }
+.tl-item { position: relative; margin-bottom: 12px; }
+.tl-item__dot { position: absolute; left: -26px; top: 14px; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 3px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 9px; }
+.tl-item__dot--food { border-color: var(--warn); }
+.tl-item__dot--transport { border-color: var(--accent); }
+.tl-item__dot--hotel { border-color: #9b8cff; }
+.tl-item__dot--note { border-color: var(--text-2); }
+
+.item-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 11px 12px; }
+.item-card__top { display: flex; align-items: flex-start; gap: 8px; }
+.item-card__time { font-weight: 800; color: var(--primary-dark); font-size: 14px; min-width: 46px; }
+.item-card__title { font-weight: 700; flex: 1; }
+.item-card__type { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); white-space: nowrap; }
+.item-card__type--food { background: #fff2dc; color: #c9822a; }
+.item-card__type--transport { background: var(--accent-soft); color: #2f9c89; }
+.item-card__type--hotel { background: #efeaff; color: #6a5bd1; }
+.item-card__type--note { background: #eee; color: var(--text-2); }
+.item-card__note { font-size: 12px; color: var(--text-2); margin-top: 4px; }
+.item-card__sub { font-size: 12px; color: var(--text-2); margin-top: 4px; display: flex; gap: 10px; flex-wrap: wrap; }
+.item-card__photos { display: flex; gap: 5px; margin-top: 7px; flex-wrap: wrap; }
+.item-card__photos img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; }
+.item-card__actions { display: flex; gap: 8px; margin-top: 8px; }
+.item-card__actions .link { font-size: 12px; color: var(--primary-dark); font-weight: 600; }
+.item-card__actions .link--danger { color: #e2575f; }
+
+/* ---------- Map ---------- */
+.map-box { width: 100%; height: 260px; border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; background: var(--bg-2); position: relative; }
+.map-box__placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-2); gap: 8px; text-align: center; padding: 16px; }
+.map-box.inited { background: #fff; }
+.map-toolbar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.route-result { font-size: 12px; color: var(--text-2); background: var(--bg-2); border-radius: 12px; padding: 10px; margin-top: 8px; }
+.amap-route-num { width: 26px; height: 26px; border-radius: 50%; background: #ff8fab; color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; box-shadow: 0 3px 8px rgba(0,0,0,.25); transform: translate(-50%, -50%); }
+
+/* ---------- Modal ---------- */
+.modal-root { position: fixed; inset: 0; z-index: 100; background: rgba(60, 40, 55, .45); display: flex; align-items: flex-end; justify-content: center; }
+.modal-root[hidden] { display: none; }
+.modal {
+  background: #fff; width: 100%; max-width: 480px; border-radius: 22px 22px 0 0;
+  max-height: 88vh; overflow-y: auto; padding: 18px 16px calc(20px + var(--safe-b));
+  animation: slideUp .25s ease;
+}
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.modal__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.modal__title { font-size: 17px; font-weight: 700; }
+.modal__close { color: var(--text-2); font-size: 22px; width: 32px; height: 32px; }
+
+/* ---------- Toast ---------- */
+.toast-root { position: fixed; left: 50%; top: 70px; transform: translateX(-50%); z-index: 200; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; width: 100%; max-width: 480px; }
+.toast { background: rgba(40,30,40,.92); color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 13px; box-shadow: 0 6px 18px rgba(0,0,0,.2); animation: pop .2s ease; max-width: 90%; text-align: center; }
+.toast--error { background: #e2575f; }
+.toast--ok { background: #3fae8e; }
+@keyframes pop { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- Misc ---------- */
+.muted { color: var(--text-2); }
+.small { font-size: 12px; }
+.center { text-align: center; }
+.mt { margin-top: 12px; }
+.mb { margin-bottom: 12px; }
+.flex { display: flex; gap: 8px; align-items: center; }
+.between { justify-content: space-between; }
+.wrap { flex-wrap: wrap; }
+.grow { flex: 1; }
+.divider { height: 1px; background: var(--line); margin: 12px 0; }
+.preview-text { white-space: pre-wrap; font-size: 13px; background: var(--bg-2); border-radius: 12px; padding: 12px; max-height: 50vh; overflow-y: auto; font-family: ui-monospace, Menlo, Consolas, monospace; }
+
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.photo-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+.photo-add { aspect-ratio: 1; border: 1.5px dashed var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 26px; }
+
+.list-row { display: flex; align-items: center; gap: 10px; padding: 12px; background: #fff; border-radius: var(--radius-sm); margin-bottom: 8px; box-shadow: var(--shadow-sm); }
+.list-row__icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; background: var(--primary-soft); flex-shrink: 0; }
+.list-row__body { flex: 1; min-width: 0; }
+.list-row__title { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.list-row__sub { font-size: 12px; color: var(--text-2); }
+.list-row__amount { font-weight: 800; color: var(--primary-dark); font-size: 15px; }
+.list-row__amount--neg { color: var(--text-2); }
+
+.cat-pill { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--bg-2); color: var(--text-2); }
+
+.hidden { display: none !important; }
+
+/* install hint banner */
+.install-banner { background: linear-gradient(135deg, var(--primary-soft), var(--accent-soft)); border-radius: 14px; padding: 12px 14px; margin-bottom: 12px; display: flex; gap: 10px; align-items: center; }
+.install-banner__txt { flex: 1; font-size: 13px; }
+.install-banner__txt b { display: block; font-size: 14px; margin-bottom: 2px; }
+
+/* segmented control */
+.seg { display: flex; background: var(--bg-2); border-radius: 999px; padding: 3px; }
+.seg button { flex: 1; padding: 8px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.seg button.active { background: #fff; color: var(--primary-dark); box-shadow: var(--shadow-sm); }
+
+/* 预算分类占比 */
+.bdg { margin-top: 4px; }
+.bdg__row { display: flex; align-items: center; gap: 8px; margin: 7px 0; font-size: 13px; }
+.bdg__label { width: 66px; flex-shrink: 0; color: var(--text-2); }
+.bdg__track { flex: 1; height: 10px; background: var(--bg-2); border-radius: 999px; overflow: hidden; }
+.bdg__fill { height: 100%; border-radius: 999px; transition: width .3s ease; }
+.bdg__val { width: 96px; text-align: right; flex-shrink: 0; font-weight: 600; }
+
+/* 自动备份提醒 */
+.backup-banner {
+  display: flex; align-items: center; gap: 12px; justify-content: space-between;
+  background: linear-gradient(135deg, #fff4e0, #ffeede);
+  border: 1px solid #ffd9a8; border-radius: 14px;
+  padding: 12px 14px; margin-bottom: 14px;
+}
+.backup-banner__txt { font-size: 13px; line-height: 1.5; color: #8a6a3a; }
+.backup-banner .btn { flex-shrink: 0; }
+.backup-hint {
+  font-size: 12.5px; color: var(--text-2);
+  background: var(--bg-2); border-radius: 10px; padding: 8px 10px; margin-bottom: 12px;
+}
+.backup-hint--warn { color: #b9722a; background: #fff3e0; border: 1px solid #ffe0b0; }
+</style>
+</head>
+<body>
+  <div id="app">
+
+  <div id="app">
+    <header class="app-header" id="appHeader">
+      <div class="app-header__inner">
+        <button class="icon-btn app-header__back" id="backBtn" aria-label="返回" hidden>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <h1 class="app-header__title" id="appTitle">小游记</h1>
+        <div class="app-header__actions" id="headerActions"></div>
+      </div>
+    </header>
+
+    <main class="app-main" id="appMain"><!-- 视图渲染区 --></main>
+
+    <button id="fab" class="fab" hidden aria-label="新建">＋</button>
+
+    <nav class="app-nav" id="appNav">
+      <a class="nav-item" data-route="trips" href="#/trips">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 7l9-4 9 4-9 4-9-4zm0 5l9 4 9-4M3 17l9 4 9-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="nav-item__label">攻略</span>
+      </a>
+      <a class="nav-item" data-route="orders" href="#/orders">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="nav-item__label">订单</span>
+      </a>
+      <a class="nav-item" data-route="map" href="#/map">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11zm0-8.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="nav-item__label">地图</span>
+      </a>
+      <a class="nav-item" data-route="settings" href="#/settings">
+        <span class="nav-item__icon">
+          <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 11-4 0v-.1A1.6 1.6 0 005 19.4l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.6 1.6 0 003 13.6H3a2 2 0 110-4h.1A1.6 1.6 0 004.6 5L4.5 5a2 2 0 112.8-2.8l.1.1A1.6 1.6 0 0010 3.5V3a2 2 0 114 0v.1a1.6 1.6 0 002.7 1.1l.1-.1a2 2 0 112.8 2.8l-.1.1a1.6 1.6 0 001.4 2.7H21a2 2 0 110 4h-.1a1.6 1.6 0 00-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="nav-item__label">我的</span>
+      </a>
+    </nav>
+  </div>
+  </div>
+
+  <!-- 通用弹层容器 -->
+  <div id="modalRoot" class="modal-root" hidden></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite"></div>
+
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 数据存储层 ===================== */
+(function (global) {
+  'use strict';
+
+  const KEY = 'xiaoyouji.v1';
+  const SCHEMA = 1;
+
+  const DEFAULT_SETTINGS = {
+    amapKey: 'c3ebdf62d165733f2ba5e216569bb130',
+    amapWebKey: '',       // 高德 Web 服务 Key（选填，用于地点搜索/地理编码，IP 白名单）
+    appName: '小游记',
+    appIcon: '',          // dataURL，自定义桌面图标
+    themeColor: '#ff8fab',
+    userName: '我',
+    syncToken: '',        // GitHub PAT（仅 gist 权限），存本机
+    syncGistId: '',       // 同步用的 Gist ID
+    lastSyncAt: 0        // 上次云同步时间
+  };
+
+  let state = {
+    schema: SCHEMA,
+    settings: { ...DEFAULT_SETTINGS },
+    trips: [],
+    orders: []
+  };
+
+  function uid(prefix) {
+    return (prefix || 'id') + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  }
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        state = Object.assign({ schema: SCHEMA, settings: {}, trips: [], orders: [] }, parsed);
+        state.settings = Object.assign({ ...DEFAULT_SETTINGS }, parsed.settings || {});
+        // 兜底：本地已存但为空时，回退到内置默认 Key
+        if (!state.settings.amapKey) state.settings.amapKey = DEFAULT_SETTINGS.amapKey;
+      }
+    } catch (e) {
+      console.error('加载本地数据失败', e);
+    }
+    return state;
+  }
+
+  function save() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(state));
+      return true;
+    } catch (e) {
+      console.error('保存失败', e);
+      UI && UI.toast('保存失败：存储空间可能已满', 'error');
+      return false;
+    }
+  }
+
+  function exportJSON() {
+    return JSON.stringify(state, null, 2);
+  }
+
+  // 记录一次备份（导出/导入都算），用于「自动备份提醒」
+  function markBackup() {
+    state.settings.lastBackupAt = Date.now();
+    save();
+  }
+  function getLastBackup() {
+    return state.settings.lastBackupAt || null;
+  }
+  function getLastSyncAt() {
+    return state.settings.lastSyncAt || 0;
+  }
+
+  function importJSON(text) {
+    const parsed = JSON.parse(text);
+    if (!parsed || !Array.isArray(parsed.trips)) throw new Error('文件格式不正确');
+    state.schema = SCHEMA;
+    state.settings = Object.assign({ ...DEFAULT_SETTINGS }, parsed.settings || {});
+    state.trips = Array.isArray(parsed.trips) ? parsed.trips : [];
+    state.orders = Array.isArray(parsed.orders) ? parsed.orders : [];
+    save();
+    return state;
+  }
+
+  /* ---------- Trip CRUD ---------- */
+  function getTrips() { return state.trips; }
+  function getTrip(id) { return state.trips.find(t => t.id === id) || null; }
+
+  function saveTrip(trip) {
+    trip.updatedAt = Date.now();
+    const idx = state.trips.findIndex(t => t.id === trip.id);
+    if (idx >= 0) state.trips[idx] = trip;
+    else state.trips.unshift(trip);
+    save();
+    return trip;
+  }
+
+  function deleteTrip(id) {
+    state.trips = state.trips.filter(t => t.id !== id);
+    // 解绑订单
+    state.orders.forEach(o => { if (o.tripId === id) o.tripId = null; });
+    save();
+  }
+
+  function newTripBase(data) {
+    return Object.assign({
+      id: uid('trip'),
+      name: '',
+      destination: '',
+      city: '',
+      days: 1,
+      group: '独自',
+      preferences: [],
+      emoji: '🧳',
+      budgetItems: [],
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+      daysData: []
+    }, data);
+  }
+
+  /* ---------- Order CRUD ---------- */
+  function getOrders() { return state.orders; }
+  function getOrder(id) { return state.orders.find(o => o.id === id) || null; }
+  function getOrdersByTrip(tripId) { return state.orders.filter(o => o.tripId === tripId); }
+
+  function saveOrder(order) {
+    const idx = state.orders.findIndex(o => o.id === order.id);
+    if (idx >= 0) state.orders[idx] = order;
+    else state.orders.unshift(order);
+    save();
+    return order;
+  }
+  function deleteOrder(id) {
+    state.orders = state.orders.filter(o => o.id !== id);
+    save();
+  }
+  function newOrderBase(data) {
+    return Object.assign({
+      id: uid('ord'),
+      category: 'flight',
+      platform: 'ctrip',
+      orderNo: '',
+      name: '',
+      date: '',
+      amount: 0,
+      screenshot: '',
+      tripId: null,
+      note: ''
+    }, data);
+  }
+
+  /* ---------- Settings ---------- */
+  function getSettings() { return state.settings; }
+  function saveSettings(patch) {
+    state.settings = Object.assign({}, state.settings, patch);
+    save();
+    return state.settings;
+  }
+
+  function applyTheme() {
+    const c = state.settings.themeColor || '#ff8fab';
+    document.documentElement.style.setProperty('--primary', c);
+    // 计算深色（简单变暗）
+    const dark = shade(c, -22);
+    document.documentElement.style.setProperty('--primary-dark', dark);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', c);
+  }
+
+  function shade(hex, percent) {
+    const n = parseInt(hex.replace('#', ''), 16);
+    let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+    r = Math.max(0, Math.min(255, r + Math.round(2.55 * percent)));
+    g = Math.max(0, Math.min(255, g + Math.round(2.55 * percent)));
+    b = Math.max(0, Math.min(255, b + Math.round(2.55 * percent)));
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+
+  function orderTotal() {
+    return state.orders.reduce((s, o) => s + (Number(o.amount) || 0), 0);
+  }
+
+  global.Store = {
+    load, save, exportJSON, importJSON, markBackup, getLastBackup, getLastSyncAt,
+    getTrips, getTrip, saveTrip, deleteTrip, newTripBase,
+    getOrders, getOrder, getOrdersByTrip, saveOrder, deleteOrder, newOrderBase, orderTotal,
+    getSettings, saveSettings, applyTheme, uid
+  };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 通用工具 & UI 基础 ===================== */
+(function (global) {
+  'use strict';
+
+  function el(tag, attrs, children) {
+    const node = document.createElement(tag);
+    if (attrs) {
+      for (const k in attrs) {
+        if (k === 'class') node.className = attrs[k];
+        else if (k === 'html') node.innerHTML = attrs[k];
+        else if (k === 'text') node.textContent = attrs[k];
+        else if (k.startsWith('on') && typeof attrs[k] === 'function') {
+          node.addEventListener(k.slice(2).toLowerCase(), attrs[k]);
+        } else if (k === 'dataset') {
+          Object.assign(node.dataset, attrs[k]);
+        } else if (attrs[k] !== null && attrs[k] !== undefined) {
+          node.setAttribute(k, attrs[k]);
+        }
+      }
+    }
+    if (children !== undefined && children !== null) {
+      if (Array.isArray(children)) children.forEach(c => append(node, c));
+      else append(node, children);
+    }
+    return node;
+  }
+  function append(node, c) {
+    if (c == null) return;
+    if (typeof c === 'string' || typeof c === 'number') node.appendChild(document.createTextNode(String(c)));
+    else node.appendChild(c);
+  }
+
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+  }
+
+  function money(n) {
+    const v = Number(n) || 0;
+    return '¥' + v.toLocaleString('zh-CN', { maximumFractionDigits: 2 });
+  }
+
+  function fmtDate(ts) {
+    const d = new Date(ts);
+    const p = n => (n < 10 ? '0' + n : n);
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+  }
+  function fmtDateTime(ts) {
+    const d = new Date(ts);
+    const p = n => (n < 10 ? '0' + n : n);
+    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
+  }
+
+  let toastTimer = null;
+  function toast(msg, type) {
+    const root = document.getElementById('toastRoot');
+    if (!root) return;
+    const t = el('div', { class: 'toast' + (type ? ' toast--' + type : ''), text: msg });
+    root.appendChild(t);
+    setTimeout(() => { t.style.opacity = '0'; t.style.transition = 'opacity .3s'; }, 1900);
+    setTimeout(() => t.remove(), 2300);
+  }
+
+  const modalRoot = () => document.getElementById('modalRoot');
+
+  function openModal(title, contentNode, opts) {
+    opts = opts || {};
+    const root = modalRoot();
+    root.innerHTML = '';
+    const close = () => closeModal();
+    const head = el('div', { class: 'modal__head' }, [
+      el('div', { class: 'modal__title', text: title || '' }),
+      el('button', { class: 'modal__close', onclick: close, 'aria-label': '关闭' }, '×')
+    ]);
+    const body = el('div', { class: 'modal__body' }, contentNode);
+    const modal = el('div', { class: 'modal' + (opts.closable === false ? '' : '') }, [head, body]);
+    root.appendChild(modal);
+    root.hidden = false;
+    // 点击遮罩关闭
+    if (opts.closable !== false) {
+      root.addEventListener('click', function onMask(e) {
+        if (e.target === root) { closeModal(); root.removeEventListener('click', onMask); }
+      });
+    }
+    return { close, modal };
+  }
+  function closeModal() {
+    const root = modalRoot();
+    root.hidden = true;
+    root.innerHTML = '';
+  }
+
+  // 确认对话框
+  function confirmDialog({ title, message, okText, cancelText, danger }) {
+    return new Promise(resolve => {
+      const btns = el('div', { class: 'flex mt' }, [
+        el('button', { class: 'btn btn--ghost grow', text: cancelText || '取消', onclick: () => { closeModal(); resolve(false); } }),
+        el('button', { class: 'btn ' + (danger ? 'btn--danger' : 'btn--primary') + ' grow', text: okText || '确定', onclick: () => { closeModal(); resolve(true); } })
+      ]);
+      openModal(title || '确认', el('div', {}, [
+        el('p', { class: 'muted', text: message || '' }),
+        btns
+      ]));
+    });
+  }
+
+  // 轻量 prompt（输入文本）
+  function promptDialog({ title, placeholder, value, okText }) {
+    return new Promise(resolve => {
+      const input = el('input', { class: 'input', placeholder: placeholder || '', value: value || '' });
+      const btns = el('div', { class: 'flex mt' }, [
+        el('button', { class: 'btn btn--ghost grow', text: '取消', onclick: () => { closeModal(); resolve(null); } }),
+        el('button', { class: 'btn btn--primary grow', text: okText || '确定', onclick: () => { closeModal(); resolve(input.value.trim()); } })
+      ]);
+      openModal(title || '输入', el('div', {}, [el('div', { class: 'field' }, input), btns]));
+      setTimeout(() => input.focus(), 50);
+    });
+  }
+
+  function debounce(fn, ms) {
+    let t; return function () { clearTimeout(t); const a = arguments, c = this; t = setTimeout(() => fn.apply(c, a), ms); };
+  }
+
+  // 文件转 dataURL
+  function fileToDataURL(file) {
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result);
+      r.onerror = reject;
+      r.readAsDataURL(file);
+    });
+  }
+
+  // 把图片压缩后转 dataURL（限制尺寸，节省存储）
+  function compressImage(file, maxSize) {
+    maxSize = maxSize || 1000;
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = new Image();
+        img.onload = () => {
+          let { width, height } = img;
+          const scale = Math.min(1, maxSize / Math.max(width, height));
+          const w = Math.round(width * scale), h = Math.round(height * scale);
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL('image/jpeg', 0.72));
+        };
+        img.onerror = () => resolve(e.target.result);
+        img.src = e.target.result;
+      };
+      reader.onerror = () => resolve(null);
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise((res) => {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      ta.remove(); res();
+    });
+  }
+
+  global.UI = {
+    el, escapeHtml, money, fmtDate, fmtDateTime, toast,
+    openModal, closeModal, confirmDialog, promptDialog,
+    debounce, fileToDataURL, compressImage, copyText
+  };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 热门城市攻略模板库 ===================== */
+/* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
+(function (global) {
+  'use strict';
+
+  const CITIES = {
+    '北京': {
+      emoji: '🏯', adcode: '110000',
+      spots: [
+        { name: '故宫博物院', cat: 'culture', dur: 3.5, lng: 116.397, lat: 39.918, desc: '明清皇宫，建议预留半天，提前预约' },
+        { name: '天安门广场', cat: 'culture', dur: 1, lng: 116.397, lat: 39.903, desc: '看升旗需早起' },
+        { name: '颐和园', cat: 'nature', dur: 3, lng: 116.275, lat: 39.999, desc: '皇家园林，昆明湖泛舟' },
+        { name: '八达岭长城', cat: 'hike', dur: 4, lng: 116.017, lat: 40.359, desc: '不到长城非好汉，建议缆车上下' },
+        { name: '天坛公园', cat: 'culture', dur: 2, lng: 116.411, lat: 39.882, desc: '明清皇帝祭天' },
+        { name: '南锣鼓巷', cat: 'photo', dur: 1.5, lng: 116.403, lat: 39.937, desc: '胡同街区，文艺小店' },
+        { name: '798艺术区', cat: 'photo', dur: 2, lng: 116.495, lat: 39.984, desc: '画廊与涂鸦墙' },
+        { name: '北海公园', cat: 'relax', dur: 1.5, lng: 116.389, lat: 39.925, desc: '划船赏白塔' },
+        { name: '北京环球影城', cat: 'family', dur: 8, lng: 116.679, lat: 39.858, desc: '亲子必去主题乐园' }
+      ],
+      foods: [
+        { name: '全聚德烤鸭(前门)', area: '前门', tags: ['必吃'] },
+        { name: '簋街麻辣小龙虾', area: '东直门', tags: [] },
+        { name: '护国寺小吃', area: '护国寺', tags: ['老字号'] },
+        { name: '南锣鼓巷创意甜品', area: '南锣鼓巷', tags: [] }
+      ],
+      hotels: [
+        { name: '王府井/东单', note: '近地铁1号线，去故宫天安门方便' },
+        { name: '前门大街', note: '老北京风情，餐饮集中' },
+        { name: '国贸CBD', note: '商务区，安静现代' }
+      ]
+    },
+    '上海': {
+      emoji: '🌆', adcode: '310000',
+      spots: [
+        { name: '外滩', cat: 'photo', dur: 1.5, lng: 121.490, lat: 31.245, desc: '万国建筑+黄浦江夜景' },
+        { name: '东方明珠', cat: 'photo', dur: 2, lng: 121.499, lat: 31.239, desc: '登高俯瞰浦江' },
+        { name: '豫园&城隍庙', cat: 'culture', dur: 2, lng: 121.492, lat: 31.227, desc: '江南园林与老城厢' },
+        { name: '南京路步行街', cat: 'relax', dur: 1.5, lng: 121.479, lat: 31.236, desc: '购物打卡' },
+        { name: '上海迪士尼乐园', cat: 'family', dur: 9, lng: 121.667, lat: 31.152, desc: '亲子梦幻一日' },
+        { name: '田子坊', cat: 'photo', dur: 1.5, lng: 121.470, lat: 31.210, desc: '弄堂里的文创小店' },
+        { name: '上海博物馆', cat: 'culture', dur: 2.5, lng: 121.473, lat: 31.231, desc: '馆藏青铜器书画' },
+        { name: '朱家角古镇', cat: 'nature', dur: 3, lng: 121.054, lat: 31.108, desc: '江南水乡，地铁可达' }
+      ],
+      foods: [
+        { name: '城隍庙南翔小笼', area: '城隍庙', tags: ['必吃'] },
+        { name: '本帮菜(红烧肉)', area: '老西门', tags: [] },
+        { name: '黄河路美食街', area: '人民广场', tags: [] },
+        { name: '武康路咖啡馆', area: '武康路', tags: ['出片'] }
+      ],
+      hotels: [
+        { name: '人民广场', note: '地铁枢纽，去哪都方便' },
+        { name: '南京东路', note: '购物夜景近' },
+        { name: '静安寺', note: '高端安静' }
+      ]
+    },
+    '杭州': {
+      emoji: '🌊', adcode: '330100',
+      spots: [
+        { name: '西湖(断桥/苏堤)', cat: 'nature', dur: 3, lng: 120.148, lat: 30.243, desc: '环湖骑行或步行，免费的5A' },
+        { name: '灵隐寺', cat: 'culture', dur: 2.5, lng: 120.101, lat: 30.241, desc: '千年古刹，需先买飞来峰门票' },
+        { name: '西溪湿地', cat: 'nature', dur: 3, lng: 120.066, lat: 30.269, desc: '城市湿地，摇橹船' },
+        { name: '河坊街', cat: 'photo', dur: 1.5, lng: 120.173, lat: 30.239, desc: '南宋御街小吃' },
+        { name: '宋城', cat: 'family', dur: 4, lng: 120.115, lat: 30.173, desc: '《宋城千古情》演出' },
+        { name: '龙井村', cat: 'relax', dur: 2, lng: 120.078, lat: 30.208, desc: '茶园品茗' },
+        { name: '千岛湖', cat: 'nature', dur: 6, lng: 119.018, lat: 29.588, desc: '湖光山色，建议一日游' }
+      ],
+      foods: [
+        { name: '楼外楼西湖醋鱼', area: '孤山', tags: ['老字号'] },
+        { name: '河坊街定胜糕/葱包桧', area: '河坊街', tags: ['小吃'] },
+        { name: '龙井虾仁', area: '西湖边', tags: [] },
+        { name: '知味观小笼', area: '湖滨', tags: ['必吃'] }
+      ],
+      hotels: [
+        { name: '西湖湖滨', note: '步行到西湖，夜景好' },
+        { name: '龙翔桥地铁站', note: '地铁1号线，交通便利' },
+        { name: '杭州东站', note: '赶高铁方便' }
+      ]
+    },
+    '成都': {
+      emoji: '🐼', adcode: '510100',
+      spots: [
+        { name: '大熊猫繁育研究基地', cat: 'family', dur: 3, lng: 104.145, lat: 30.733, desc: '看花花，早晨去最活跃' },
+        { name: '宽窄巷子', cat: 'photo', dur: 2, lng: 104.056, lat: 30.670, desc: '老成都慢生活' },
+        { name: '锦里古街', cat: 'culture', dur: 1.5, lng: 104.048, lat: 30.642, desc: '三国文化与小吃' },
+        { name: '武侯祠', cat: 'culture', dur: 1.5, lng: 104.046, lat: 30.641, desc: '三国圣地' },
+        { name: '春熙路&太古里', cat: 'relax', dur: 2, lng: 104.081, lat: 30.657, desc: '潮购打卡' },
+        { name: '都江堰', cat: 'culture', dur: 4, lng: 103.618, lat: 31.005, desc: '千年水利工程' },
+        { name: '青城山', cat: 'hike', dur: 4, lng: 103.567, lat: 30.901, desc: '道教名山，徒步清幽' },
+        { name: '杜甫草堂', cat: 'culture', dur: 1.5, lng: 104.029, lat: 30.656, desc: '诗圣故居' }
+      ],
+      foods: [
+        { name: '火锅(小龙坎/蜀大侠)', area: '春熙路', tags: ['必吃'] },
+        { name: '串串香', area: '玉林', tags: [] },
+        { name: '龙抄手/钟水饺', area: '春熙路', tags: ['小吃'] },
+        { name: '锦里三大炮', area: '锦里', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '春熙路/太古里', note: '吃喝玩乐中心' },
+        { name: '宽窄巷子', note: '文艺安静' },
+        { name: '成都东站', note: '赶高铁方便' }
+      ]
+    },
+    '西安': {
+      emoji: '🏛️', adcode: '610100',
+      spots: [
+        { name: '秦始皇兵马俑', cat: 'culture', dur: 4, lng: 109.279, lat: 34.385, desc: '世界第八大奇迹，需半天' },
+        { name: '西安城墙', cat: 'culture', dur: 2, lng: 108.947, lat: 34.258, desc: '骑行城墙一圈' },
+        { name: '大雁塔&大唐不夜城', cat: 'photo', dur: 3, lng: 108.964, lat: 34.219, desc: '夜景灯光秀' },
+        { name: '回民街', cat: 'relax', dur: 1.5, lng: 108.946, lat: 34.264, desc: '小吃一条街' },
+        { name: '钟鼓楼', cat: 'culture', dur: 1, lng: 108.948, lat: 34.260, desc: '市中心地标' },
+        { name: '大唐芙蓉园', cat: 'culture', dur: 3, lng: 108.975, lat: 34.215, desc: '盛唐主题园林' },
+        { name: '华山', cat: 'hike', dur: 8, lng: 110.086, lat: 34.491, desc: '奇险天下第一山' }
+      ],
+      foods: [
+        { name: '回民街肉夹馍', area: '回民街', tags: ['必吃'] },
+        { name: '羊肉泡馍', area: '钟楼', tags: [] },
+        { name: '凉皮+冰峰', area: '全城', tags: ['小吃'] },
+        { name: '永兴坊摔碗酒', area: '永兴坊', tags: ['网红'] }
+      ],
+      hotels: [
+        { name: '钟楼/鼓楼', note: '市中心，地铁交汇' },
+        { name: '大雁塔', note: '夜景好，近不夜城' },
+        { name: '西安北站', note: '高铁站附近' }
+      ]
+    },
+    '重庆': {
+      emoji: '🌃', adcode: '500100',
+      spots: [
+        { name: '洪崖洞', cat: 'photo', dur: 2, lng: 106.581, lat: 29.564, desc: '魔幻吊脚楼夜景' },
+        { name: '解放碑', cat: 'relax', dur: 1.5, lng: 106.578, lat: 29.558, desc: '商圈地标' },
+        { name: '李子坝轻轨', cat: 'photo', dur: 1, lng: 106.539, lat: 29.552, desc: '轻轨穿楼' },
+        { name: '长江索道', cat: 'relax', dur: 1, lng: 106.590, lat: 29.553, desc: '空中看两江' },
+        { name: '磁器口古镇', cat: 'culture', dur: 2, lng: 106.457, lat: 29.579, desc: '千年古镇小吃' },
+        { name: '鹅岭公园(二厂)', cat: 'photo', dur: 2, lng: 106.550, lat: 29.544, desc: '文创天台' },
+        { name: '武隆天生三桥', cat: 'nature', dur: 7, lng: 107.693, lat: 29.258, desc: '喀斯特奇观，一日游' }
+      ],
+      foods: [
+        { name: '重庆火锅(珮姐/周师兄)', area: '解放碑', tags: ['必吃'] },
+        { name: '酸辣粉', area: '解放碑', tags: ['小吃'] },
+        { name: '磁器口陈麻花', area: '磁器口', tags: ['小吃'] },
+        { name: '江湖菜', area: '南滨路', tags: [] }
+      ],
+      hotels: [
+        { name: '解放碑', note: '核心商圈，夜景近' },
+        { name: '观音桥', note: '现代商圈，性价比高' },
+        { name: '南滨路', note: '江景安静' }
+      ]
+    },
+    '厦门': {
+      emoji: '🏝️', adcode: '350200',
+      spots: [
+        { name: '鼓浪屿', cat: 'nature', dur: 5, lng: 118.073, lat: 24.448, desc: '世界文化遗产，需轮渡' },
+        { name: '厦门大学', cat: 'photo', dur: 2, lng: 118.101, lat: 24.438, desc: '最美校园(限流预约)' },
+        { name: '南普陀寺', cat: 'culture', dur: 1.5, lng: 118.095, lat: 24.434, desc: '依山面海古刹' },
+        { name: '曾厝垵', cat: 'relax', dur: 2, lng: 118.123, lat: 24.425, desc: '文艺渔村小吃' },
+        { name: '环岛路骑行', cat: 'nature', dur: 2, lng: 118.130, lat: 24.430, desc: '海滨自行车道' },
+        { name: '厦门园林植物园', cat: 'photo', dur: 3, lng: 118.115, lat: 24.447, desc: '雨林喷雾打卡' }
+      ],
+      foods: [
+        { name: '沙茶面', area: '中山路', tags: ['必吃'] },
+        { name: '海蛎煎', area: '曾厝垵', tags: [] },
+        { name: '土笋冻', area: '中山路', tags: ['特色'] },
+        { name: '姜母鸭', area: '全城', tags: [] }
+      ],
+      hotels: [
+        { name: '中山路', note: '老城中心，吃货首选' },
+        { name: '曾厝垵', note: '临海文艺' },
+        { name: '环岛路', note: '海景安静' }
+      ]
+    },
+    '三亚': {
+      emoji: '🌴', adcode: '460200',
+      spots: [
+        { name: '亚龙湾', cat: 'nature', dur: 4, lng: 109.626, lat: 18.242, desc: '天下第一湾，沙滩绝美' },
+        { name: '蜈支洲岛', cat: 'nature', dur: 5, lng: 109.757, lat: 18.316, desc: '潜水天堂' },
+        { name: '天涯海角', cat: 'photo', dur: 2, lng: 109.349, lat: 18.227, desc: '地标打卡' },
+        { name: '南山文化旅游区', cat: 'culture', dur: 3, lng: 109.210, lat: 18.306, desc: '海上观音' },
+        { name: '大东海', cat: 'relax', dur: 3, lng: 109.512, lat: 18.224, desc: '市区海滩' },
+        { name: '呀诺达雨林', cat: 'hike', dur: 5, lng: 109.680, lat: 18.390, desc: '热带雨林徒步' }
+      ],
+      foods: [
+        { name: '海鲜加工(第一市场)', area: '第一市场', tags: ['必吃'] },
+        { name: '清补凉', area: '全城', tags: ['小吃'] },
+        { name: '椰子鸡', area: '全城', tags: [] },
+        { name: '文昌鸡', area: '全城', tags: [] }
+      ],
+      hotels: [
+        { name: '亚龙湾', note: '高端度假酒店群' },
+        { name: '三亚湾', note: '看日落，性价比高' },
+        { name: '海棠湾', note: '免税店+奢华酒店' }
+      ]
+    },
+    '丽江': {
+      emoji: '🏔️', adcode: '530700',
+      spots: [
+        { name: '丽江古城', cat: 'culture', dur: 3, lng: 100.234, lat: 26.871, desc: '世界文化遗产，夜生活丰富' },
+        { name: '玉龙雪山', cat: 'hike', dur: 6, lng: 100.180, lat: 27.098, desc: '冰川公园，需氧气瓶' },
+        { name: '拉市海', cat: 'nature', dur: 3, lng: 100.110, lat: 26.910, desc: '骑马划船湿地' },
+        { name: '束河古镇', cat: 'relax', dur: 2, lng: 100.200, lat: 26.880, desc: '比古城清静' }
+      ],
+      foods: [
+        { name: '腊排骨火锅', area: '古城', tags: ['必吃'] },
+        { name: '纳西烤鱼', area: '古城', tags: [] },
+        { name: '鸡豆凉粉', area: '古城', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '丽江古城内', note: '氛围好但石板路行李不便' },
+        { name: '束河古镇', note: '安静惬意' },
+        { name: '丽江市区', note: '交通方便' }
+      ]
+    },
+    '苏州': {
+      emoji: '🌿', adcode: '320500',
+      spots: [
+        { name: '拙政园', cat: 'culture', dur: 2.5, lng: 120.627, lat: 31.326, desc: '中国四大名园之首' },
+        { name: '平江路', cat: 'photo', dur: 2, lng: 120.633, lat: 31.317, desc: '水巷慢游' },
+        { name: '狮子林', cat: 'culture', dur: 1.5, lng: 120.630, lat: 31.322, desc: '假山迷宫' },
+        { name: '山塘街', cat: 'relax', dur: 1.5, lng: 120.603, lat: 31.322, desc: '七里山塘夜景' },
+        { name: '周庄古镇', cat: 'nature', dur: 4, lng: 120.850, lat: 31.110, desc: '中国第一水乡' },
+        { name: '虎丘', cat: 'culture', dur: 2, lng: 120.589, lat: 31.342, desc: '吴中第一名胜' }
+      ],
+      foods: [
+        { name: '松鼠桂鱼', area: '观前街', tags: ['必吃'] },
+        { name: '苏式汤面', area: '全城', tags: ['小吃'] },
+        { name: '蟹壳黄', area: '山塘街', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '拙政园/平江路', note: '园林核心区' },
+        { name: '观前街', note: '商圈便利' },
+        { name: '苏州站', note: '赶高铁方便' }
+      ]
+    },
+    '南京': {
+      emoji: '🍁', adcode: '320100',
+      spots: [
+        { name: '中山陵', cat: 'culture', dur: 2.5, lng: 118.855, lat: 32.063, desc: '近代建筑宏伟' },
+        { name: '夫子庙秦淮河', cat: 'photo', dur: 2.5, lng: 118.793, lat: 32.021, desc: '桨声灯影' },
+        { name: '玄武湖', cat: 'nature', dur: 2, lng: 118.796, lat: 32.068, desc: '城中湖漫步' },
+        { name: '总统府', cat: 'culture', dur: 2, lng: 118.796, lat: 32.047, desc: '近代史缩影' },
+        { name: '鸡鸣寺', cat: 'culture', dur: 1.5, lng: 118.795, lat: 32.060, desc: '樱花季极美' },
+        { name: '牛首山', cat: 'culture', dur: 4, lng: 118.736, lat: 31.940, desc: '佛顶宫地宫' }
+      ],
+      foods: [
+        { name: '盐水鸭', area: '全城', tags: ['必吃'] },
+        { name: '鸭血粉丝汤', area: '夫子庙', tags: [] },
+        { name: '鸡鸣汤包', area: '鸡鸣寺', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '新街口', note: '城市中心枢纽' },
+        { name: '夫子庙', note: '景区夜景' },
+        { name: '南京南站', note: '高铁站附近' }
+      ]
+    },
+    '青岛': {
+      emoji: '🌊', adcode: '370200',
+      spots: [
+        { name: '栈桥', cat: 'photo', dur: 1, lng: 120.319, lat: 36.058, desc: '青岛地标' },
+        { name: '八大关', cat: 'nature', dur: 2, lng: 120.336, lat: 36.051, desc: '万国建筑+红叶' },
+        { name: '五四广场', cat: 'photo', dur: 1, lng: 120.384, lat: 36.066, desc: '五月的风雕塑' },
+        { name: '崂山', cat: 'hike', dur: 6, lng: 120.603, lat: 36.156, desc: '海上名山' },
+        { name: '金沙滩', cat: 'relax', dur: 3, lng: 120.220, lat: 35.980, desc: '黄岛细软沙滩' }
+      ],
+      foods: [
+        { name: '青岛啤酒+海鲜', area: '台东', tags: ['必吃'] },
+        { name: '鲅鱼水饺', area: '全城', tags: [] },
+        { name: '辣炒蛤蜊', area: '啤酒街', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '栈桥/中山路', note: '老城核心' },
+        { name: '五四广场', note: '现代滨海' },
+        { name: '台东', note: '夜市美食' }
+      ]
+    },
+    '长沙': {
+      emoji: '🌶️', adcode: '430100',
+      spots: [
+        { name: '橘子洲', cat: 'nature', dur: 2.5, lng: 112.944, lat: 28.186, desc: '青年毛泽东雕像，小火车' },
+        { name: '岳麓山&岳麓书院', cat: 'culture', dur: 3, lng: 112.944, lat: 28.168, desc: '千年学府+爱晚亭' },
+        { name: '湖南省博物馆', cat: 'culture', dur: 3, lng: 112.996, lat: 28.221, desc: '马王堆辛追夫人' },
+        { name: '五一广场', cat: 'relax', dur: 2, lng: 112.938, lat: 28.199, desc: '繁华商圈' },
+        { name: '坡子街', cat: 'photo', dur: 1.5, lng: 112.936, lat: 28.197, desc: '火宫殿小吃' }
+      ],
+      foods: [
+        { name: '文和友小龙虾', area: '海信广场', tags: ['网红'] },
+        { name: '茶颜悦色', area: '全城', tags: ['必喝'] },
+        { name: '黑色经典臭豆腐', area: '坡子街', tags: ['必吃'] },
+        { name: '剁椒鱼头', area: '全城', tags: [] }
+      ],
+      hotels: [
+        { name: '五一广场', note: '地铁2号线，吃喝中心' },
+        { name: '湘江中路', note: '江景夜色' },
+        { name: '长沙南站', note: '高铁站附近' }
+      ]
+    },
+    '广州': {
+      emoji: '🍜', adcode: '440100',
+      spots: [
+        { name: '广州塔(小蛮腰)', cat: 'photo', dur: 2, lng: 113.324, lat: 23.106, desc: '城市地标夜景' },
+        { name: '沙面岛', cat: 'photo', dur: 1.5, lng: 113.245, lat: 23.108, desc: '欧陆风情建筑' },
+        { name: '陈家祠', cat: 'culture', dur: 1.5, lng: 113.252, lat: 23.126, desc: '岭南建筑瑰宝' },
+        { name: '长隆欢乐世界/野生动物园', cat: 'family', dur: 8, lng: 113.330, lat: 23.010, desc: '亲子一整天' },
+        { name: '北京路步行街', cat: 'relax', dur: 1.5, lng: 113.269, lat: 23.126, desc: '千年古道' },
+        { name: '白云山', cat: 'hike', dur: 4, lng: 113.298, lat: 23.184, desc: '羊城第一秀' }
+      ],
+      foods: [
+        { name: '早茶(点都德)', area: '全城', tags: ['必吃'] },
+        { name: '广州烧腊', area: '上下九', tags: [] },
+        { name: '艇仔粥', area: '荔湾', tags: ['小吃'] },
+        { name: '双皮奶', area: '沙湾', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '北京路', note: '老城中心' },
+        { name: '珠江新城', note: 'CBD现代' },
+        { name: '广州南站', note: '高铁站附近' }
+      ]
+    },
+    '昆明': {
+      emoji: '🌸', adcode: '530100',
+      spots: [
+        { name: '石林风景区', cat: 'nature', dur: 5, lng: 103.330, lat: 24.880, desc: '喀斯特奇石，一日游' },
+        { name: '滇池&海埂大坝', cat: 'nature', dur: 2, lng: 102.650, lat: 24.920, desc: '冬季观红嘴鸥' },
+        { name: '翠湖公园', cat: 'relax', dur: 1.5, lng: 102.700, lat: 25.046, desc: '城中绿肺' },
+        { name: '云南民族村', cat: 'culture', dur: 3, lng: 102.670, lat: 24.960, desc: '26个民族风情' },
+        { name: '西山龙门', cat: 'hike', dur: 4, lng: 102.620, lat: 24.960, desc: '俯瞰滇池' }
+      ],
+      foods: [
+        { name: '过桥米线', area: '全城', tags: ['必吃'] },
+        { name: '汽锅鸡', area: '全城', tags: [] },
+        { name: '鲜花饼', area: '全城', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '翠湖/五华', note: '市中心便利' },
+        { name: '滇池度假区', note: '安静湖景' },
+        { name: '昆明站', note: '赶高铁方便' }
+      ]
+    },
+    '武汉': {
+      emoji: '🌉', adcode: '420100',
+      spots: [
+        { name: '黄鹤楼', cat: 'culture', dur: 2, lng: 114.306, lat: 30.547, desc: '天下江山第一楼' },
+        { name: '东湖绿道', cat: 'nature', dur: 3, lng: 114.400, lat: 30.560, desc: '骑行赏湖' },
+        { name: '户部巷', cat: 'relax', dur: 1.5, lng: 114.306, lat: 30.545, desc: '汉味小吃街' },
+        { name: '江汉路步行街', cat: 'photo', dur: 1.5, lng: 114.290, lat: 30.582, desc: '百年商业街' },
+        { name: '武汉大学', cat: 'photo', dur: 2, lng: 114.366, lat: 30.538, desc: '樱花季最美(需预约)' }
+      ],
+      foods: [
+        { name: '热干面', area: '全城', tags: ['必吃'] },
+        { name: '小龙虾(靓靓蒸虾)', area: '万松园', tags: ['必吃'] },
+        { name: '豆皮', area: '户部巷', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '江汉路', note: '老城繁华' },
+        { name: '武昌司门口', note: '近黄鹤楼' },
+        { name: '武汉站', note: '高铁站附近' }
+      ]
+    },
+    '桂林': {
+      emoji: '⛰️', adcode: '450300',
+      spots: [
+        { name: '漓江竹筏(杨堤-兴坪)', cat: 'nature', dur: 4, lng: 110.290, lat: 25.270, desc: '20元背景取景地' },
+        { name: '阳朔西街', cat: 'relax', dur: 2, lng: 110.490, lat: 24.780, desc: '洋人街夜生活' },
+        { name: '遇龙河', cat: 'nature', dur: 3, lng: 110.460, lat: 24.760, desc: '人工竹筏漂流' },
+        { name: '象鼻山', cat: 'photo', dur: 1.5, lng: 110.295, lat: 25.272, desc: '桂林城徽' }
+      ],
+      foods: [
+        { name: '桂林米粉', area: '全城', tags: ['必吃'] },
+        { name: '啤酒鱼', area: '阳朔', tags: [] },
+        { name: '荔浦芋扣肉', area: '全城', tags: [] }
+      ],
+      hotels: [
+        { name: '桂林市区', note: '交通枢纽' },
+        { name: '阳朔', note: '景区核心，建议住2晚' }
+      ]
+    },
+    '天津': {
+      emoji: '🎡', adcode: '120100',
+      spots: [
+        { name: '天津之眼', cat: 'photo', dur: 1.5, lng: 117.190, lat: 39.155, desc: '永乐桥摩天轮' },
+        { name: '五大道', cat: 'photo', dur: 2, lng: 117.200, lat: 39.115, desc: '万国租界建筑' },
+        { name: '意大利风情区', cat: 'relax', dur: 2, lng: 117.210, lat: 39.135, desc: '意式街区' },
+        { name: '古文化街', cat: 'culture', dur: 1.5, lng: 117.195, lat: 39.145, desc: '津味民俗' },
+        { name: '盘山', cat: 'hike', dur: 5, lng: 117.280, lat: 40.060, desc: '京东第一山' }
+      ],
+      foods: [
+        { name: '狗不理包子', area: '和平区', tags: ['老字号'] },
+        { name: '煎饼果子', area: '全城', tags: ['必吃'] },
+        { name: '耳朵眼炸糕', area: '古文化街', tags: ['小吃'] }
+      ],
+      hotels: [
+        { name: '滨江道/和平路', note: '市中心商圈' },
+        { name: '意风区', note: '特色街区' }
+      ]
+    }
+  };
+
+  // 通用城市回退模板（未知目的地时使用）
+  const GENERIC = {
+    emoji: '🧭', adcode: '',
+    spots: [
+      { name: '城市地标/老城区', cat: 'culture', dur: 2.5, lng: null, lat: null, desc: '可补充具体景点' },
+      { name: '自然公园/绿道', cat: 'nature', dur: 3, lng: null, lat: null, desc: '亲近自然' },
+      { name: '博物馆/美术馆', cat: 'culture', dur: 2, lng: null, lat: null, desc: '了解城市文化' },
+      { name: '特色街区/商圈', cat: 'photo', dur: 2, lng: null, lat: null, desc: '吃喝打卡' },
+      { name: '近郊徒步路线', cat: 'hike', dur: 4, lng: null, lat: null, desc: '户外活动' }
+    ],
+    foods: [
+      { name: '当地特色正餐', area: '市中心', tags: ['推荐'] },
+      { name: '老字号小吃街', area: '老城区', tags: ['小吃'] }
+    ],
+    hotels: [
+      { name: '市中心/地铁站附近', note: '交通枢纽，出行方便' }
+    ]
+  };
+
+  function matchCity(name) {
+    if (!name) return null;
+    const n = name.trim();
+    for (const key in CITIES) {
+      if (n === key || n.indexOf(key) >= 0 || key.indexOf(n) >= 0) return CITIES[key];
+    }
+    return null;
+  }
+
+  function getCity(name) {
+    return matchCity(name) || null;
+  }
+
+  global.CityDB = { CITIES, GENERIC, matchCity, getCity };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 离线攻略生成引擎 ===================== */
+(function (global) {
+  'use strict';
+
+  const PREF_OPTIONS = ['美食', '自然风光', '徒步', '人文历史', '亲子', '拍照出片'];
+  const GROUP_OPTIONS = ['独自', '情侣', '朋友', '亲子', '长辈'];
+  const PREF_CAT = {
+    '美食': 'food', '自然风光': 'nature', '徒步': 'hike',
+    '人文历史': 'culture', '亲子': 'family', '拍照出片': 'photo'
+  };
+
+  function findCity(name) {
+    if (!name) return { key: null, data: CityDB.GENERIC };
+    const n = name.trim();
+    for (const key in CityDB.CITIES) {
+      if (n === key || n.indexOf(key) >= 0 || key.indexOf(n) >= 0) return { key, data: CityDB.CITIES[key] };
+    }
+    return { key: null, data: CityDB.GENERIC };
+  }
+
+  function fmtMin(m) {
+    m = Math.round(m);
+    const h = Math.floor(m / 60), mm = m % 60;
+    return (h < 10 ? '0' + h : h) + ':' + (mm < 10 ? '0' + mm : mm);
+  }
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function orderedSpots(city, prefs) {
+    const cats = prefs.map(p => PREF_CAT[p]).filter(Boolean);
+    let spots = city.spots.slice();
+    if (cats.length) {
+      spots.sort((a, b) => {
+        const sa = cats.includes(a.cat) ? 1 : 0;
+        const sb = cats.includes(b.cat) ? 1 : 0;
+        if (sb !== sa) return sb - sa;
+        return b.dur - a.dur;
+      });
+    }
+    // 同类打散，避免连续同类型
+    const byCat = {};
+    spots.forEach(s => (byCat[s.cat] = byCat[s.cat] || []).push(s));
+    const result = [];
+    let added = true;
+    while (added) {
+      added = false;
+      for (const c in byCat) {
+        if (byCat[c].length) { result.push(byCat[c].shift()); added = true; }
+      }
+    }
+    return result;
+  }
+
+  function mkItem(type, title, minute, extra) {
+    extra = extra || {};
+    return {
+      id: Store.uid('it'),
+      time: fmtMin(minute),
+      type,
+      title,
+      place: extra.place || '',
+      lng: extra.lng != null ? extra.lng : null,
+      lat: extra.lat != null ? extra.lat : null,
+      note: extra.note || '',
+      photos: [],
+      budget: 0,
+      orderId: null,
+      duration: extra.duration || null
+    };
+  }
+
+  function buildDay(spots, foods, hotels, dayIndex, totalDays, group, opts) {
+    const items = [];
+    let cur = (opts.arriveAfternoon && dayIndex === 0) ? 14 * 60 : 9 * 60;
+
+    const addTransport = (toName) => {
+      items.push(mkItem('transport', '前往 · ' + toName, cur, { note: '交通方式自选（打车/地铁/公交）' }));
+      cur += 35;
+    };
+    const addSpot = (s) => {
+      const it = mkItem('attraction', s.name, cur, { place: s.name, lng: s.lng, lat: s.lat, note: s.desc || '', duration: s.dur });
+      items.push(it);
+      cur += (s.dur || 2) * 60 + 30;
+    };
+    const addFood = (f, label) => {
+      items.push(mkItem('food', (label ? label + '：' : '') + f.name, cur, { place: f.area || '', note: '推荐 ' + f.name + (f.tags && f.tags.length ? '（' + f.tags.join('/') + '）' : '') }));
+      cur += 60;
+    };
+
+    // 住宿
+    if (totalDays >= 2) {
+      if (dayIndex === 0) {
+        const h = hotels[0];
+        items.push(mkItem('hotel', '入住 · ' + h.name, cur, { note: h.note || '', place: h.name }));
+        cur += 50;
+      }
+      if (dayIndex === totalDays - 1) {
+        const h = hotels[0];
+        items.push(mkItem('hotel', '退房 · ' + h.name, cur + 30, { note: h.note || '', place: h.name }));
+      }
+    } else if (hotels[0]) {
+      items.push(mkItem('hotel', '住宿 · ' + hotels[0].name, cur + 60, { note: hotels[0].note || '' }));
+    }
+
+    spots.forEach((s, idx) => {
+      if (idx > 0) addTransport(s.name);
+      addSpot(s);
+      if (idx === 0) addFood(foods[(dayIndex) % foods.length], '午餐');
+    });
+    if (spots.length) addFood(foods[(dayIndex + 1) % foods.length], '晚餐');
+
+    return items.sort((a, b) => a.time.localeCompare(b.time));
+  }
+
+  /**
+   * 主生成函数
+   * opts: { destination, days, group, preferences, startDate, arriveAfternoon }
+   */
+  function generate(opts) {
+    const { destination, days, group, preferences } = opts;
+    const { key, data } = findCity(destination);
+    const nDays = Math.max(1, parseInt(days, 10) || 1);
+
+    const perDay = { '独自': 3, '情侣': 3, '朋友': 3, '亲子': 2, '长辈': 2 }[group] || 2;
+    const spotsPool = orderedSpots(data, preferences);
+    // 扩展到足够数量
+    const needed = nDays * perDay;
+    const seq = [];
+    while (seq.length < needed) seq.push.apply(seq, spotsPool);
+    seq.length = needed;
+
+    const foods = data.foods.length ? data.foods : [{ name: '当地特色餐', area: '市中心', tags: [] }];
+    const hotels = data.hotels.length ? data.hotels : [{ name: '市中心酒店', note: '交通便利' }];
+
+    const start = opts.startDate ? new Date(opts.startDate + 'T00:00:00') : new Date();
+    const daysData = [];
+    for (let d = 0; d < nDays; d++) {
+      const daySpots = seq.slice(d * perDay, d * perDay + perDay);
+      const items = buildDay(daySpots, foods, hotels, d, nDays, group, opts);
+      const dt = new Date(start.getTime() + d * 86400000);
+      const p = n => (n < 10 ? '0' + n : n);
+      daysData.push({ date: `${dt.getFullYear()}-${p(dt.getMonth() + 1)}-${p(dt.getDate())}`, weekday: ['周日','周一','周二','周三','周四','周五','周六'][dt.getDay()], items });
+    }
+
+    const trip = Store.newTripBase({
+      name: opts.name && opts.name.trim() ? opts.name.trim() : `${destination}${nDays}日游`,
+      destination: destination,
+      city: key || destination,
+      days: nDays,
+      group: group || '独自',
+      preferences: preferences || [],
+      emoji: data.emoji || '🧳',
+      adcode: data.adcode || '',
+      daysData
+    });
+    return trip;
+  }
+
+  global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 高德地图集成 ===================== */
+(function (global) {
+  'use strict';
+
+  const MapX = {
+    key: '',
+    loaded: false,
+    loading: null,
+
+    load(key) {
+      if (this.loaded && window.AMap) return Promise.resolve();
+      if (this.loading) return this.loading;
+      this.key = key || Store.getSettings().amapKey;
+      if (!this.key) return Promise.reject(new Error('NO_KEY'));
+      this.loading = new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = 'https://webapi.amap.com/maps?v=2.0&key=' + encodeURIComponent(this.key) +
+          '&plugin=AMap.Driving,AMap.Transfer,AMap.PlaceSearch,AMap.Geocoder,AMap.Scale,AMap.ToolBar';
+        let settled = false;
+        const fail = (err) => { if (settled) return; settled = true; this.loading = null; reject(new Error(err)); };
+        const scriptTimer = setTimeout(() => fail('SCRIPT_TIMEOUT'), 15000);
+        s.onload = () => {
+          clearTimeout(scriptTimer);
+          if (!window.AMap) { fail('LOAD_FAIL'); return; }
+          const plugins = ['AMap.PlaceSearch', 'AMap.Geocoder', 'AMap.Driving', 'AMap.Transfer', 'AMap.Scale', 'AMap.ToolBar'];
+          const pluginTimer = setTimeout(() => fail('PLUGIN_TIMEOUT'), 10000);
+          window.AMap.plugin(plugins, (status) => {
+            if (settled) return;
+            clearTimeout(pluginTimer);
+            if (status === 'complete' || status === undefined || status === null || (Array.isArray(status) && status.length === plugins.length)) {
+              this.loaded = true; resolve();
+            } else { fail('PLUGIN_FAIL:' + JSON.stringify(status)); }
+          });
+        };
+        s.onerror = () => { clearTimeout(scriptTimer); fail('LOAD_FAIL'); };
+        document.head.appendChild(s);
+      });
+      return this.loading;
+    },
+
+    available() { return this.loaded && !!window.AMap; },
+
+    navigate(lng, lat, name) {
+      if (lng == null || lat == null) { UI.toast('该地点暂无坐标，无法导航', 'error'); return; }
+      const url = 'https://uri.amap.com/navigation?to=' + lng + ',' + lat + ',' +
+        encodeURIComponent(name || '目的地') + '&mode=car&src=xiaoyouji&coordinate=gaode&callnative=1';
+      window.open(url, '_blank');
+    },
+
+    // 在容器内渲染某天行程地图：标记 + 连线
+    async renderTripMap(container, trip, dayIndex) {
+      container.classList.add('inited');
+      container.innerHTML = '';
+      const AMap = window.AMap;
+      const day = trip.daysData[dayIndex];
+      const pts = (day ? day.items : []).filter(i => i.lng != null && i.lat != null)
+        .sort((a, b) => a.time.localeCompare(b.time));
+
+      const map = new AMap.Map(container, {
+        zoom: 12, resizeEnable: true,
+        mapStyle: 'amap://styles/whitesmoke'
+      });
+      map.addControl(new AMap.Scale());
+      map.addControl(new AMap.ToolBar({ position: 'RB' }));
+
+      if (trip.city) map.setCity(trip.city);
+
+      if (!pts.length) {
+        map.setZoom(11);
+        const info = document.createElement('div');
+        return map;
+      }
+
+      const linePts = pts.map(p => [p.lng, p.lat]);
+      pts.forEach((p, idx) => {
+        const num = idx + 1;
+        const marker = new AMap.Marker({
+          position: [p.lng, p.lat],
+          title: p.title,
+          content: '<div class="amap-route-num">' + num + '</div>',
+          extData: p
+        });
+        marker.on('click', () => {
+          const iw = new AMap.InfoWindow({
+            content: '<div style="padding:6px 8px;min-width:140px">' +
+              '<div style="font-weight:700;margin-bottom:4px">' + num + '. ' + UI.escapeHtml(p.title) + '</div>' +
+              '<div style="font-size:12px;color:#888;margin-bottom:6px">' + UI.escapeHtml(p.time) + (p.note ? ' · ' + UI.escapeHtml(p.note) : '') + '</div>' +
+              '<a href="javascript:;" style="color:#f56a8e;font-weight:600" onclick="window.__navTo(' + p.lng + ',' + p.lat + ',\'' + UI.escapeHtml(p.title).replace(/'/g, "\\'") + '\')">🧭 高德导航</a>' +
+              '</div>',
+            offset: new AMap.Pixel(0, -30)
+          });
+          iw.open(map, [p.lng, p.lat]);
+        });
+        map.add(marker);
+      });
+
+      const polyline = new AMap.Polyline({
+        path: linePts, strokeColor: '#ff8fab', strokeWeight: 5, strokeOpacity: .85,
+        strokeStyle: 'dashed', strokeDasharray: [10, 6], showDir: true, lineJoin: 'round', lineCap: 'round',
+        borderColor: '#fff', borderWeight: 2, isOutline: true
+      });
+      map.add(polyline);
+      map.setFitView(null, false, [60, 60, 60, 60]);
+      return map;
+    },
+
+    // 手绘风 SVG 路线地图（按天 / 全部），无需联网，纯前端生成
+    renderSketchMap(container, trip, dayIndex) {
+      container.classList.add('inited');
+      container.innerHTML = '';
+      const day = (dayIndex != null && dayIndex >= 0) ? trip.daysData[dayIndex] : null;
+      const pool = (day ? day.items : trip.daysData.reduce((a, d) => a.concat(d.items || []), []));
+      const pts = pool.filter(i => i.lng != null && i.lat != null && i.lng !== 0 && i.lat !== 0)
+        .sort((a, b) => (a.time || '').localeCompare(b.time || ''));
+      if (!pts.length) {
+        container.appendChild(UI.el('div', { class: 'map-box__placeholder' }, [
+          UI.el('div', { style: 'font-size:28px' }, '📍'),
+          UI.el('div', { text: '该行程地点暂未获取到坐标，无法绘制手绘地图' })
+        ]));
+        return;
+      }
+      const W = 360, H = 240, P = 38;
+      const xs = pts.map(p => +p.lng), ys = pts.map(p => +p.lat);
+      const minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
+      const minY = Math.min.apply(null, ys), maxY = Math.max.apply(null, ys);
+      const spanX = (maxX - minX) || 0.02, spanY = (maxY - minY) || 0.02;
+      const scale = Math.min((W - 2 * P) / spanX, (H - 2 * P) / spanY);
+      const offX = (W - spanX * scale) / 2, offY = (H - spanY * scale) / 2;
+      const proj = (lng, lat) => [+(offX + (lng - minX) * scale).toFixed(1), +(offY + (maxY - lat) * scale).toFixed(1)];
+      const C = pts.map(p => proj(p.lng, p.lat));
+
+      // 平滑路径（穿过各点中点的二次曲线）
+      let d = 'M ' + C[0][0] + ' ' + C[0][1];
+      for (let i = 1; i < C.length - 1; i++) {
+        const a = C[i], b = C[i + 1];
+        d += ' Q ' + a[0] + ' ' + a[1] + ' ' + ((a[0] + b[0]) / 2).toFixed(1) + ' ' + ((a[1] + b[1]) / 2).toFixed(1);
+      }
+      if (C.length > 1) d += ' T ' + C[C.length - 1][0] + ' ' + C[C.length - 1][1];
+
+      const esc = s => UI.escapeHtml(s || '');
+      const pinsRough = pts.map((p, i) => {
+        const [x, y] = C[i];
+        return '<g filter="url(#rough)">' +
+          '<circle cx="' + x + '" cy="' + y + '" r="13" fill="#fff" stroke="#ff8fab" stroke-width="3"/>' +
+          '<text x="' + x + '" y="' + (y + 5).toFixed(1) + '" text-anchor="middle" font-size="14" font-weight="800" fill="#ff5c8a">' + (i + 1) + '</text>' +
+          '</g>';
+      }).join('');
+      const labels = pts.map((p, i) => {
+        const [x, y] = C[i];
+        return '<text x="' + x + '" y="' + (y - 21).toFixed(1) + '" text-anchor="middle" font-size="11" fill="#6b5b4f">' + esc(p.title) + '</text>';
+      }).join('');
+
+      const svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:16px;background:#fbf3e3">' +
+        '<defs><filter id="rough" x="-10%" y="-10%" width="120%" height="120%">' +
+        '<feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="5" result="n"/>' +
+        '<feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter></defs>' +
+        '<rect x="8" y="8" width="' + (W - 16) + '" height="' + (H - 16) + '" rx="14" fill="none" stroke="#e2cfa6" stroke-width="2" stroke-dasharray="2 7"/>' +
+        (pts.length > 1 ? '<path d="' + d + '" fill="none" stroke="#ff8fab" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9 7" filter="url(#rough)"/>' : '') +
+        pinsRough + labels +
+        '</svg>';
+      container.innerHTML = svg;
+    },
+
+    // 路线规划：mode = 'drive' | 'transit'
+    async planRoute(container, from, to, mode) {
+      const AMap = window.AMap;
+      const map = new AMap.Map(container, { zoom: 11, resizeEnable: true });
+      if (mode === 'transit') {
+        const trans = new AMap.Transfer({ map, city: from.city || '', policy: AMap.TransferPolicy.LEAST_TIME });
+        return new Promise((resolve) => {
+          trans.search([from.lng, from.lat], [to.lng, to.lat], (status, res) => {
+            if (status === 'complete' && res.plans && res.plans.length) {
+              const p = res.plans[0];
+              resolve('约 ' + (p.time / 60).toFixed(0) + ' 分钟 · ' + (p.distance / 1000).toFixed(1) + ' km · 换乘 ' + (p.transfers || 0) + ' 次');
+            } else resolve('未找到公共交通路线');
+          });
+        });
+      } else {
+        const driving = new AMap.Driving({ map, policy: AMap.DrivingPolicy.LEAST_TIME });
+        return new Promise((resolve) => {
+          driving.search([from.lng, from.lat], [to.lng, to.lat], (status, res) => {
+            if (status === 'complete' && res.routes && res.routes.length) {
+              const r = res.routes[0];
+              resolve('驾车约 ' + (r.time / 60).toFixed(0) + ' 分钟 · ' + (r.distance / 1000).toFixed(1) + ' km');
+            } else resolve('未找到驾车路线');
+          });
+        });
+      }
+    },
+
+    async search(city, keyword) {
+      const webKey = Store.getSettings().amapWebKey;
+      if (webKey) {
+        try { return await this.searchRest(webKey, city, keyword); }
+        catch (e) {
+          if (e && e.message && /^(NO_|.*TIMEOUT|.*FAIL|KEY_)/.test(e.message)) {
+            // Web 服务失败（无结果/超时/Key 错）则退回 JS API
+          } else throw e;
+        }
+      }
+      return await this.searchJs(city, keyword);
+    },
+
+    // JSONP 请求（用于高德 Web 服务 REST 接口，跨域、不依赖 JS 插件）
+    jsonp(url, ms) {
+      return new Promise((resolve, reject) => {
+        const cb = 'amapcb_' + Date.now() + '_' + Math.floor(Math.random() * 1e6);
+        const s = document.createElement('script');
+        const cleanup = () => { clearTimeout(timer); try { delete window[cb]; } catch (e) {} if (s.parentNode) s.parentNode.removeChild(s); };
+        const timer = setTimeout(() => { cleanup(); reject(new Error('JSONP TIMEOUT')); }, ms || 12000);
+        window[cb] = (data) => { cleanup(); resolve(data); };
+        s.onerror = () => { cleanup(); reject(new Error('JSONP LOAD_FAIL')); };
+        s.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + cb;
+        document.head.appendChild(s);
+      });
+    },
+
+    // 高德 Web 服务 REST 搜索（优先）
+    async searchRest(key, city, keyword) {
+      const out = (raw) => {
+        if (!raw) return [];
+        if (raw.pois) return raw.pois.filter(p => p.location).map(p => {
+          const ll = (p.location || '').split(',');
+          return { name: p.name, address: p.address || '', lng: parseFloat(ll[0]), lat: parseFloat(ll[1]), type: p.type || 'poi' };
+        });
+        if (raw.geocodes) return raw.geocodes.filter(g => g.location).map(g => {
+          const ll = (g.location || '').split(',');
+          return { name: g.formatted_address || keyword, address: g.formatted_address || '', lng: parseFloat(ll[0]), lat: parseFloat(ll[1]), type: 'geocode' };
+        });
+        return [];
+      };
+      const placeUrl = (kw, c) => 'https://restapi.amap.com/v3/place/text?key=' + encodeURIComponent(key) + '&keywords=' + encodeURIComponent(kw) + '&offset=25&output=JSON' + (c ? '&city=' + encodeURIComponent(c) : '');
+      const geoUrl = (kw, c) => 'https://restapi.amap.com/v3/geocode/geo?key=' + encodeURIComponent(key) + '&address=' + encodeURIComponent(kw) + '&output=JSON' + (c ? '&city=' + encodeURIComponent(c) : '');
+      const tryOnce = async (url) => {
+        const d = await this.jsonp(url, 12000);
+        if (d.status && d.status !== '1') {
+          if (d.infocode === '10001' || (d.info && d.info.indexOf('KEY') >= 0)) throw new Error('KEY_INVALID');
+          return [];
+        }
+        return out(d);
+      };
+      // POI：城市 → 全国；地理编码：城市 → 全国
+      let list = await tryOnce(placeUrl(keyword, city));
+      if (!list.length) list = await tryOnce(placeUrl(keyword, ''));
+      if (!list.length && city && !keyword.includes(city)) {
+        const r = await tryOnce(placeUrl(city + ' ' + keyword, ''));
+        if (r.length) list = r;
+      }
+      if (!list.length) {
+        const g = await tryOnce(geoUrl(keyword, city));
+        if (g.length) list = g; else list = await tryOnce(geoUrl(keyword, ''));
+      }
+      return list;
+    },
+
+    // 高德 JS API 搜索（兜底）
+    async searchJs(city, keyword) {
+      const AMap = window.AMap;
+      if (!AMap) throw new Error('NO_AMAP');
+      const normalize = p => ({ name: p.name, address: p.address, lng: p.location.lng, lat: p.location.lat, type: p.type });
+      const withTimeout = (promise, ms, label) => Promise.race([
+        promise,
+        new Promise((_, reject) => setTimeout(() => reject(new Error(label + ' TIMEOUT')), ms))
+      ]);
+      const placeSearch = (kw, c) => new Promise((resolve, reject) => {
+        try {
+          const ps = new AMap.PlaceSearch({ city: c || '', pageSize: 20 });
+          ps.search(kw, (status, res) => {
+            if (status === 'complete' && res.poiList) resolve(res.poiList.pois.map(normalize));
+            else resolve([]);
+          });
+        } catch (e) { reject(e); }
+      });
+      const geocode = (kw, c) => new Promise((resolve, reject) => {
+        try {
+          const geo = new AMap.Geocoder({ city: c || '' });
+          geo.getLocation(kw, (status, res) => {
+            if (status === 'complete' && res.geocodes && res.geocodes.length) {
+              resolve(res.geocodes.map(g => ({
+                name: g.formattedAddress || kw,
+                address: g.formattedAddress || '',
+                lng: g.location.lng,
+                lat: g.location.lat,
+                type: 'geocode'
+              })));
+            } else resolve([]);
+          });
+        } catch (e) { reject(e); }
+      });
+      const trySearch = async (kw, c, via) => {
+        try {
+          if (via === 'place') return await withTimeout(placeSearch(kw, c), 12000, 'PlaceSearch');
+          return await withTimeout(geocode(kw, c), 12000, 'Geocoder');
+        } catch (e) {
+          if (e && e.message && e.message.includes('TIMEOUT')) return 'TIMEOUT';
+          throw e;
+        }
+      };
+      // 策略：城市内 → 全国 → 城市+关键词 → 地理编码 → 全国地理编码
+      let list = await trySearch(keyword, city, 'place');
+      if (list === 'TIMEOUT') list = await trySearch(keyword, '', 'place');
+      if (!list.length && city && !keyword.includes(city)) {
+        const retry = await trySearch(city + ' ' + keyword, '', 'place');
+        if (retry !== 'TIMEOUT') list = retry;
+      }
+      if (!list.length) {
+        const g = await trySearch(keyword, city, 'geo');
+        if (g === 'TIMEOUT') list = await trySearch(keyword, '', 'geo');
+        else list = g;
+      }
+      return Array.isArray(list) ? list : [];
+    },
+
+    // 取城市 adcode
+    async getAdcode(cityName) {
+      const AMap = window.AMap;
+      const geocoder = new AMap.Geocoder({ city: cityName });
+      return new Promise((resolve) => {
+        geocoder.getLocation(cityName, (status, res) => {
+          if (status === 'complete' && res.geocodes && res.geocodes.length) {
+            resolve(res.geocodes[0].adcode);
+          } else resolve(null);
+        });
+      });
+    }
+  };
+
+  global.MapX = MapX;
+  // 地图 InfoWindow 内导航回调
+  global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 订单管理模块 ===================== */
+(function (global) {
+  'use strict';
+
+  const CATS = {
+    flight: { label: '机票', icon: '✈️' },
+    hotel: { label: '酒店', icon: '🏨' },
+    train: { label: '火车票', icon: '🚄' },
+    cruise: { label: '邮轮', icon: '🚢' },
+    metro: { label: '地铁', icon: '🚇' },
+    taxi: { label: '打车', icon: '🚕' },
+    car: { label: '租车', icon: '🚙' },
+    ticket: { label: '景区门票', icon: '🎫' },
+    other: { label: '其他', icon: '📄' }
+  };
+  const PLATFORMS = { ctrip: '携程', qunar: '去哪儿', zhixing: '智行', other: '其他' };
+
+  function catPill(cat) {
+    const c = CATS[cat] || { label: cat, icon: '📄' };
+    return UI.el('span', { class: 'cat-pill', text: c.icon + ' ' + c.label });
+  }
+
+  function listView(main) {
+    const orders = Store.getOrders();
+    main.innerHTML = '';
+
+    const header = UI.el('div', { class: 'card' }, [
+      UI.el('div', { class: 'stat-row' }, [
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: String(orders.length) }), UI.el('div', { class: 'stat__lbl', text: '全部订单' })]),
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: UI.money(Store.orderTotal()) }), UI.el('div', { class: 'stat__lbl', text: '累计支出' })]),
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: String(orders.filter(o => !o.tripId).length) }), UI.el('div', { class: 'stat__lbl', text: '未关联' })])
+      ])
+    ]);
+    main.appendChild(header);
+
+    // 分类快捷筛选
+    let activeCat = 'all';
+    const catsBar = UI.el('div', { class: 'chips mb' });
+    const mkChip = (val, label) => {
+      const chip = UI.el('button', { class: 'chip' + (val === activeCat ? ' active' : ''), text: label, onclick: () => { activeCat = val; catsBar.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); chip.classList.add('active'); renderRows(); } });
+      return chip;
+    };
+    catsBar.appendChild(mkChip('all', '全部'));
+    Object.keys(CATS).forEach(k => catsBar.appendChild(mkChip(k, CATS[k].icon + CATS[k].label)));
+    main.appendChild(catsBar);
+
+    const listBox = UI.el('div', {});
+    main.appendChild(listBox);
+
+    function renderRows() {
+      listBox.innerHTML = '';
+      const filtered = orders.filter(o => activeCat === 'all' || o.category === activeCat);
+      if (!filtered.length) {
+        listBox.appendChild(UI.el('div', { class: 'empty' }, [
+          UI.el('div', { class: 'empty__emoji', text: '🧾' }),
+          UI.el('div', { text: '还没有订单' }),
+          UI.el('div', { class: 'empty__tip', text: '点击右下角 + 录入携程/去哪儿订单' })
+        ]));
+        return;
+      }
+      filtered.forEach(o => {
+        const trip = o.tripId ? Store.getTrip(o.tripId) : null;
+        const row = UI.el('div', { class: 'list-row', onclick: () => App.navigate('#/orders/edit/' + o.id) }, [
+          UI.el('div', { class: 'list-row__icon', text: (CATS[o.category] || {}).icon || '📄' }),
+          UI.el('div', { class: 'list-row__body' }, [
+            UI.el('div', { class: 'list-row__title', text: o.name || (CATS[o.category] || {}).label || '订单' }),
+            UI.el('div', { class: 'list-row__sub', text: PLATFORMS[o.platform] + ' · ' + (o.orderNo || '无编号') + (o.date ? ' · ' + o.date : '') })
+          ]),
+          UI.el('div', { style: 'text-align:right' }, [
+            UI.el('div', { class: 'list-row__amount', text: UI.money(o.amount) }),
+            trip ? UI.el('div', { class: 'cat-pill', text: '🔗' + trip.name }) : UI.el('div', { class: 'cat-pill', text: '未关联' })
+          ])
+        ]);
+        listBox.appendChild(row);
+      });
+    }
+    renderRows();
+  }
+
+  function formView(main, opts) {
+    opts = opts || {};
+    const editing = !!opts.id;
+    const o = editing ? Store.getOrder(opts.id) : Store.newOrderBase({ tripId: opts.tripId || null });
+    main.innerHTML = '';
+
+    const screenshotData = { val: o.screenshot || '' };
+
+    const platSel = UI.el('select', { class: 'select' }, Object.keys(PLATFORMS).map(k =>
+      UI.el('option', { value: k, text: PLATFORMS[k], selected: k === o.platform ? 'selected' : null })));
+    const catSel = UI.el('select', { class: 'select' }, Object.keys(CATS).map(k =>
+      UI.el('option', { value: k, text: CATS[k].icon + ' ' + CATS[k].label, selected: k === o.category ? 'selected' : null })));
+    const tripSel = UI.el('select', { class: 'select' }, [UI.el('option', { value: '', text: '不关联', selected: !o.tripId ? 'selected' : null })].concat(
+      Store.getTrips().map(t => UI.el('option', { value: t.id, text: t.name, selected: t.id === o.tripId ? 'selected' : null }))));
+
+    const nameInput = UI.el('input', { class: 'input', placeholder: '如：上海→东京 往返机票', value: o.name || '' });
+    const noInput = UI.el('input', { class: 'input', placeholder: '订单编号（选填）', value: o.orderNo || '' });
+    const dateInput = UI.el('input', { class: 'input', type: 'date', value: o.date || '' });
+    const amtInput = UI.el('input', { class: 'input', type: 'number', placeholder: '0.00', value: o.amount ? String(o.amount) : '', step: '0.01', min: '0' });
+    const noteInput = UI.el('textarea', { class: 'textarea', placeholder: '备注（选填）', text: o.note || '' });
+
+    const shotPreview = UI.el('div', { class: 'photo-grid' });
+    function renderShot() {
+      shotPreview.innerHTML = '';
+      if (screenshotData.val) shotPreview.appendChild(UI.el('img', { src: screenshotData.val, onclick: () => App.navigate('#/orders/' + o.id + '/shot') }));
+      const add = UI.el('label', { class: 'photo-add', text: '+' });
+      const file = UI.el('input', { type: 'file', accept: 'image/*', style: 'display:none', onchange: async (e) => {
+        const f = e.target.files[0]; if (!f) return;
+        const d = await UI.compressImage(f, 1100);
+        if (d) { screenshotData.val = d; renderShot(); }
+      } });
+      add.appendChild(file);
+      shotPreview.appendChild(add);
+    }
+    renderShot();
+
+    const form = UI.el('div', {}, [
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '订单分类' }), catSel]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '平台' }), platSel]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '名称' }), nameInput]),
+      UI.el('div', { class: 'row2' }, [
+        UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '订单编号' }), noInput]),
+        UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '日期' }), dateInput])
+      ]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '金额（RMB）' }), amtInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '关联行程' }), tripSel]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '订单截图' }), shotPreview]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '备注' }), noteInput])
+    ]);
+    main.appendChild(form);
+
+    const actions = UI.el('div', { class: 'flex mt' }, [
+      editing ? UI.el('button', { class: 'btn btn--danger grow', text: '删除', onclick: async () => {
+        if (await UI.confirmDialog({ title: '删除订单', message: '确定删除该订单？', danger: true })) {
+          Store.deleteOrder(o.id); UI.toast('已删除', 'ok'); App.navigate('#/orders');
+        }
+      } }) : UI.el('span', {}),
+      UI.el('button', { class: 'btn btn--primary grow', text: editing ? '保存' : '添加', onclick: () => {
+        const payload = {
+          category: catSel.value, platform: platSel.value, name: nameInput.value.trim(),
+          orderNo: noInput.value.trim(), date: dateInput.value, amount: parseFloat(amtInput.value) || 0,
+          screenshot: screenshotData.val, tripId: tripSel.value || null, note: noteInput.value.trim()
+        };
+        if (!payload.name) { UI.toast('请填写订单名称', 'error'); return; }
+        Object.assign(o, payload);
+        Store.saveOrder(o);
+        UI.toast(editing ? '已保存' : '已添加', 'ok');
+        App.navigate(o.tripId ? '#/trip/' + o.tripId : '#/orders');
+      } })
+    ]);
+    main.appendChild(actions);
+  }
+
+  // 行程详情里关联的订单列表
+  function tripOrdersView(trip, container) {
+    container.innerHTML = '';
+    const orders = Store.getOrdersByTrip(trip.id);
+    if (!orders.length) {
+      container.appendChild(UI.el('div', { class: 'muted center', text: '暂无关联订单', style: 'font-size:13px;padding:8px' }));
+      return;
+    }
+    orders.forEach(o => {
+      const c = CATS[o.category] || { icon: '📄', label: o.category };
+      container.appendChild(UI.el('div', { class: 'list-row', onclick: () => App.navigate('#/orders/edit/' + o.id) }, [
+        UI.el('div', { class: 'list-row__icon', text: c.icon }),
+        UI.el('div', { class: 'list-row__body' }, [
+          UI.el('div', { class: 'list-row__title', text: o.name }),
+          UI.el('div', { class: 'list-row__sub', text: PLATFORMS[o.platform] + (o.date ? ' · ' + o.date : '') })
+        ]),
+        UI.el('div', { class: 'list-row__amount', text: UI.money(o.amount) })
+      ]));
+    });
+  }
+
+  function shotView(main, id) {
+    const o = Store.getOrder(id);
+    main.innerHTML = '';
+    if (!o || !o.screenshot) { main.appendChild(UI.el('div', { class: 'empty', text: '无截图' })); return; }
+    main.appendChild(UI.el('img', { src: o.screenshot, style: 'width:100%;border-radius:14px' }));
+  }
+
+  global.Orders = { CATS, PLATFORMS, listView, formView, tripOrdersView, shotView, catPill };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 行程核心模块 ===================== */
+(function (global) {
+  'use strict';
+
+  const TYPE_META = {
+    attraction: { label: '景点', cls: '', icon: '🏞️' },
+    food: { label: '餐饮', cls: 'food', icon: '🍜' },
+    transport: { label: '交通', cls: 'transport', icon: '🚌' },
+    hotel: { label: '住宿', cls: 'hotel', icon: '🏨' },
+    note: { label: '备注', cls: 'note', icon: '📝' }
+  };
+
+  const BUDGET_CATS = {
+    transport: { label: '交通', icon: '🚌' },
+    hotel: { label: '住宿', icon: '🏨' },
+    food: { label: '餐饮', icon: '🍜' },
+    ticket: { label: '门票', icon: '🎫' },
+    shopping: { label: '购物', icon: '🛍️' },
+    fun: { label: '娱乐', icon: '🎡' },
+    other: { label: '其他', icon: '💰' }
+  };
+  const BUDGET_COLORS = {
+    transport: '#7ad0c1', hotel: '#9b8cff', food: '#ffb454',
+    ticket: '#ff8fab', shopping: '#5b8bd0', fun: '#ff7e9d', other: '#b0a8b8'
+  };
+
+  function sortItems(day) { day.items.sort((a, b) => (a.time || '').localeCompare(b.time || '')); }
+
+  // 取某个订单的金额
+  function orderAmount(orderId) {
+    if (!orderId) return 0;
+    const o = Store.getOrders().find(x => x.id === orderId);
+    return o ? (Number(o.amount) || 0) : 0;
+  }
+
+  // 行程项的有效花费：手动填了就用 item.budget；没填但关联了订单，用订单金额
+  function effectiveItemBudget(item) {
+    return Number(item.budget) || (item.orderId ? orderAmount(item.orderId) : 0);
+  }
+
+  // 获取已被行程项关联的订单 ID 集合（用于去重统计）
+  function linkedOrderIds(trip) {
+    const ids = new Set();
+    (trip.daysData || []).forEach(d => {
+      (d.items || []).forEach(it => { if (it.orderId) ids.add(it.orderId); });
+    });
+    return ids;
+  }
+
+  function previewPhoto(src) {
+    const img = UI.el('img', { src: src, style: 'width:100%;border-radius:12px' });
+    UI.openModal('照片', img);
+  }
+
+  /* ---------------- 行程列表（首页） ---------------- */
+  function tripsView(main) {
+    const trips = Store.getTrips();
+    main.innerHTML = '';
+
+    main.appendChild(UI.el('div', { class: 'section-title' }, [
+      document.createTextNode('我的行程'),
+      UI.el('small', { text: trips.length ? '(' + trips.length + ')' : '开始规划吧' })
+    ]));
+
+    if (!trips.length) {
+      main.appendChild(UI.el('div', { class: 'card', style: 'text-align:center;padding:30px' }, [
+        UI.el('div', { style: 'font-size:46px' }, '🧳'),
+        UI.el('div', { style: 'font-weight:700;font-size:17px;margin:8px 0', text: '还没有行程' }),
+        UI.el('div', { class: 'muted', style: 'font-size:13px;margin-bottom:14px', text: '填目的地+天数+偏好，一键生成结构化攻略' }),
+        UI.el('button', { class: 'btn btn--primary', text: '＋ 新建行程', onclick: () => App.navigate('#/trip/new') })
+      ]));
+      return;
+    }
+
+    trips.forEach(trip => {
+      const itemCount = trip.daysData.reduce((s, d) => s + d.items.length, 0);
+      const itineraryBudget = trip.daysData.reduce((s, d) => s + d.items.reduce((a, i) => a + effectiveItemBudget(i), 0), 0);
+      const manualBudget = (trip.budgetItems || []).reduce((s, i) => s + (Number(i.amount) || 0), 0);
+      const orders = Store.getOrdersByTrip(trip.id);
+      const linked = linkedOrderIds(trip);
+      const orderSum = orders.reduce((s, o) => s + (linked.has(o.id) ? 0 : (Number(o.amount) || 0)), 0);
+      const totalBudget = itineraryBudget + manualBudget + orderSum;
+      const card = UI.el('div', { class: 'card trip-card', onclick: () => App.navigate('#/trip/' + trip.id) }, [
+        UI.el('div', { class: 'trip-card__cover', text: trip.emoji || '🧳' }),
+        UI.el('div', { class: 'trip-card__name', text: trip.name }),
+        UI.el('div', { class: 'trip-card__meta' }, [
+          UI.el('span', { text: '📍 ' + trip.destination }),
+          UI.el('span', { text: '📅 ' + trip.days + '天' }),
+          UI.el('span', { text: '👥 ' + trip.group })
+        ]),
+        trip.preferences && trip.preferences.length ? UI.el('div', { class: 'trip-card__tags' }, trip.preferences.map(p => UI.el('span', { class: 'tag', text: p }))) : null,
+        UI.el('div', { class: 'trip-card__meta', style: 'margin-top:8px' }, [
+          UI.el('span', { text: '🗒 ' + itemCount + ' 项安排' }),
+          UI.el('span', { text: '💰 ' + UI.money(totalBudget) })
+        ])
+      ]);
+      main.appendChild(card);
+    });
+  }
+
+  /* ---------------- 新建行程（生成） ---------------- */
+  function newView(main) {
+    main.innerHTML = '';
+    main.appendChild(UI.el('div', { class: 'section-title', text: '✨ 智能生成攻略' }));
+
+    const destInput = UI.el('input', { class: 'input', placeholder: '如：成都 / 杭州 / 厦门', value: '' });
+    const nameInput = UI.el('input', { class: 'input', placeholder: '行程名称（选填，默认“目的地N日游”）', value: '' });
+    const daysInput = UI.el('input', { class: 'input', type: 'number', min: '1', max: '30', value: '3' });
+    const dateInput = UI.el('input', { class: 'input', type: 'date', value: UI.fmtDate(Date.now()) });
+
+    let group = '独自';
+    const groupChips = UI.el('div', { class: 'chips' }, AI.GROUP_OPTIONS.map(g =>
+      UI.el('button', { class: 'chip' + (g === group ? ' active' : ''), text: g, onclick: (e) => { group = g; groupChips.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); e.target.classList.add('active'); } })));
+
+    const prefs = new Set();
+    const prefChips = UI.el('div', { class: 'chips' }, AI.PREF_OPTIONS.map(p =>
+      UI.el('button', { class: 'chip', text: p, onclick: (e) => { if (prefs.has(p)) { prefs.delete(p); e.target.classList.remove('active'); } else { prefs.add(p); e.target.classList.add('active'); } } })));
+
+    const afternoon = UI.el('input', { type: 'checkbox', style: 'width:18px;height:18px' });
+
+    main.appendChild(UI.el('div', { class: 'card' }, [
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '目的地' }), destInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '行程名称' }), nameInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '出行天数' }), daysInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '出发日期' }), dateInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '出行人群' }), groupChips]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '偏好（可多选）' }), prefChips]),
+      UI.el('label', { class: 'flex', style: 'gap:8px;font-size:14px;color:var(--text-2)' }, [afternoon, document.createTextNode('第一天中午抵达（下午开始游玩）')])
+    ]));
+
+    const gen = UI.el('button', { class: 'btn btn--primary btn--block', text: '🚀 生成攻略', onclick: () => {
+      const dest = destInput.value.trim();
+      if (!dest) { UI.toast('请填写目的地', 'error'); return; }
+      const days = Math.max(1, Math.min(30, parseInt(daysInput.value, 10) || 1));
+      UI.toast('正在生成…');
+      const trip = AI.generate({
+        destination: dest, days, group,
+        preferences: Array.from(prefs),
+        name: nameInput.value, startDate: dateInput.value,
+        arriveAfternoon: afternoon.checked
+      });
+      Store.saveTrip(trip);
+      UI.toast('攻略已生成 🎉', 'ok');
+      App.navigate('#/trip/' + trip.id);
+    } });
+    main.appendChild(gen);
+
+    main.appendChild(UI.el('div', { class: 'muted center', style: 'font-size:12px;margin-top:14px', text: '内置 ' + Object.keys(CityDB.CITIES).length + ' 座城市攻略库，其余城市将生成通用模板可手动完善' }));
+  }
+
+  /* ---------------- 行程详情 ---------------- */
+  function detailView(main, id) {
+    const trip = Store.getTrip(id);
+    if (!trip) { UI.toast('行程不存在', 'error'); App.navigate('#/trips'); return; }
+    main.innerHTML = '';
+
+    if (!trip.daysData || !trip.daysData.length) trip.daysData = [];
+    let currentDay = 0;
+
+    // 天数切换
+    const daySel = UI.el('div', { class: 'chips mb' });
+    trip.daysData.forEach((d, i) => {
+      const chip = UI.el('button', { class: 'chip' + (i === 0 ? ' active' : ''), text: '第' + (i + 1) + '天', onclick: () => { currentDay = i; daySel.querySelectorAll('.chip').forEach(c => c.classList.remove('active')); chip.classList.add('active'); renderDay(); } });
+      daySel.appendChild(chip);
+    });
+    if (trip.daysData.length) main.appendChild(daySel);
+
+    const daySection = UI.el('div', {});
+    main.appendChild(daySection);
+
+    // 花费明细（手动添加项次 + 自动合计）
+    if (!trip.budgetItems) trip.budgetItems = [];
+    const budgetBox = UI.el('div', { class: 'card' });
+    main.appendChild(budgetBox);
+
+    // 将行程事项类型映射到花费分类
+    const TYPE_TO_BUDGET_CAT = { attraction: 'ticket', food: 'food', transport: 'transport', hotel: 'hotel', note: 'other' };
+
+    function renderBudget() {
+      budgetBox.innerHTML = '';
+
+      // 统计行程中已安排的花费（daysData[].items[].budget）
+      const itinByCat = {};
+      let itinerarySum = 0;
+      let itineraryCount = 0;
+      (trip.daysData || []).forEach(d => {
+        (d.items || []).forEach(it => {
+          const b = effectiveItemBudget(it);
+          if (b > 0) {
+            itinerarySum += b;
+            itineraryCount++;
+            const cat = TYPE_TO_BUDGET_CAT[it.type] || 'other';
+            itinByCat[cat] = (itinByCat[cat] || 0) + b;
+          }
+        });
+      });
+
+      const sum = (trip.budgetItems || []).reduce((s, i) => s + (Number(i.amount) || 0), 0);
+      const orders = Store.getOrdersByTrip(trip.id);
+      const linked = linkedOrderIds(trip);
+      const orderSum = orders.reduce((s, o) => s + (linked.has(o.id) ? 0 : (Number(o.amount) || 0)), 0);
+      const total = itinerarySum + sum + orderSum;
+
+      const head = UI.el('div', { class: 'flex between' }, [
+        UI.el('div', { class: 'section-title', text: '💰 花费明细', style: 'margin:0' }),
+        UI.el('button', { class: 'btn btn--ghost btn--sm', text: '＋ 添加项次', onclick: () => budgetItemModal(trip, null, renderBudget) })
+      ]);
+      budgetBox.appendChild(head);
+
+      const list = UI.el('div', { style: 'margin-top:8px' });
+      if (!trip.budgetItems.length && !itinerarySum) {
+        list.appendChild(UI.el('div', { class: 'muted center', text: '还没有花费项次，点「＋ 添加项次」记录花费', style: 'font-size:13px;padding:8px' }));
+      }
+
+      // 行程已安排花费摘要行
+      if (itinerarySum > 0) {
+        list.appendChild(UI.el('div', { class: 'list-row', style: 'background:var(--bg-2);border-radius:12px' }, [
+          UI.el('div', { class: 'list-row__icon', text: '🗓️' }),
+          UI.el('div', { class: 'list-row__body' }, [
+            UI.el('div', { class: 'list-row__title', text: '行程已安排花费' }),
+            UI.el('div', { class: 'list-row__sub', text: '共 ' + itineraryCount + ' 项，已计入总花费' })
+          ]),
+          UI.el('div', { class: 'list-row__amount', text: UI.money(itinerarySum) })
+        ]));
+      }
+
+      (trip.budgetItems || []).forEach(it => {
+        list.appendChild(UI.el('div', { class: 'list-row', onclick: () => budgetItemModal(trip, it, renderBudget) }, [
+          UI.el('div', { class: 'list-row__icon', text: (BUDGET_CATS[it.cat] || {}).icon || '💰' }),
+          UI.el('div', { class: 'list-row__body' }, [
+            UI.el('div', { class: 'list-row__title', text: it.name || '未命名项次' }),
+            UI.el('div', { class: 'list-row__sub', text: (BUDGET_CATS[it.cat] || {}).label || '其他' + (it.note ? ' · ' + it.note : '') })
+          ]),
+          UI.el('div', { class: 'list-row__amount', text: UI.money(it.amount) })
+        ]));
+      });
+      budgetBox.appendChild(list);
+
+      budgetBox.appendChild(UI.el('div', { class: 'divider' }));
+      budgetBox.appendChild(UI.el('div', { class: 'stat-row' }, [
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: UI.money(itinerarySum) }), UI.el('div', { class: 'stat__lbl', text: '行程花费' })]),
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: UI.money(sum) }), UI.el('div', { class: 'stat__lbl', text: '手动项次(' + (trip.budgetItems || []).length + ')' })]),
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: UI.money(orderSum) }), UI.el('div', { class: 'stat__lbl', text: '未关联订单' })]),
+        UI.el('div', { class: 'stat' }, [UI.el('div', { class: 'stat__num', text: UI.money(total) }), UI.el('div', { class: 'stat__lbl', text: '总花费' })])
+      ]));
+
+      // 分类占比可视化（合并行程 + 手动项次 + 关联订单）
+      const ORDER_TO_BUDGET_CAT = { flight: 'transport', train: 'transport', car: 'transport', hotel: 'hotel', ticket: 'ticket' };
+      const catTotal = total;
+      if (catTotal > 0) {
+        const byCat = {};
+        trip.budgetItems.forEach(i => { byCat[i.cat] = (byCat[i.cat] || 0) + (Number(i.amount) || 0); });
+        Object.keys(itinByCat).forEach(cat => { byCat[cat] = (byCat[cat] || 0) + itinByCat[cat]; });
+        orders.forEach(o => {
+          if (linked.has(o.id)) return; // 已关联的订单金额已通过 item.budget 计入，避免重复
+          const cat = ORDER_TO_BUDGET_CAT[o.category] || 'other';
+          byCat[cat] = (byCat[cat] || 0) + (Number(o.amount) || 0);
+        });
+        const entries = Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]);
+        const wrap = UI.el('div', { class: 'bdg' });
+        wrap.appendChild(UI.el('div', { class: 'section-title', text: '📊 分类占比', style: 'font-size:14px;margin:14px 0 8px' }));
+        entries.forEach(cat => {
+          const v = byCat[cat];
+          const pct = Math.round(v / catTotal * 100);
+          const color = BUDGET_COLORS[cat] || '#b0a8b8';
+          wrap.appendChild(UI.el('div', { class: 'bdg__row' }, [
+            UI.el('div', { class: 'bdg__label', text: (BUDGET_CATS[cat] || {}).icon + ' ' + (BUDGET_CATS[cat] || {}).label }),
+            UI.el('div', { class: 'bdg__track' }, [UI.el('div', { class: 'bdg__fill', style: 'width:' + pct + '%;background:' + color })]),
+            UI.el('div', { class: 'bdg__val', text: UI.money(v) + ' ' + pct + '%' })
+          ]));
+        });
+        budgetBox.appendChild(wrap);
+      }
+    }
+
+    function renderDay() {
+      daySection.innerHTML = '';
+      const day = trip.daysData[currentDay];
+      if (!day) { daySection.appendChild(UI.el('div', { class: 'empty', text: '暂无安排' })); return; }
+      sortItems(day);
+
+      daySection.appendChild(UI.el('div', { class: 'day-head', style: 'justify-content:space-between' }, [
+        UI.el('div', { class: 'flex', style: 'gap:8px' }, [
+          UI.el('span', { class: 'day-head__badge', text: '第' + (currentDay + 1) + '天' }),
+          UI.el('span', { class: 'day-head__date', text: day.date + ' ' + (day.weekday || '') })
+        ]),
+        UI.el('button', { class: 'btn btn--ghost btn--sm', text: '＋ 加安排', onclick: () => editItemModal(trip, currentDay, null, renderDay) })
+      ]));
+
+      const tl = UI.el('div', { class: 'timeline' });
+      if (!day.items.length) {
+        tl.appendChild(UI.el('div', { class: 'muted center', text: '这一天还没有安排，点「＋ 加安排」', style: 'padding:10px' }));
+      }
+      day.items.forEach(item => tl.appendChild(itemCard(trip, currentDay, item, renderDay)));
+      daySection.appendChild(tl);
+
+      renderBudget();
+    }
+
+    renderDay();
+
+    // 头部操作：看地图 / 复制/导出
+    App.setHeaderActions([
+      UI.el('button', { class: 'icon-btn icon-btn--ghost', title: '查看路线图', html: '🗺️', onclick: () => App.navigate('#/map') }),
+      UI.el('button', { class: 'icon-btn icon-btn--ghost', title: '导出/分享', html: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7M16 6l-4-4-4 4M12 2v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>', onclick: () => openExportModal(trip) })
+    ]);
+  }
+
+  function itemCard(trip, dIdx, item, rerender) {
+    const meta = TYPE_META[item.type] || { label: '事项', cls: '', icon: '📍' };
+    const photod = (item.photos && item.photos.length) ? UI.el('div', { class: 'item-card__photos' }, item.photos.map(p => UI.el('img', { src: p, onclick: (e) => { e.stopPropagation(); previewPhoto(p); } }))) : null;
+    const sub = UI.el('div', { class: 'item-card__sub' });
+    if (item.place) sub.appendChild(UI.el('span', { text: '📍 ' + item.place }));
+    const effBudget = effectiveItemBudget(item);
+    if (effBudget > 0) sub.appendChild(UI.el('span', { text: '💰 ' + UI.money(effBudget) }));
+    if (item.orderId) {
+      const o = Store.getOrder(item.orderId);
+      if (o) sub.appendChild(UI.el('span', { text: '🔗 ' + (Orders.CATS[o.category] || {}).icon + o.name }));
+    }
+
+    return UI.el('div', { class: 'tl-item' }, [
+      UI.el('div', { class: 'tl-item__dot' + (meta.cls ? ' tl-item__dot--' + meta.cls : ''), text: meta.icon }),
+      UI.el('div', { class: 'item-card', onclick: () => editItemModal(trip, dIdx, item, rerender) }, [
+        UI.el('div', { class: 'item-card__top' }, [
+          UI.el('div', { class: 'item-card__time', text: item.time || '' }),
+          UI.el('div', { class: 'item-card__title', text: item.title }),
+          UI.el('div', { class: 'item-card__type' + (meta.cls ? ' item-card__type--' + meta.cls : ''), text: meta.label })
+        ]),
+        item.note ? UI.el('div', { class: 'item-card__note', text: item.note }) : null,
+        sub.childNodes.length ? sub : null,
+        photod,
+        UI.el('div', { class: 'item-card__actions' }, [
+          UI.el('span', { class: 'link', text: '编辑', onclick: (e) => { e.stopPropagation(); editItemModal(trip, dIdx, item, rerender); } }),
+          item.lng != null ? UI.el('span', { class: 'link', text: '导航', onclick: (e) => { e.stopPropagation(); MapX.navigate(item.lng, item.lat, item.title); } }) : null,
+          UI.el('span', { class: 'link link--danger', text: '删除', onclick: async (e) => { e.stopPropagation(); if (await UI.confirmDialog({ title: '删除时段', message: '确定删除「' + item.title + '」？', danger: true })) { trip.daysData[dIdx].items = trip.daysData[dIdx].items.filter(x => x.id !== item.id); Store.saveTrip(trip); rerender(); } } })
+        ])
+      ])
+    ]);
+  }
+
+  /* ---------------- 编辑/新增时段 ---------------- */
+  function editItemModal(trip, dIdx, item, rerender) {
+    const isNew = !item;
+    const data = item ? JSON.parse(JSON.stringify(item)) : { id: Store.uid('it'), time: '09:00', type: 'attraction', title: '', place: '', lng: null, lat: null, note: '', photos: [], budget: 0, orderId: null };
+    const photos = { val: data.photos || [] };
+    const hasKey = !!Store.getSettings().amapKey;
+
+    const typeSel = UI.el('select', { class: 'select' }, Object.keys(TYPE_META).map(k =>
+      UI.el('option', { value: k, text: TYPE_META[k].icon + ' ' + TYPE_META[k].label, selected: k === data.type ? 'selected' : null })));
+    const timeInput = UI.el('input', { class: 'input', type: 'time', value: data.time || '' });
+    const titleInput = UI.el('input', { class: 'input', placeholder: '名称，如：故宫博物院', value: data.title || '' });
+    const placeInput = UI.el('input', { class: 'input', placeholder: '地点/地址（选填）', value: data.place || '' });
+    const lngInput = UI.el('input', { class: 'input', type: 'number', step: 'any', placeholder: '经度 lng', value: data.lng != null ? String(data.lng) : '', style: 'flex:1;min-width:0' });
+    const latInput = UI.el('input', { class: 'input', type: 'number', step: 'any', placeholder: '纬度 lat', value: data.lat != null ? String(data.lat) : '', style: 'flex:1;min-width:0' });
+    const coordRow = UI.el('div', { class: 'flex', style: 'gap:8px' }, [lngInput, latInput]);
+    const searchLocBtn = hasKey
+      ? UI.el('button', { class: 'btn btn--ghost btn--sm', text: '🔍 用搜索定位', onclick: () => openSearchModal(trip, (p) => {
+          data.lng = p.lng; data.lat = p.lat;
+          if (!data.title) data.title = p.name;
+          if (!data.place) data.place = p.address || '';
+          lngInput.value = p.lng != null ? p.lng : '';
+          latInput.value = p.lat != null ? p.lat : '';
+          titleInput.value = data.title;
+          placeInput.value = data.place;
+        }) })
+      : UI.el('div', { class: 'muted small', text: '在「我的」填入高德 Key 后，可一键搜索定位' });
+    const locBtn = hasKey
+      ? UI.el('button', { class: 'btn btn--ghost btn--sm', text: '📍 获取坐标', onclick: async () => {
+          const kw = placeInput.value.trim();
+          if (!kw) { UI.toast('请先填写地点名称', 'error'); return; }
+          const old = locBtn.textContent; locBtn.textContent = '定位中…'; locBtn.disabled = true;
+          try {
+            await MapX.load(Store.getSettings().amapKey);
+            const res = await MapX.search(trip.city, kw);
+            if (!res.length) { UI.toast('未找到该地点，换个名称或手动填坐标', 'error'); }
+            else {
+              const p = res[0];
+              data.lng = p.lng; data.lat = p.lat;
+              lngInput.value = p.lng != null ? p.lng : '';
+              latInput.value = p.lat != null ? p.lat : '';
+              if (!data.place) placeInput.value = p.address || '';
+              UI.toast('已获取坐标 ✓');
+            }
+          } catch (e) { UI.toast('获取失败，请检查 Key/网络', 'error'); }
+          finally { locBtn.textContent = old; locBtn.disabled = false; }
+        } })
+      : null;
+    const placeRow = UI.el('div', { class: 'flex', style: 'gap:8px' }, [placeInput, locBtn].filter(Boolean));
+    const noteInput = UI.el('textarea', { class: 'textarea', placeholder: '备注、Tips（选填）', text: data.note || '' });
+    const budgetInput = UI.el('input', { class: 'input', type: 'number', placeholder: '0.00', value: data.budget ? String(data.budget) : '', step: '0.01', min: '0' });
+
+    const orderSel = UI.el('select', { class: 'select' }, [UI.el('option', { value: '', text: '不关联订单', selected: !data.orderId ? 'selected' : null })].concat(
+      Store.getOrders().map(o => UI.el('option', { value: o.id, text: (Orders.CATS[o.category] || {}).icon + ' ' + o.name, selected: o.id === data.orderId ? 'selected' : null }))));
+    orderSel.onchange = () => {
+      const oid = orderSel.value;
+      if (!oid) return;
+      const o = Store.getOrders().find(x => x.id === oid);
+      if (o && o.amount && !budgetInput.value.trim()) budgetInput.value = String(o.amount);
+    };
+
+    const grid = UI.el('div', { class: 'photo-grid' });
+    function renderPhotos() {
+      grid.innerHTML = '';
+      photos.val.forEach((p, i) => {
+        grid.appendChild(UI.el('div', { style: 'position:relative' }, [
+          UI.el('img', { src: p, style: 'width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px', onclick: () => previewPhoto(p) }),
+          UI.el('button', { text: '×', style: 'position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;font-size:13px', onclick: () => { photos.val.splice(i, 1); renderPhotos(); } })
+        ]));
+      });
+      const add = UI.el('label', { class: 'photo-add', text: '+' });
+      const file = UI.el('input', { type: 'file', accept: 'image/*', style: 'display:none', onchange: async (e) => { const f = e.target.files[0]; if (f) { const d = await UI.compressImage(f, 1000); if (d) { photos.val.push(d); renderPhotos(); } } } });
+      add.appendChild(file); grid.appendChild(add);
+    }
+    renderPhotos();
+
+    const body = UI.el('div', {}, [
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '类型' }), typeSel]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '时间' }), timeInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '名称' }), titleInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '地点' }), placeRow]),
+      UI.el('div', { class: 'field' }, [
+        UI.el('label', { class: 'field__label', text: '坐标（用于地图标注，选填）' }),
+        coordRow,
+        searchLocBtn
+      ]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '金额（RMB，选填）' }), budgetInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '关联订单' }), orderSel]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '照片' }), grid]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '备注' }), noteInput]),
+      UI.el('div', { class: 'flex mt' }, [
+        isNew ? UI.el('span', {}) : UI.el('button', { class: 'btn btn--danger grow', text: '删除', onclick: async () => { if (await UI.confirmDialog({ title: '删除', message: '确定删除该时段？', danger: true })) { trip.daysData[dIdx].items = trip.daysData[dIdx].items.filter(x => x.id !== data.id); Store.saveTrip(trip); UI.closeModal(); rerender(); } } }),
+        UI.el('button', { class: 'btn btn--primary grow', text: isNew ? '添加' : '保存', onclick: () => {
+          if (!titleInput.value.trim()) { UI.toast('请填写名称', 'error'); return; }
+          const lng = lngInput.value.trim() === '' ? null : parseFloat(lngInput.value);
+          const lat = latInput.value.trim() === '' ? null : parseFloat(latInput.value);
+          if ((lng !== null && isNaN(lng)) || (lat !== null && isNaN(lat))) { UI.toast('坐标格式不正确', 'error'); return; }
+          const updated = {
+            id: data.id, time: timeInput.value || '09:00', type: typeSel.value, title: titleInput.value.trim(),
+            place: placeInput.value.trim(), lng: lng, lat: lat, note: noteInput.value.trim(),
+            photos: photos.val, budget: parseFloat(budgetInput.value) || 0, orderId: orderSel.value || null
+          };
+          const arr = trip.daysData[dIdx].items;
+          const idx = arr.findIndex(x => x.id === updated.id);
+          if (idx >= 0) arr[idx] = updated; else arr.push(updated);
+          sortItems(trip.daysData[dIdx]);
+          Store.saveTrip(trip);
+          UI.closeModal(); rerender();
+        } })
+      ])
+    ]);
+    UI.openModal(isNew ? '＋ 新增安排' : '编辑时段', body);
+  }
+
+  /* ---------------- 路线规划 ---------------- */
+  function openRouteModal(trip, dIdx) {
+    const pts = trip.daysData[dIdx].items.filter(i => i.lng != null && i.lat != null);
+    if (pts.length < 2) { UI.toast('当天至少需要 2 个有坐标的地点', 'error'); return; }
+    const fromSel = UI.el('select', { class: 'select' }, pts.map((p, i) => UI.el('option', { value: i, text: (i + 1) + '. ' + p.title, selected: i === 0 ? 'selected' : null })));
+    const toSel = UI.el('select', { class: 'select' }, pts.map((p, i) => UI.el('option', { value: i, text: (i + 1) + '. ' + p.title, selected: i === pts.length - 1 ? 'selected' : null })));
+    let mode = 'drive';
+    const seg = UI.el('div', { class: 'seg' }, [
+      UI.el('button', { class: 'active', text: '🚗 驾车', onclick: (e) => { mode = 'drive'; seg.querySelectorAll('button').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); } }),
+      UI.el('button', { text: '🚌 公交', onclick: (e) => { mode = 'transit'; seg.querySelectorAll('button').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); } })
+    ]);
+    const resultBox = UI.el('div', { class: 'route-result hidden' });
+    const mapBox = UI.el('div', { class: 'map-box', style: 'height:220px' });
+
+    const body = UI.el('div', {}, [
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '起点' }), fromSel]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '终点' }), toSel]),
+      seg,
+      UI.el('button', { class: 'btn btn--primary btn--block mt', text: '规划路线', onclick: async () => {
+        resultBox.classList.add('hidden');
+        const from = pts[+fromSel.value], to = pts[+toSel.value];
+        MapX.load(Store.getSettings().amapKey).then(async () => {
+          const r = await MapX.planRoute(mapBox, { lng: from.lng, lat: from.lat, city: trip.city }, { lng: to.lng, lat: to.lat }, mode);
+          resultBox.textContent = '📏 ' + r;
+          resultBox.classList.remove('hidden');
+        }).catch(() => UI.toast('地图加载失败', 'error'));
+      } }),
+      mapBox, resultBox
+    ]);
+    UI.openModal('路线规划', body);
+  }
+
+  /* ---------------- 地点搜索（回调式，可复用） ----------------
+     onPick(p) 在选中某个地点时调用，p = { name, address, lng, lat, type }
+     弹窗由调用方决定是否关闭 */
+  function openSearchModal(trip, onPick) {
+    const kwInput = UI.el('input', { class: 'input', placeholder: '搜索地点，如：宽窄巷子' });
+    const listBox = UI.el('div', {});
+    const body = UI.el('div', {}, [
+      UI.el('div', { class: 'flex' }, [
+        kwInput,
+        UI.el('button', { class: 'btn btn--primary', text: '搜索', onclick: async () => {
+          const kw = kwInput.value.trim(); if (!kw) return;
+          listBox.innerHTML = '<div class="muted">搜索中…</div>';
+          try {
+            await MapX.load(Store.getSettings().amapKey);
+            const res = await MapX.search(trip.city, kw);
+            listBox.innerHTML = '';
+            if (!res.length) { listBox.appendChild(UI.el('div', { class: 'muted', text: '未找到结果。可尝试：① 换更常见的地名（如"蛇口邮轮中心"）；② 在关键词前加城市名（如"深圳 蛇口"）；③ 直接手填经纬度。' })); return; }
+            res.forEach(p => listBox.appendChild(UI.el('div', { class: 'list-row', onclick: () => {
+              onPick(p);
+              UI.closeModal();
+            } }, [
+              UI.el('div', { class: 'list-row__icon', text: '📍' }),
+              UI.el('div', { class: 'list-row__body' }, [
+                UI.el('div', { class: 'list-row__title', text: p.name }),
+                UI.el('div', { class: 'list-row__sub', text: (p.address || '') + (p.lng != null ? '  (' + p.lng + ', ' + p.lat + ')' : '') })
+              ])
+            ])));
+          } catch (e) {
+            let msg = '搜索失败';
+            if (e && e.message && e.message.includes('SCRIPT_TIMEOUT')) msg = '高德 JS 脚本加载超时，请检查当前网络是否能访问 webapi.amap.com，或稍后重试';
+            else if (e && e.message && e.message.includes('KEY_INVALID')) msg = '高德 Key 无效或没有权限。若用的是 Web端 JS API Key，建议再填一个「Web 服务 Key」做搜索（设置页「高德 Web 服务 Key」）。';
+            else if (e && e.message && e.message.includes('TIMEOUT')) msg = '高德接口响应超时。建议：① 在设置页填一个「高德 Web 服务 Key」（比 JS API 更稳）；② 检查网络/换 Wi-Fi。';
+            else if (e && e.message && e.message.includes('PLUGIN')) msg = '高德插件加载失败，请检查 Key 是否开通了 Web端 JS API';
+            else msg = '搜索失败，请检查：① 高德 Key 是否开通了「Web端JS API」和「地点搜索/地理编码」服务；② 当前域名是否在 Key 白名单内。';
+            listBox.innerHTML = '<div class="muted">' + msg + '</div>';
+          }
+        } })
+      ]),
+      listBox
+    ]);
+    UI.openModal('地点搜索', body);
+  }
+
+  /* ---------------- 导出/分享 ---------------- */
+  function buildText(trip) {
+    let t = '【' + trip.name + '】\n';
+    t += '📍 目的地：' + trip.destination + ' ｜ ' + trip.days + '天 ｜ 人群：' + trip.group + '\n';
+    if (trip.preferences && trip.preferences.length) t += '🎯 偏好：' + trip.preferences.join('、') + '\n';
+    t += '━━━━━━━━━━━━━━\n';
+    trip.daysData.forEach((d, i) => {
+      sortItems(d);
+      t += '📅 第' + (i + 1) + '天（' + d.date + (d.weekday ? ' ' + d.weekday : '') + '）\n';
+      if (!d.items.length) t += '  （自由安排）\n';
+      d.items.forEach(it => {
+        const m = TYPE_META[it.type] || { label: '事项' };
+        t += '  ' + (it.time || '--:--') + ' [' + m.label + '] ' + it.title + (it.place ? '（' + it.place + '）' : '') + '\n';
+        if (it.note) t += '      💡 ' + it.note + '\n';
+        if (it.budget) t += '      💰 ' + UI.money(it.budget) + '\n';
+      });
+      t += '\n';
+    });
+    const items = trip.budgetItems || [];
+    const itemSum = items.reduce((s, i) => s + (Number(i.amount) || 0), 0);
+    const orders = Store.getOrdersByTrip(trip.id);
+    const linked = linkedOrderIds(trip);
+    const orderSum = orders.reduce((s, o) => s + (linked.has(o.id) ? 0 : (Number(o.amount) || 0)), 0);
+    const TYPE_TO_BUDGET_CAT = { attraction: 'ticket', food: 'food', transport: 'transport', hotel: 'hotel', note: 'other' };
+    let itinerarySum = 0;
+    (trip.daysData || []).forEach(d => {
+      (d.items || []).forEach(it => { itinerarySum += effectiveItemBudget(it); });
+    });
+    t += '💰 花费汇总：行程 ' + UI.money(itinerarySum) + ' ＋ 手动项次 ' + UI.money(itemSum) + ' ＋ 未关联订单 ' + UI.money(orderSum) + ' ＝ 总花费 ' + UI.money(itinerarySum + itemSum + orderSum) + '\n';
+    if (items.length) {
+      t += '  手动项次明细：\n';
+      items.forEach(i => t += '    · ' + (BUDGET_CATS[i.cat] || {}).icon + ' ' + i.name + ' ' + UI.money(i.amount) + (i.note ? '（' + i.note + '）' : '') + '\n');
+    }
+    if (orders.length) {
+      t += '🧾 订单：\n';
+      orders.forEach(o => t += '  · ' + (Orders.CATS[o.category] || {}).icon + ' ' + o.name + ' ' + UI.money(o.amount) + '（' + Orders.PLATFORMS[o.platform] + '）\n');
+    }
+    t += '\n—— 由「小游记」生成 ——';
+    return t;
+  }
+
+  function openExportModal(trip) {
+    const text = buildText(trip);
+    const pre = UI.el('pre', { class: 'preview-text', text: text });
+    const body = UI.el('div', {}, [
+      pre,
+      UI.el('div', { class: 'flex mt' }, [
+        UI.el('button', { class: 'btn btn--ghost grow', text: '复制全文', onclick: async () => { await UI.copyText(text); UI.toast('已复制到剪贴板', 'ok'); } }),
+        UI.el('button', { class: 'btn btn--primary grow', text: '下载 .txt', onclick: () => {
+          const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+          const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = trip.name + '.txt'; a.click();
+        } })
+      ])
+    ]);
+    UI.openModal('导出 / 分享', body);
+  }
+
+  global.Itinerary = { tripsView, newView, detailView, buildText };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 云同步（GitHub Gist） ===================== */
+(function (global) {
+  'use strict';
+
+  const API = 'https://api.github.com/gists';
+  const FNAME = 'xiaoyouji.json';
+
+  function cfg() {
+    const s = Store.getSettings();
+    return {
+      token: (s.syncToken || '').trim(),
+      gistId: (s.syncGistId || '').trim()
+    };
+  }
+  // 根据 Token 前缀自动选择认证头：
+  //   classic PAT（ghp_...）           →  Authorization: token <tok>
+  //   fine-grained PAT（github_pat_...）→  Authorization: Bearer <tok>
+  function authHeader(token) {
+    const t = (token || '').trim();
+    if (t.startsWith('github_pat_')) return 'Bearer ' + t;
+    return 'token ' + t;
+  }
+  function hdrs(token) {
+    return {
+      'Authorization': authHeader(token),
+      'Content-Type': 'application/json',
+      'Accept': 'application/vnd.github+json'
+    };
+  }
+
+  // 在用户所有 Gist 中按文件名找到小游记的同步仓库
+  async function findGist(token) {
+    try {
+      const res = await fetch(API, { headers: hdrs(token) });
+      if (!res.ok) return null;
+      const list = await res.json().catch(() => []);
+      const found = (list || []).find(g => g.files && g.files[FNAME]);
+      return found ? found.id : null;
+    } catch (e) { return null; }
+  }
+
+  // 上传本地数据到 Gist（无 gistId 时自动查找已有 / 否则新建）
+  async function push() {
+    const { token, gistId } = cfg();
+    if (!token) throw new Error('请先在同步设置里填写 GitHub Token');
+    let id = gistId;
+    if (!id) id = await findGist(token);
+    const body = JSON.stringify({ files: { [FNAME]: { content: Store.exportJSON() } } });
+    let url = API, method = 'POST';
+    if (id) { url = API + '/' + id; method = 'PATCH'; }
+    const res = await fetch(url, { method, headers: hdrs(token), body });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      let msg = data.message || res.statusText;
+      if (res.status === 401) msg += '。请检查：① Token 是否完整复制（ghp_开头）；② 是否为 Tokens (classic) 且勾选了 gist；③ 是否已被删除/过期。';
+      throw new Error('上传失败 (' + res.status + ')：' + msg);
+    }
+    const newId = data.id || id;
+    if (newId && newId !== gistId) Store.saveSettings({ syncGistId: newId });
+    Store.saveSettings({ lastSyncAt: Date.now() });
+    return newId;
+  }
+
+  // 从 Gist 拉取数据覆盖本地（无 gistId 时自动发现）
+  async function pull() {
+    const { token, gistId } = cfg();
+    if (!token) throw new Error('请先在同步设置里填写 GitHub Token');
+    let id = gistId;
+    if (!id) {
+      id = await findGist(token);
+      if (!id) throw new Error('还没有同步仓库，请先在一台设备上「上传到云端」一次');
+    }
+    const res = await fetch(API + '/' + id, { headers: hdrs(token) });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      let msg = data.message || res.statusText;
+      if (res.status === 401) msg += '。请检查：① Token 是否完整复制（ghp_开头）；② 是否为 Tokens (classic) 且勾选了 gist；③ 是否已被删除/过期。';
+      throw new Error('拉取失败 (' + res.status + ')：' + msg);
+    }
+    const file = data.files && data.files[FNAME];
+    if (!file || file.content == null) throw new Error('云端还没有小游记数据');
+    Store.importJSON(file.content);
+    if (id !== gistId) Store.saveSettings({ syncGistId: id });
+    Store.saveSettings({ lastSyncAt: Date.now() });
+  }
+
+  global.Sync = { push, pull, findGist, cfg };
+})(window);
+</script>
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-08 08:55:29';
+/* ===================== 主控 / 路由 / 设置 / PWA ===================== */
+(function (global) {
+  'use strict';
+
+  const App = {
+    init() {
+      Store.load();
+      Store.applyTheme();
+      this.updateFavicon();
+      this.bindChrome();
+      this.registerSW();
+      this.bindInstall();
+      window.addEventListener('hashchange', () => this.render());
+      if (!location.hash) location.hash = '#/trips';
+      this.render();
+    },
+
+    /* ---------- 自动备份提醒 ---------- */
+    maybeRemindBackup(main) {
+      if (this._backupNagged) return;                 // 每个会话只提醒一次
+      const hasData = Store.getTrips().length || Store.getOrders().length;
+      if (!hasData) return;
+      const lb = Store.getLastBackup();
+      const overdue = !lb || (Date.now() - lb > 14 * 864e5);
+      if (!overdue) return;
+      this._backupNagged = true;
+      const days = lb ? Math.floor((Date.now() - lb) / 864e5) : null;
+      const head = lb ? ('你已有 ' + days + ' 天没备份了') : '你还没备份过';
+      const banner = UI.el('div', { class: 'backup-banner' }, [
+        UI.el('div', { class: 'backup-banner__txt' }, [
+          UI.el('div', { text: '💡 ' + head + '，行程和订单只存在本机浏览器' }),
+          UI.el('div', { class: 'muted', style: 'font-size:12px;margin-top:2px', text: '换设备 / 清缓存会丢失，去「我的 → 设置 → 导出备份」存一份 JSON' })
+        ]),
+        UI.el('button', { class: 'btn btn--primary btn--sm', text: '去备份', onclick: () => this.navigate('#/settings') })
+      ]);
+      main.insertBefore(banner, main.firstChild);
+    },
+
+    /* ---------- 顶部栏控制 ---------- */
+    setHeaderTitle(t) { document.getElementById('appTitle').textContent = t; },
+    setHeaderActions(nodes) {
+      const box = document.getElementById('headerActions');
+      box.innerHTML = '';
+      (nodes || []).forEach(n => box.appendChild(n));
+    },
+    showBack(show) { document.getElementById('backBtn').hidden = !show; },
+    updateFab(section) {
+      const fab = document.getElementById('fab');
+      if (!fab) return;
+      if (section === 'trips' || section === 'map') {
+        fab.hidden = false; fab.textContent = '＋';
+        fab.onclick = () => this.navigate('#/trip/new');
+      } else if (section === 'orders') {
+        fab.hidden = false; fab.textContent = '＋';
+        fab.onclick = () => this.navigate('#/orders/new');
+      } else {
+        fab.hidden = true;
+      }
+    },
+    updateFavicon() {
+      const icon = Store.getSettings().appIcon;
+      const meta = document.querySelector('meta[name="application-name"]') || document.createElement('meta');
+      if (icon) {
+        let link = document.querySelector('link[rel="icon"]');
+        link.href = icon;
+        let apple = document.querySelector('link[rel="apple-touch-icon"]');
+        if (apple) apple.href = icon;
+      }
+    },
+
+    bindChrome() {
+      document.getElementById('backBtn').addEventListener('click', () => {
+        const hash = location.hash || '';
+        if (hash.indexOf('#/trip/') === 0) this.navigate('#/trips');
+        else if (hash.indexOf('#/orders/edit/') === 0) this.navigate('#/orders');
+        else if (hash.indexOf('#/orders/new') === 0) this.navigate('#/orders');
+        else if (hash.indexOf('/shot') >= 0) this.navigate('#/orders');
+        else if (hash === '#/trip/new') this.navigate('#/trips');
+        else if (hash === '#/map') this.navigate('#/trips');
+        else if (hash === '#/settings') this.navigate('#/trips');
+        else history.back();
+      });
+    },
+
+    navigate(hash) { location.hash = hash; },
+
+    /* ---------- 路由 ---------- */
+    render() {
+      const main = document.getElementById('appMain');
+      const hash = location.hash || '#/trips';
+      const path = hash.replace(/^#\//, '');
+      const parts = path.split('/');
+      this.setHeaderActions([]);
+
+      // 底部导航高亮
+      document.querySelectorAll('.nav-item').forEach(n => {
+        const r = n.getAttribute('data-route');
+        n.classList.toggle('active', r === (parts[0] || 'trips'));
+      });
+
+      // 返回按钮
+      const needsBack = ['trip/new', 'orders/new'].includes(path) ||
+        /^(trip|orders)\/.+/.test(path);
+      this.showBack(needsBack);
+      this.updateFab(parts[0]);
+
+      try {
+        if (parts[0] === 'trips' || parts[0] === '') {
+          this.setHeaderTitle(Store.getSettings().appName || '小游记');
+          Itinerary.tripsView(main);
+          this.maybeRemindBackup(main);
+        } else if (parts[0] === 'trip' && parts[1] === 'new') {
+          this.setHeaderTitle('新建行程');
+          Itinerary.newView(main);
+        } else if (parts[0] === 'trip' && parts[1]) {
+          const t = Store.getTrip(parts[1]);
+          this.setHeaderTitle(t ? t.name : '行程');
+          this._activeTripId = parts[1];
+          Itinerary.detailView(main, parts[1]);
+        } else if (parts[0] === 'orders' && (parts[1] === undefined)) {
+          this.setHeaderTitle('订单管理');
+          Orders.listView(main);
+        } else if (parts[0] === 'orders' && parts[1] === 'new') {
+          this.setHeaderTitle('新增订单');
+          Orders.formView(main, { tripId: parts[2] ? decodeURIComponent(parts[2]) : null });
+        } else if (parts[0] === 'orders' && parts[1] === 'edit' && parts[2]) {
+          this.setHeaderTitle('编辑订单');
+          Orders.formView(main, { id: parts[2] });
+        } else if (parts[0] === 'orders' && parts[2] === 'shot') {
+          this.setHeaderTitle('订单截图');
+          Orders.shotView(main, parts[1]);
+        } else if (parts[0] === 'map') {
+          this.setHeaderTitle('地图');
+          this.mapView(main);
+        } else if (parts[0] === 'settings') {
+          this.setHeaderTitle('我的');
+          this.settingsView(main);
+        } else {
+          this.navigate('#/trips');
+        }
+      } catch (e) {
+        console.error(e);
+        main.innerHTML = '';
+        main.appendChild(UI.el('div', { class: 'card', style: 'text-align:center' }, [
+          UI.el('div', { style: 'font-size:40px' }, '😵'),
+          UI.el('div', { style: 'font-weight:700;margin:8px 0', text: '页面加载出错' }),
+          UI.el('div', { class: 'muted', style: 'font-size:13px', text: String(e && e.message || e) }),
+          UI.el('button', { class: 'btn btn--primary mt', text: '回到首页', onclick: () => this.navigate('#/trips') })
+        ]));
+      }
+    },
+
+    /* ---------- 独立地图页 ---------- */
+    mapView(main) {
+      const trips = Store.getTrips();
+      main.innerHTML = '';
+      if (!trips.length) {
+        main.appendChild(UI.el('div', { class: 'empty' }, [
+          UI.el('div', { class: 'empty__emoji', text: '🗺️' }),
+          UI.el('div', { text: '还没有行程' }),
+          UI.el('div', { class: 'empty__tip', text: '先在攻略里创建行程，再来这里看地图' }),
+          UI.el('button', { class: 'btn btn--primary mt', text: '去创建', onclick: () => this.navigate('#/trip/new') })
+        ]));
+        return;
+      }
+      let selectedTripId = this._activeTripId || trips[0].id;
+      let selectedDay = -1; // -1 = 全部
+      let mapMode = 'amap'; // 'amap' | 'sketch'
+
+      const tripChips = UI.el('div', { class: 'chips mb' });
+      trips.forEach(t => {
+        const c = UI.el('button', { class: 'chip' + (t.id === selectedTripId ? ' active' : ''), text: t.name, onclick: () => { selectedTripId = t.id; selectedDay = -1; updateTripChips(); buildDayChips(); renderMap(); } });
+        tripChips.appendChild(c);
+      });
+      main.appendChild(tripChips);
+
+      const dayChips = UI.el('div', { class: 'chips mb' });
+      main.appendChild(dayChips);
+
+      const mapBox = UI.el('div', { class: 'map-box', style: 'height:300px' });
+      main.appendChild(mapBox);
+      const modeBtn = UI.el('button', { class: 'btn btn--ghost btn--sm', text: '🎨 手绘地图', onclick: () => { mapMode = (mapMode === 'amap' ? 'sketch' : 'amap'); modeBtn.textContent = mapMode === 'amap' ? '🎨 手绘地图' : '🗺️ 高德地图'; renderMap(); } });
+      main.appendChild(UI.el('div', { class: 'map-toolbar' }, [
+        modeBtn,
+        UI.el('button', { class: 'btn btn--ghost btn--sm', text: '🔍 地点搜索', onclick: () => this.searchFromMap(selectedTripId) })
+      ]));
+
+      function updateTripChips() {
+        Array.from(tripChips.children).forEach(c => {
+          c.classList.toggle('active', selectedTripId === c._tripId);
+        });
+      }
+      Array.from(tripChips.children).forEach((c, i) => { c._tripId = trips[i].id; });
+
+      function buildDayChips() {
+        dayChips.innerHTML = '';
+        const trip = Store.getTrip(selectedTripId);
+        const all = UI.el('button', { class: 'chip' + (selectedDay === -1 ? ' active' : ''), text: '全部', onclick: () => { selectedDay = -1; buildDayChips(); renderMap(); } });
+        dayChips.appendChild(all);
+        (trip.daysData || []).forEach((d, i) => {
+          const c = UI.el('button', { class: 'chip' + (selectedDay === i ? ' active' : ''), text: '第' + (i + 1) + '天', onclick: () => { selectedDay = i; buildDayChips(); renderMap(); } });
+          dayChips.appendChild(c);
+        });
+      }
+
+      function renderMap() {
+        const trip = Store.getTrip(selectedTripId);
+        if (mapMode === 'sketch') {
+          MapX.renderSketchMap(mapBox, trip, selectedDay);
+          return;
+        }
+        if (!Store.getSettings().amapKey) {
+          mapBox.innerHTML = '';
+          mapBox.appendChild(UI.el('div', { class: 'map-box__placeholder' }, [UI.el('div', { style: 'font-size:30px' }, '🔑'), UI.el('div', { text: '在「我的」填入高德 Key 后显示地图' })]));
+          return;
+        }
+        MapX.load(Store.getSettings().amapKey).then(() => {
+          mapBox.innerHTML = '';
+          const AMap = window.AMap;
+          if (selectedDay >= 0) {
+            // 按天显示带路线的手绘风格地图
+            MapX.renderTripMap(mapBox, trip, selectedDay);
+            return;
+          }
+          // 全部：合并所有天数的点位
+          const allPts = [];
+          trip.daysData.forEach(d => d.items.forEach(i => { if (i.lng != null) allPts.push(i); }));
+          const map = new AMap.Map(mapBox, { zoom: 11, resizeEnable: true, mapStyle: 'amap://styles/whitesmoke' });
+          map.addControl(new AMap.Scale());
+          if (trip.city) map.setCity(trip.city);
+          if (allPts.length) {
+            allPts.forEach((p, idx) => {
+              const m = new AMap.Marker({ position: [p.lng, p.lat], title: p.title, content: '<div class="amap-route-num">' + (idx + 1) + '</div>' });
+              map.add(m);
+            });
+            map.setFitView(null, false, [60, 60, 60, 60]);
+          }
+        }).catch(e => {
+          mapBox.innerHTML = '';
+          mapBox.appendChild(UI.el('div', { class: 'map-box__placeholder' }, [UI.el('div', { text: '地图加载失败：' + (e && e.message || '') })]));
+        });
+      }
+      renderMap();
+      this._mapSelected = () => selected;
+    },
+
+    searchFromMap(tripId) {
+      const trip = Store.getTrip(tripId) || Store.getTrips()[0];
+      if (!trip) return;
+      const kw = UI.el('input', { class: 'input', placeholder: '搜索地点，如：深圳蛇口码头' });
+      const listBox = UI.el('div', {});
+      const doSearch = async () => {
+        const keyword = kw.value.trim();
+        if (!keyword) return;
+        listBox.innerHTML = '<div class="muted">搜索中…</div>';
+        try {
+          await MapX.load(Store.getSettings().amapKey);
+          const res = await MapX.search(trip.city, keyword);
+          listBox.innerHTML = '';
+          if (!res.length) {
+            listBox.appendChild(UI.el('div', { class: 'muted', text: '未找到结果。可尝试：① 换更常见的地名；② 在关键词前加城市名（如"深圳 蛇口"）；③ 检查高德 Key 是否开通了 JS API / 地点搜索 / 地理编码服务。' }));
+            return;
+          }
+          res.forEach(p => listBox.appendChild(UI.el('div', { class: 'list-row', onclick: () => { MapX.navigate(p.lng, p.lat, p.name); } }, [
+            UI.el('div', { class: 'list-row__icon', text: '📍' }),
+            UI.el('div', { class: 'list-row__body' }, [
+              UI.el('div', { class: 'list-row__title', text: p.name }),
+              UI.el('div', { class: 'list-row__sub', text: (p.address || '') + (p.lng != null ? '  (' + p.lng + ', ' + p.lat + ')' : '') })
+            ])
+          ])));
+        } catch (e) {
+          let msg = '搜索失败';
+          if (e && e.message && e.message.includes('SCRIPT_TIMEOUT')) msg = '高德 JS 脚本加载超时，请检查当前网络是否能访问 webapi.amap.com，或稍后重试';
+          else if (e && e.message && e.message.includes('KEY_INVALID')) msg = '高德 Key 无效或没有权限。若用的是 Web端 JS API Key，建议再填一个「Web 服务 Key」做搜索（设置页「高德 Web 服务 Key」）。';
+          else if (e && e.message && e.message.includes('TIMEOUT')) msg = '高德接口响应超时。建议：① 在设置页填一个「高德 Web 服务 Key」（比 JS API 更稳）；② 检查网络/换 Wi-Fi。';
+          else if (e && e.message && e.message.includes('PLUGIN')) msg = '高德插件加载失败，请检查 Key 是否开通了 Web端 JS API';
+          else msg = '搜索失败，请检查：① 高德 Key 是否开通了「Web端JS API」和「地点搜索/地理编码」服务；② 当前域名是否在 Key 白名单内。';
+          listBox.innerHTML = '<div class="muted">' + msg + '</div>';
+        }
+      };
+      UI.openModal('地点搜索', UI.el('div', {}, [
+        UI.el('div', { class: 'flex' }, [
+          kw,
+          UI.el('button', { class: 'btn btn--primary', text: '搜索', onclick: doSearch })
+        ]),
+        listBox
+      ]));
+    },
+
+    /* ---------- 设置页 ---------- */
+    settingsView(main) {
+      const s = Store.getSettings();
+      main.innerHTML = '';
+
+      // 高德 Key
+      const keyInput = UI.el('input', { class: 'input', placeholder: '粘贴你的高德 Web端 JS API Key', value: s.amapKey || '' });
+      const webKeyInput = UI.el('input', { class: 'input', placeholder: '粘贴你的高德 Web 服务 Key（选填）', value: s.amapWebKey || '' });
+      const hostname = (location && location.hostname) || '未知';
+      const keyCard = UI.el('div', { class: 'card' }, [
+        UI.el('div', { class: 'section-title', text: '🔑 高德地图 Key' }),
+        UI.el('div', { class: 'muted', style: 'font-size:12px;margin-bottom:8px', text: '地图、导航依赖「Web端 JS API」Key。申请：高德开放平台 → 创建应用 → 添加 Key（服务平台选「Web端 JS API」）。' }),
+        keyInput,
+        UI.el('div', { class: 'muted small', style: 'margin-top:6px', text: '当前域名：' + hostname + '（请把它填进该 Key 的域名白名单）' }),
+        UI.el('div', { class: 'section-title mt', style: 'margin-top:14px', text: '🌐 高德 Web 服务 Key（选填，推荐）' }),
+        UI.el('div', { class: 'muted', style: 'font-size:12px;margin-bottom:8px', text: '用于地点搜索自动定位。服务平台选「Web 服务」，IP 白名单填 * 即可。填了它，搜索比 JS API 更稳、不受域名限制。' }),
+        webKeyInput,
+        UI.el('button', { class: 'btn btn--primary btn--block mt', text: '保存 Key', onclick: () => {
+          Store.saveSettings({ amapKey: keyInput.value.trim(), amapWebKey: webKeyInput.value.trim() });
+          UI.toast('已保存', 'ok');
+        } })
+      ]);
+
+      // 外观自定义
+      const themeColors = ['#ff8fab', '#7ad0c1', '#9b8cff', '#ffb454', '#5b8bd0', '#ff7e9d'];
+      const colorRow = UI.el('div', { class: 'chips' }, themeColors.map(c =>
+        UI.el('button', { class: 'chip', style: 'background:' + c + ';width:34px;height:34px;padding:0;border-radius:50%', text: c === (s.themeColor || '#ff8fab') ? '✓' : '', onclick: (e) => {
+          Store.saveSettings({ themeColor: c }); Store.applyTheme(); this.updateFavicon(); colorRow.querySelectorAll('.chip').forEach(x => x.textContent = ''); e.target.textContent = '✓';
+        } })));
+      const nameInput = UI.el('input', { class: 'input', value: s.appName || '小游记', placeholder: 'APP 名称' });
+      const iconPreview = UI.el('img', { src: s.appIcon || 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmY4ZmFiIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1NmE4ZSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSI0MiIgZmlsbD0idXJsKCNnKSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk2LDEwMCkiPgogICAgPHJlY3QgeD0iLTUyIiB5PSItMzQiIHdpZHRoPSIxMDQiIGhlaWdodD0iNzYiIHJ4PSIxNiIgZmlsbD0iI2ZmZiIvPgogICAgPGxpbmUgeDE9Ii00MiIgeTE9Ii04IiB4Mj0iNDIiIHkyPSItOCIgc3Ryb2tlPSIjZmZhYWJlIiBzdHJva2Utd2lkdGg9IjQiLz4KICAgIDxyZWN0IHg9Ii0xNiIgeT0iLTUwIiB3aWR0aD0iMzIiIGhlaWdodD0iMTgiIHJ4PSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIvPgogICAgPGNpcmNsZSBjeD0iLTE4IiBjeT0iLTgiIHI9IjYiIGZpbGw9IiNmZjhmYWIiLz4KICAgIDxjaXJjbGUgY3g9IjE4IiBjeT0iLTgiIHI9IjYiIGZpbGw9IiNmZjhmYWIiLz4KICAgIDxwYXRoIGQ9Ik0wIDYgTC0xMyAtNiBMLTYgLTE2IEwwIC05IEw2IC0xNiBMMTMgLTYgWiIgZmlsbD0iI2ZmOGZhYiIvPgogIDwvZz4KPC9zdmc+Cg==', style: 'width:60px;height:60px;border-radius:14px;object-fit:cover' });
+      const iconFile = UI.el('input', { type: 'file', accept: 'image/*', style: 'display:none', onchange: async (e) => {
+        const f = e.target.files[0]; if (!f) return;
+        const d = await UI.compressImage(f, 256);
+        if (d) { Store.saveSettings({ appIcon: d }); iconPreview.src = d; this.updateFavicon(); UI.toast('图标已更新（重新「添加到主屏幕」生效）', 'ok'); }
+      } });
+      const iconBtn = UI.el('label', { class: 'btn btn--ghost btn--sm', text: '上传图标', style: 'margin-left:8px' }, [iconFile]);
+
+      const lookCard = UI.el('div', { class: 'card' }, [
+        UI.el('div', { class: 'section-title', text: '🎨 个性化' }),
+        UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: 'APP 名称' }), nameInput,
+          UI.el('button', { class: 'btn btn--primary btn--sm mt', text: '保存', onclick: () => { Store.saveSettings({ appName: nameInput.value.trim() || '小游记' }); this.setHeaderTitle(nameInput.value.trim() || '小游记'); UI.toast('已保存', 'ok'); } })]),
+        UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '主题色' }), colorRow]),
+        UI.el('div', { class: 'field' }, [
+          UI.el('label', { class: 'field__label', text: '桌面图标' }),
+          UI.el('div', { class: 'flex' }, [iconPreview, iconBtn])
+        ])
+      ]);
+
+      // 数据
+      const dataCard = UI.el('div', { class: 'card' }, [
+        UI.el('div', { class: 'section-title', text: '💾 数据备份' }),
+        UI.el('div', { class: 'muted', style: 'font-size:12px;margin-bottom:10px', text: '所有行程、订单存在本机浏览器。换设备或清缓存前请导出备份，可再导入恢复。' }),
+        (() => {
+          const lb = Store.getLastBackup();
+          const txt = lb ? ('上次备份：' + UI.fmtDate(lb) + (Date.now() - lb > 14 * 864e5 ? '（已超过 14 天，建议再备一次）' : '')) : '尚未备份过';
+          return UI.el('div', { class: 'backup-hint' + (lb ? '' : ' backup-hint--warn'), text: txt });
+        })(),
+        UI.el('div', { class: 'flex' }, [
+          UI.el('button', { class: 'btn btn--ghost grow', text: '导出备份', onclick: () => {
+            Store.markBackup();
+            const blob = new Blob([Store.exportJSON()], { type: 'application/json' });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = '小游记备份_' + UI.fmtDate(Date.now()) + '.json'; a.click();
+            UI.toast('已导出并记下备份时间', 'ok');
+          } }),
+          UI.el('label', { class: 'btn btn--ghost grow', text: '导入备份', style: 'text-align:center' }, [
+            (() => { const f = UI.el('input', { type: 'file', accept: '.json,application/json', style: 'display:none', onchange: async (e) => {
+              const file = e.target.files[0]; if (!file) return;
+              try { const txt = await file.text(); Store.importJSON(txt); UI.toast('导入成功', 'ok'); this.render(); } catch (err) { UI.toast('导入失败：' + err.message, 'error'); }
+            } }); return f; })()
+          ])
+        ]),
+        UI.el('button', { class: 'btn btn--danger btn--block mt', text: '清空全部数据', onclick: async () => {
+          if (await UI.confirmDialog({ title: '清空数据', message: '将删除所有行程和订单，且不可恢复！建议先导出备份。', danger: true, okText: '确认清空' })) {
+            localStorage.removeItem('xiaoyouji.v1'); Store.load(); UI.toast('已清空'); this.render();
+          }
+        } })
+      ]);
+
+      // 云同步（GitHub Gist）
+      const tokenInput = UI.el('input', { class: 'input', type: 'password', placeholder: 'GitHub Token（需 gist 权限）', value: s.syncToken || '' });
+      const gistInput = UI.el('input', { class: 'input', placeholder: '同步仓库 ID（首次上传后自动填，可留空）', value: s.syncGistId || '' });
+      const syncStatus = UI.el('div', { class: 'backup-hint', text: (s.lastSyncAt ? ('上次同步：' + UI.fmtDate(s.lastSyncAt)) : '尚未同步') });
+      const syncCard = UI.el('div', { class: 'card' }, [
+        UI.el('div', { class: 'section-title', text: '☁️ 云同步（多设备共享）' }),
+        UI.el('div', { class: 'muted', style: 'font-size:12px;margin-bottom:8px', text: '用你的 GitHub Gist 当云端仓库：手机上传、电脑拉取，反之亦然。Token 只存在本机，需在 GitHub 申请并勾选 gist 权限。' }),
+        UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: 'GitHub Token' }), tokenInput,
+          UI.el('button', { class: 'btn btn--primary btn--sm mt', text: '保存凭据', onclick: () => {
+            Store.saveSettings({ syncToken: tokenInput.value.trim(), syncGistId: gistInput.value.trim() });
+            UI.toast('已保存', 'ok');
+          } })]),
+        UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '同步仓库 ID' }), gistInput]),
+        UI.el('div', { class: 'flex' }, [
+          UI.el('button', { class: 'btn btn--ghost grow', text: '⬆️ 上传到云端', onclick: async () => {
+            syncStatus.textContent = '上传中…';
+            try { const id = await Sync.push(); syncStatus.textContent = '已上传 · 仓库 ' + id; UI.toast('已上传到云端', 'ok'); }
+            catch (e) { syncStatus.textContent = '上传失败：' + e.message; UI.toast('上传失败：' + e.message, 'error'); }
+          } }),
+          UI.el('button', { class: 'btn btn--ghost grow', text: '⬇️ 从云端拉取', onclick: async () => {
+            syncStatus.textContent = '拉取中…';
+            try { await Sync.pull(); syncStatus.textContent = '已拉取 · ' + UI.fmtDate(Store.getLastSyncAt()); UI.toast('已从云端更新', 'ok'); App.render(); }
+            catch (e) { syncStatus.textContent = '拉取失败：' + e.message; UI.toast('拉取失败：' + e.message, 'error'); }
+          } })
+        ]),
+        syncStatus
+      ]);
+
+      // 安装引导
+      let installCard = UI.el('div', {});
+      if (this._deferredPrompt) {
+        installCard = UI.el('div', { class: 'install-banner' }, [
+          UI.el('div', { class: 'install-banner__txt' }, [UI.el('b', { text: '安装到手机桌面' }), UI.el('span', { text: '像 App 一样随时打开' })]),
+          UI.el('button', { class: 'btn btn--primary btn--sm', text: '安装', onclick: () => this.doInstall() })
+        ]);
+      } else if (this.isIOS()) {
+        installCard = UI.el('div', { class: 'install-banner' }, [
+          UI.el('div', { class: 'install-banner__txt' }, [
+            UI.el('b', { text: '添加到主屏幕' }),
+            UI.el('span', { text: 'iOS：点 分享 →「添加到主屏幕」' }),
+            UI.el('span', { text: 'Android/桌面：浏览器菜单 →「安装应用」' })
+          ])
+        ]);
+      }
+
+      const about = UI.el('div', { class: 'card muted center', style: 'font-size:12px' }, [
+        UI.el('div', { style: 'font-size:30px;margin-bottom:4px' }, '🧳'),
+        UI.el('div', { text: '小游记 · 自用旅行攻略' }),
+        UI.el('div', { text: '纯前端 PWA · 数据存本机 · 可永久托管' }),
+        UI.el('div', { class: 'small', style: 'margin-top:6px', text: '构建时间：' + (window.__XIAOYOUJI_BUILD__ || '开发模式') })
+      ]);
+
+      main.appendChild(installCard);
+      main.appendChild(keyCard);
+      main.appendChild(lookCard);
+      main.appendChild(dataCard);
+      main.appendChild(syncCard);
+      main.appendChild(about);
+    },
+
+    /* ---------- 安装 PWA ---------- */
+    bindInstall() {
+      window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); this._deferredPrompt = e; });
+      window.addEventListener('appinstalled', () => { this._deferredPrompt = null; UI.toast('已安装 🎉', 'ok'); });
+    },
+    isIOS() { return /iphone|ipad|ipod/i.test(navigator.userAgent); },
+    doInstall() {
+      const p = this._deferredPrompt;
+      if (!p) return;
+      p.prompt();
+      p.userChoice.then(() => { this._deferredPrompt = null; });
+    },
+
+    registerSW() {
+      if (!('serviceWorker' in navigator)) return;
+      window.addEventListener('load', () => {
+        /* service worker disabled in single-file build */
+      });
+    }
+  };
+
+  global.App = App;
+})(window);
+</script>
+<script>window.addEventListener("load", () => App.init());</script>
+</body>
+</html>
