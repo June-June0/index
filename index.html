@@ -321,7 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -513,7 +513,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -696,7 +696,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1127,7 +1127,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1296,7 +1296,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1629,7 +1629,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1906,7 +1906,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2134,72 +2134,25 @@ ul { margin: 0; padding: 0; list-style: none; }
       budgetBox.appendChild(list);
 
       // 分类占比可视化（合并行程 + 手动项次 + 关联订单）
-      const ORDER_TO_BUDGET_CAT = { flight: 'transport', train: 'transport', car: 'transport', hotel: 'hotel', ticket: 'ticket' };
-      const catTotal = total;
-      if (catTotal > 0) {
-        const byCat = {};
-        trip.budgetItems.forEach(i => { byCat[i.cat] = (byCat[i.cat] || 0) + (Number(i.amount) || 0); });
-        Object.keys(itinByCat).forEach(cat => { byCat[cat] = (byCat[cat] || 0) + itinByCat[cat]; });
-        orders.forEach(o => {
-          if (linked.has(o.id)) return; // 已关联的订单金额已通过 item.budget 计入，避免重复
-          const cat = ORDER_TO_BUDGET_CAT[o.category] || 'other';
-          byCat[cat] = (byCat[cat] || 0) + (Number(o.amount) || 0);
-        });
-        const entries = Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]);
+      // 日花费统计
+      const days = trip.daysData || [];
+      const daySpend = days.map(d => (d.items || []).reduce((s, it) => s + effectiveItemBudget(it), 0));
+      const maxDay = Math.max(0, ...daySpend);
+      if (days.length) {
         const wrap = UI.el('div', { class: 'bdg' });
-        wrap.appendChild(UI.el('div', { class: 'section-title', text: '📊 分类占比', style: 'font-size:14px;margin:14px 0 8px' }));
-
-        // 饼图
-        function polar(cx, cy, r, deg) {
-          const rad = (deg - 90) * Math.PI / 180;
-          return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
-        }
-        function arc(cx, cy, r, startDeg, endDeg) {
-          const s = polar(cx, cy, r, startDeg);
-          const e = polar(cx, cy, r, endDeg);
-          const large = (endDeg - startDeg) > 180 ? 1 : 0;
-          return 'M ' + cx + ' ' + cy + ' L ' + s.x + ' ' + s.y + ' A ' + r + ' ' + r + ' 0 ' + large + ' 1 ' + e.x + ' ' + e.y + ' Z';
-        }
-        const size = 160;
-        const cx = size / 2, cy = size / 2, r = 70;
-        const svg = UI.el('svg', { viewBox: '0 0 ' + size + ' ' + size, style: 'width:160px;height:160px;margin:0 auto;display:block' });
-        const cuteFont = '"Nunito", "Quicksand", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
-        let startDeg = 0;
-        entries.forEach(cat => {
-          const v = byCat[cat];
-          const pct = v / catTotal;
-          const endDeg = startDeg + pct * 360;
-          const color = BUDGET_COLORS[cat] || '#b0a8b8';
-          svg.appendChild(UI.el('path', { d: arc(cx, cy, r, startDeg, endDeg), fill: color, stroke: '#fff', 'stroke-width': '2' }));
-          // 在占比大于 5% 的扇区上显示百分比
-          if (pct >= 0.05) {
-            const midDeg = startDeg + pct * 180;
-            const pos = polar(cx, cy, 56, midDeg);
-            const labelPct = Math.round(pct * 100);
-            svg.appendChild(UI.el('text', {
-              x: pos.x, y: pos.y, 'text-anchor': 'middle', 'dominant-baseline': 'middle',
-              style: 'font-family:' + cuteFont + ';font-size:10px;font-weight:600;fill:#fff;text-shadow:0 1px 1px rgba(0,0,0,.25)'
-            }, [document.createTextNode(labelPct + '%')]));
-          }
-          startDeg = endDeg;
-        });
-        // 中心镂空成环形图
-        svg.appendChild(UI.el('circle', { cx: cx, cy: cy, r: 42, fill: 'var(--card, #ffffff)' }));
-        svg.appendChild(UI.el('text', { x: cx, y: cy - 2, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:11px;fill:var(--text-2)' }, [document.createTextNode('总花费')]));
-        svg.appendChild(UI.el('text', { x: cx, y: cy + 14, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:14px;font-weight:700;fill:var(--text)' }, [document.createTextNode(UI.money(total))]));
-        wrap.appendChild(svg);
-
-        // 图例
-        entries.forEach(cat => {
-          const v = byCat[cat];
-          const pct = Math.round(v / catTotal * 100);
-          const color = BUDGET_COLORS[cat] || '#b0a8b8';
-          wrap.appendChild(UI.el('div', { class: 'bdg__row' }, [
+        wrap.appendChild(UI.el('div', { class: 'section-title', text: '📅 日花费统计', style: 'font-size:14px;margin:14px 0 8px' }));
+        days.forEach((d, i) => {
+          const v = daySpend[i];
+          const pct = maxDay > 0 ? Math.round(v / maxDay * 100) : 0;
+          wrap.appendChild(UI.el('div', { class: 'bdg__row', style: 'flex-wrap:wrap' }, [
             UI.el('div', { class: 'bdg__label' }, [
-              UI.el('span', { style: 'display:inline-block;width:10px;height:10px;border-radius:50%;background:' + color + ';margin-right:6px' }),
-              document.createTextNode((BUDGET_CATS[cat] || {}).icon + ' ' + (BUDGET_CATS[cat] || {}).label)
+              UI.el('span', { text: '第' + (i + 1) + '天' }),
+              d.date ? UI.el('span', { class: 'muted small', text: ' ' + d.date + (d.weekday ? ' ' + d.weekday : '') }) : null
             ]),
-            UI.el('div', { class: 'bdg__val', text: UI.money(v) + ' · ' + pct + '%' })
+            UI.el('div', { class: 'bdg__val', text: v > 0 ? UI.money(v) : '—' })
+          ]));
+          wrap.appendChild(UI.el('div', { class: 'bdg__track', style: 'margin-top:-2px;margin-bottom:8px' }, [
+            UI.el('div', { class: 'bdg__fill', style: 'width:' + (v > 0 ? Math.max(pct, 4) : 0) + '%;background:linear-gradient(90deg,var(--primary),var(--primary-dark))' })
           ]));
         });
         budgetBox.appendChild(wrap);
@@ -2519,7 +2472,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2609,7 +2562,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:11:42';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:17:46';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
