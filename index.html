@@ -321,7 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -513,7 +513,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -696,7 +696,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1127,7 +1127,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1296,7 +1296,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1629,7 +1629,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1906,7 +1906,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -1934,6 +1934,38 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 
   function sortItems(day) { day.items.sort((a, b) => (a.time || '').localeCompare(b.time || '')); }
+
+  // 生成小型 donut 饼图（用于行程卡片）
+  function miniPie(total, byCat, size) {
+    size = size || 46;
+    const cx = size / 2, cy = size / 2, r = size / 2 - 3, innerR = Math.max(4, r - 12);
+    const svg = UI.el('svg', { viewBox: '0 0 ' + size + ' ' + size, style: 'width:' + size + 'px;height:' + size + 'px;display:block' });
+    if (!total) {
+      svg.appendChild(UI.el('circle', { cx: cx, cy: cy, r: r, fill: 'var(--bg-2)' }));
+      return svg;
+    }
+    function polar(rr, deg) {
+      const rad = (deg - 90) * Math.PI / 180;
+      return { x: cx + rr * Math.cos(rad), y: cy + rr * Math.sin(rad) };
+    }
+    function arcPath(ra, rb, startDeg, endDeg) {
+      const s1 = polar(ra, startDeg), e1 = polar(ra, endDeg);
+      const s2 = polar(rb, endDeg), e2 = polar(rb, startDeg);
+      const large = (endDeg - startDeg) > 180 ? 1 : 0;
+      return 'M ' + s1.x + ' ' + s1.y + ' A ' + ra + ' ' + ra + ' 0 ' + large + ' 1 ' + e1.x + ' ' + e1.y +
+             ' L ' + s2.x + ' ' + s2.y + ' A ' + rb + ' ' + rb + ' 0 ' + large + ' 0 ' + e2.x + ' ' + e2.y + ' Z';
+    }
+    const entries = Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]);
+    let startDeg = 0;
+    entries.forEach(cat => {
+      const v = byCat[cat];
+      const pct = v / total;
+      const endDeg = startDeg + pct * 360;
+      svg.appendChild(UI.el('path', { d: arcPath(r, innerR, startDeg, endDeg), fill: BUDGET_COLORS[cat] || '#b0a8b8', stroke: '#fff', 'stroke-width': '1' }));
+      startDeg = endDeg;
+    });
+    return svg;
+  }
 
   // 取某个订单的金额
   function orderAmount(orderId) {
@@ -1983,11 +2015,25 @@ ul { margin: 0; padding: 0; list-style: none; }
 
     trips.forEach(trip => {
       const itemCount = trip.daysData.reduce((s, d) => s + d.items.length, 0);
-      const itineraryBudget = trip.daysData.reduce((s, d) => s + d.items.reduce((a, i) => a + effectiveItemBudget(i), 0), 0);
-      const manualBudget = (trip.budgetItems || []).reduce((s, i) => s + (Number(i.amount) || 0), 0);
+      const TYPE_TO_BUDGET_CAT = { attraction: 'ticket', food: 'food', transport: 'transport', hotel: 'hotel', note: 'other' };
+      const ORDER_TO_BUDGET_CAT = { flight: 'transport', train: 'transport', car: 'transport', hotel: 'hotel', ticket: 'ticket' };
+      const byCat = {};
+      (trip.budgetItems || []).forEach(i => { byCat[i.cat] = (byCat[i.cat] || 0) + (Number(i.amount) || 0); });
+      trip.daysData.forEach(d => {
+        d.items.forEach(it => {
+          const b = effectiveItemBudget(it);
+          if (b > 0) byCat[TYPE_TO_BUDGET_CAT[it.type] || 'other'] = (byCat[TYPE_TO_BUDGET_CAT[it.type] || 'other'] || 0) + b;
+        });
+      });
       const orders = Store.getOrdersByTrip(trip.id);
       const linked = linkedOrderIds(trip);
+      orders.forEach(o => {
+        if (linked.has(o.id)) return;
+        byCat[ORDER_TO_BUDGET_CAT[o.category] || 'other'] = (byCat[ORDER_TO_BUDGET_CAT[o.category] || 'other'] || 0) + (Number(o.amount) || 0);
+      });
+      const manualBudget = (trip.budgetItems || []).reduce((s, i) => s + (Number(i.amount) || 0), 0);
       const orderSum = orders.reduce((s, o) => s + (linked.has(o.id) ? 0 : (Number(o.amount) || 0)), 0);
+      const itineraryBudget = trip.daysData.reduce((s, d) => s + d.items.reduce((a, i) => a + effectiveItemBudget(i), 0), 0);
       const totalBudget = itineraryBudget + manualBudget + orderSum;
       const card = UI.el('div', { class: 'card trip-card', onclick: () => App.navigate('#/trip/' + trip.id) }, [
         UI.el('div', { class: 'trip-card__cover', text: trip.emoji || '🧳' }),
@@ -1998,9 +2044,12 @@ ul { margin: 0; padding: 0; list-style: none; }
           UI.el('span', { text: '👥 ' + trip.group })
         ]),
         trip.preferences && trip.preferences.length ? UI.el('div', { class: 'trip-card__tags' }, trip.preferences.map(p => UI.el('span', { class: 'tag', text: p }))) : null,
-        UI.el('div', { class: 'trip-card__meta', style: 'margin-top:8px' }, [
+        UI.el('div', { class: 'trip-card__meta', style: 'margin-top:8px;align-items:center' }, [
           UI.el('span', { text: '🗒 ' + itemCount + ' 项安排' }),
-          UI.el('span', { text: '💰 ' + UI.money(totalBudget) })
+          UI.el('div', { class: 'flex', style: 'align-items:center;gap:6px;margin-left:auto' }, [
+            totalBudget > 0 ? miniPie(totalBudget, byCat, 44) : null,
+            UI.el('span', { text: '💰 ' + UI.money(totalBudget), style: 'font-weight:700;color:var(--primary-dark)' })
+          ])
         ])
       ]);
       main.appendChild(card);
@@ -2522,7 +2571,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2612,7 +2661,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:23:54';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
