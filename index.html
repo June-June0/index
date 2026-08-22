@@ -321,7 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -513,7 +513,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -696,7 +696,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1127,7 +1127,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1296,7 +1296,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1629,7 +1629,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1906,7 +1906,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2182,22 +2182,18 @@ ul { margin: 0; padding: 0; list-style: none; }
       });
       budgetBox.appendChild(list);
 
-      // 分类占比可视化（合并行程 + 手动项次 + 关联订单）
-      // 分类占比可视化（合并行程 + 手动项次 + 关联订单）
-      const ORDER_TO_BUDGET_CAT = { flight: 'transport', train: 'transport', car: 'transport', hotel: 'hotel', ticket: 'ticket' };
-      const catTotal = total;
-      if (catTotal > 0) {
-        const byCat = {};
-        trip.budgetItems.forEach(i => { byCat[i.cat] = (byCat[i.cat] || 0) + (Number(i.amount) || 0); });
-        Object.keys(itinByCat).forEach(cat => { byCat[cat] = (byCat[cat] || 0) + itinByCat[cat]; });
-        orders.forEach(o => {
-          if (linked.has(o.id)) return; // 已关联的订单金额已通过 item.budget 计入，避免重复
-          const cat = ORDER_TO_BUDGET_CAT[o.category] || 'other';
-          byCat[cat] = (byCat[cat] || 0) + (Number(o.amount) || 0);
-        });
-        const entries = Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]);
+      // 每日花费占比可视化
+      const dayTotals = (trip.daysData || []).map((d, i) => ({
+        index: i,
+        label: '第' + (i + 1) + '天',
+        date: (d.date || '') + (d.weekday ? ' ' + d.weekday : ''),
+        value: (d.items || []).reduce((s, it) => s + effectiveItemBudget(it), 0)
+      })).filter(d => d.value > 0);
+      const dayGrand = dayTotals.reduce((s, d) => s + d.value, 0);
+      if (dayGrand > 0) {
+        const entries = dayTotals.slice().sort((a, b) => b.value - a.value);
         const wrap = UI.el('div', { class: 'bdg' });
-        wrap.appendChild(UI.el('div', { class: 'section-title', text: '📊 分类占比', style: 'font-size:14px;margin:14px 0 8px' }));
+        wrap.appendChild(UI.el('div', { class: 'section-title', text: '📅 每日花费占比', style: 'font-size:14px;margin:14px 0 8px' }));
 
         // 饼图
         function polar(cx, cy, r, deg) {
@@ -2210,46 +2206,47 @@ ul { margin: 0; padding: 0; list-style: none; }
           const large = (endDeg - startDeg) > 180 ? 1 : 0;
           return 'M ' + cx + ' ' + cy + ' L ' + s.x + ' ' + s.y + ' A ' + r + ' ' + r + ' 0 ' + large + ' 1 ' + e.x + ' ' + e.y + ' Z';
         }
+        function dayColor(i, n) {
+          return 'hsl(' + Math.round(i * 360 / Math.max(n, 1)) + ', 72%, 76%)';
+        }
         const size = 160;
         const cx = size / 2, cy = size / 2, r = 70;
         const svg = UI.el('svg', { viewBox: '0 0 ' + size + ' ' + size, style: 'width:160px;height:160px;margin:0 auto;display:block' });
         const cuteFont = '"Nunito", "Quicksand", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
+        const n = dayTotals.length;
         let startDeg = 0;
-        entries.forEach(cat => {
-          const v = byCat[cat];
-          const pct = v / catTotal;
+        // 按原始天序画饼，避免相邻色块撞色
+        dayTotals.forEach((d, i) => {
+          const pct = d.value / dayGrand;
           const endDeg = startDeg + pct * 360;
-          const color = BUDGET_COLORS[cat] || '#b0a8b8';
+          const color = dayColor(i, n);
           svg.appendChild(UI.el('path', { d: arc(cx, cy, r, startDeg, endDeg), fill: color, stroke: '#fff', 'stroke-width': '2' }));
-          // 在占比大于 5% 的扇区上显示百分比
           if (pct >= 0.05) {
             const midDeg = startDeg + pct * 180;
             const pos = polar(cx, cy, 56, midDeg);
-            const labelPct = Math.round(pct * 100);
             svg.appendChild(UI.el('text', {
               x: pos.x, y: pos.y, 'text-anchor': 'middle', 'dominant-baseline': 'middle',
               style: 'font-family:' + cuteFont + ';font-size:10px;font-weight:600;fill:#fff;text-shadow:0 1px 1px rgba(0,0,0,.25)'
-            }, [document.createTextNode(labelPct + '%')]));
+            }, [document.createTextNode(Math.round(pct * 100) + '%')]));
           }
           startDeg = endDeg;
         });
         // 中心镂空成环形图
         svg.appendChild(UI.el('circle', { cx: cx, cy: cy, r: 42, fill: 'var(--card, #ffffff)' }));
         svg.appendChild(UI.el('text', { x: cx, y: cy - 2, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:11px;fill:var(--text-2)' }, [document.createTextNode('总花费')]));
-        svg.appendChild(UI.el('text', { x: cx, y: cy + 14, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:14px;font-weight:700;fill:var(--text)' }, [document.createTextNode(UI.money(total))]));
+        svg.appendChild(UI.el('text', { x: cx, y: cy + 14, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:14px;font-weight:700;fill:var(--text)' }, [document.createTextNode(UI.money(dayGrand))]));
         wrap.appendChild(svg);
 
-        // 图例
-        entries.forEach(cat => {
-          const v = byCat[cat];
-          const pct = Math.round(v / catTotal * 100);
-          const color = BUDGET_COLORS[cat] || '#b0a8b8';
+        // 图例（按金额从大到小）
+        entries.forEach((d, rank) => {
+          const pct = Math.round(d.value / dayGrand * 100);
+          const color = dayColor(d.index, n);
           wrap.appendChild(UI.el('div', { class: 'bdg__row' }, [
             UI.el('div', { class: 'bdg__label' }, [
               UI.el('span', { style: 'display:inline-block;width:10px;height:10px;border-radius:50%;background:' + color + ';margin-right:6px' }),
-              document.createTextNode((BUDGET_CATS[cat] || {}).icon + ' ' + (BUDGET_CATS[cat] || {}).label)
+              document.createTextNode(d.label + (d.date ? ' · ' + d.date : ''))
             ]),
-            UI.el('div', { class: 'bdg__val', text: UI.money(v) + ' · ' + pct + '%' })
+            UI.el('div', { class: 'bdg__val', text: UI.money(d.value) + ' · ' + pct + '%' })
           ]));
         });
         budgetBox.appendChild(wrap);
@@ -2571,7 +2568,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2661,7 +2658,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:39:28';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-22 11:45:43';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
