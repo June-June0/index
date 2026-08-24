@@ -344,7 +344,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -564,7 +564,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -747,7 +747,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1178,7 +1178,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1348,7 +1348,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1681,7 +1681,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1981,7 +1981,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2249,34 +2249,8 @@ ul { margin: 0; padding: 0; list-style: none; }
         });
       });
 
-      const sum = (trip.budgetItems || []).reduce((s, i) => s + (Number(i.amount) || 0), 0);
-      const orders = Store.getOrdersByTrip(trip.id);
-      const linked = linkedOrderIds(trip);
-      const orderSum = orders.reduce((s, o) => s + (linked.has(o.id) ? 0 : (Number(o.amount) || 0)), 0);
-      const total = itinerarySum + sum + orderSum;
-
-      const head = UI.el('div', { class: 'flex between' }, [
-        UI.el('div', { class: 'section-title', text: '💰 花费明细', style: 'margin:0' }),
-        UI.el('button', { class: 'btn btn--ghost btn--sm', text: '＋ 添加项次', onclick: () => budgetItemModal(trip, null, renderBudget) })
-      ]);
+      const head = UI.el('div', { class: 'section-title', text: '💰 花费明细', style: 'margin:0' });
       budgetBox.appendChild(head);
-
-      const list = UI.el('div', { style: 'margin-top:8px' });
-      if (!trip.budgetItems.length && !itinerarySum) {
-        list.appendChild(UI.el('div', { class: 'muted center', text: '还没有花费项次，点「＋ 添加项次」记录花费', style: 'font-size:13px;padding:8px' }));
-      }
-
-      (trip.budgetItems || []).forEach(it => {
-        list.appendChild(UI.el('div', { class: 'list-row', onclick: () => budgetItemModal(trip, it, renderBudget) }, [
-          UI.el('div', { class: 'list-row__icon', text: (BUDGET_CATS[it.cat] || {}).icon || '💰' }),
-          UI.el('div', { class: 'list-row__body' }, [
-            UI.el('div', { class: 'list-row__title', text: it.name || '未命名项次' }),
-            UI.el('div', { class: 'list-row__sub', text: (BUDGET_CATS[it.cat] || {}).label || '其他' + (it.note ? ' · ' + it.note : '') })
-          ]),
-          UI.el('div', { class: 'list-row__amount', text: UI.money(it.amount) })
-        ]));
-      });
-      budgetBox.appendChild(list);
 
       // 当天分类花费占比可视化
       const day = trip.daysData[currentDay];
@@ -2625,7 +2599,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2715,7 +2689,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:59:50';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 17:12:47';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
