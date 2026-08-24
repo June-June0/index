@@ -344,7 +344,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -564,7 +564,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -747,7 +747,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1178,7 +1178,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1348,7 +1348,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1681,7 +1681,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1981,7 +1981,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2119,42 +2119,42 @@ ul { margin: 0; padding: 0; list-style: none; }
           UI.el('span', { text: '👥 ' + trip.group })
         ]),
         trip.preferences && trip.preferences.length ? UI.el('div', { class: 'trip-card__tags' }, trip.preferences.map(p => UI.el('span', { class: 'tag', text: p }))) : null,
-        UI.el('div', { class: 'trip-card__meta', style: 'margin-top:8px;align-items:center' }, [
-          UI.el('span', { text: '🗒 ' + itemCount + ' 项安排' }),
+        (() => {
           const people = Number(trip.people) > 0 ? Number(trip.people) : 1;
           const perPerson = totalBudget / people;
-          totalBudget > 0 ? (() => {
-            const catEntries = Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]);
-            const legendItems = catEntries.slice(0, 3).map(cat => {
-              const v = byCat[cat];
-              const pct = Math.round(v / totalBudget * 100);
-              const color = BUDGET_COLORS[cat] || '#b0a8b8';
-              const label = (BUDGET_CATS[cat] || {}).icon + ' ' + (BUDGET_CATS[cat] || {}).label;
-              return UI.el('div', { style: 'font-size:11px;display:flex;align-items:center;gap:5px;white-space:nowrap' }, [
-                UI.el('span', { style: 'width:8px;height:8px;border-radius:50%;background:' + color + ';flex-shrink:0' }),
-                UI.el('span', { text: label }),
-                UI.el('span', { style: 'font-weight:700;color:var(--text)', text: UI.money(v) }),
-                UI.el('span', { class: 'muted', style: 'font-size:10px', text: pct + '%' })
+          return UI.el('div', { class: 'trip-card__meta', style: 'margin-top:8px;align-items:center' }, [
+            UI.el('span', { text: '🗒 ' + itemCount + ' 项安排' }),
+            totalBudget > 0 ? (() => {
+              const catEntries = Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]);
+              const legendItems = catEntries.slice(0, 3).map(cat => {
+                const v = byCat[cat];
+                const pct = Math.round(v / totalBudget * 100);
+                const color = BUDGET_COLORS[cat] || '#b0a8b8';
+                const label = (BUDGET_CATS[cat] || {}).icon + ' ' + (BUDGET_CATS[cat] || {}).label;
+                return UI.el('div', { style: 'font-size:11px;display:flex;align-items:center;gap:5px;white-space:nowrap' }, [
+                  UI.el('span', { style: 'width:8px;height:8px;border-radius:50%;background:' + color + ';flex-shrink:0' }),
+                  UI.el('span', { text: label }),
+                  UI.el('span', { style: 'font-weight:700;color:var(--text)', text: UI.money(v) }),
+                  UI.el('span', { class: 'muted', style: 'font-size:10px', text: pct + '%' })
+                ]);
+              });
+              if (catEntries.length > 3) {
+                legendItems.push(UI.el('div', { class: 'muted', style: 'font-size:10px', text: '＋' + (catEntries.length - 3) + ' 项' }));
+              }
+              legendItems.push(UI.el('div', { style: 'font-size:12px;font-weight:700;color:var(--primary-dark);margin-top:2px' }, [
+                document.createTextNode('💰 ' + UI.money(totalBudget)),
+                UI.el('span', { style: 'font-size:10px;font-weight:400;color:var(--text-2);margin-left:5px', text: '人均 ' + UI.money(perPerson) })
+              ]));
+              return UI.el('div', { class: 'flex', style: 'align-items:center;gap:10px;margin-left:auto' }, [
+                miniPie(totalBudget, byCat, 52),
+                UI.el('div', { style: 'display:flex;flex-direction:column;gap:2px' }, legendItems)
               ]);
-            });
-            if (catEntries.length > 3) {
-              legendItems.push(UI.el('div', { class: 'muted', style: 'font-size:10px', text: '＋' + (catEntries.length - 3) + ' 项' }));
-            }
-            const people = Number(trip.people) > 0 ? Number(trip.people) : 1;
-            const perPerson = totalBudget / people;
-            legendItems.push(UI.el('div', { style: 'font-size:12px;font-weight:700;color:var(--primary-dark);margin-top:2px' }, [
+            })() : UI.el('span', { style: 'margin-left:auto' }, [
               document.createTextNode('💰 ' + UI.money(totalBudget)),
-              UI.el('span', { style: 'font-size:10px;font-weight:400;color:var(--text-2);margin-left:5px', text: '人均 ' + UI.money(perPerson) })
-            ]));
-            return UI.el('div', { class: 'flex', style: 'align-items:center;gap:10px;margin-left:auto' }, [
-              miniPie(totalBudget, byCat, 52),
-              UI.el('div', { style: 'display:flex;flex-direction:column;gap:2px' }, legendItems)
-            ]);
-          })() : UI.el('span', { style: 'margin-left:auto' }, [
-            document.createTextNode('💰 ' + UI.money(totalBudget)),
-            UI.el('span', { style: 'font-size:10px;color:var(--text-2);margin-left:5px', text: '人均 ' + UI.money(perPerson) })
-          ])
-        ])
+              UI.el('span', { style: 'font-size:10px;color:var(--text-2);margin-left:5px', text: '人均 ' + UI.money(perPerson) })
+            ])
+          ]);
+        })()
       ]);
       main.appendChild(card);
     });
@@ -2636,7 +2636,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2726,7 +2726,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 13:44:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 16:13:58';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
