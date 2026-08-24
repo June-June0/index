@@ -254,6 +254,28 @@ ul { margin: 0; padding: 0; list-style: none; }
 .bdg__fill { height: 100%; border-radius: 999px; transition: width .3s ease; }
 .bdg__val { text-align: right; flex-shrink: 0; font-weight: 600; white-space: nowrap; }
 
+/* ---------- Memo ---------- */
+.memo-item {
+  display: flex; align-items: center; gap: 10px;
+  background: #fff; border-radius: var(--radius-sm);
+  padding: 12px 12px 12px 14px; margin-bottom: 8px;
+  box-shadow: var(--shadow-sm); transition: opacity .2s, background .2s;
+}
+.memo-item--done { opacity: .55; background: var(--bg-2); }
+.memo-check {
+  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+  border: 2px solid var(--primary); background: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.memo-item--done .memo-check { background: var(--primary); border-color: var(--primary); }
+.memo-text { flex: 1; min-width: 0; font-size: 15px; word-break: break-word; }
+.memo-item--done .memo-text { text-decoration: line-through; color: var(--text-2); }
+.memo-delete {
+  width: 28px; height: 28px; border-radius: 50%; color: var(--text-2);
+  display: flex; align-items: center; justify-content: center;
+}
+.memo-delete:active { background: var(--bg-2); color: #e2575f; }
+
 /* 自动备份提醒 */
 .backup-banner {
   display: flex; align-items: center; gap: 12px; justify-content: space-between;
@@ -301,11 +323,11 @@ ul { margin: 0; padding: 0; list-style: none; }
         </span>
         <span class="nav-item__label">订单</span>
       </a>
-      <a class="nav-item" data-route="map" href="#/map">
+      <a class="nav-item" data-route="memo" href="#/memo">
         <span class="nav-item__icon">
-          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11zm0-8.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M9 3h6a2 2 0 012 2v14l-2.5-2H9a2 2 0 01-2-2V5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 8h8M8 12h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         </span>
-        <span class="nav-item__label">地图</span>
+        <span class="nav-item__label">备忘</span>
       </a>
       <a class="nav-item" data-route="settings" href="#/settings">
         <span class="nav-item__icon">
@@ -321,7 +343,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -345,7 +367,8 @@ ul { margin: 0; padding: 0; list-style: none; }
     schema: SCHEMA,
     settings: { ...DEFAULT_SETTINGS },
     trips: [],
-    orders: []
+    orders: [],
+    memos: []
   };
 
   function uid(prefix) {
@@ -474,6 +497,29 @@ ul { margin: 0; padding: 0; list-style: none; }
     }, data);
   }
 
+  /* ---------- Memo CRUD ---------- */
+  function getMemos() { return state.memos; }
+  function getMemo(id) { return state.memos.find(m => m.id === id) || null; }
+  function saveMemo(memo) {
+    const idx = state.memos.findIndex(m => m.id === memo.id);
+    if (idx >= 0) state.memos[idx] = memo;
+    else state.memos.unshift(memo);
+    save();
+    return memo;
+  }
+  function deleteMemo(id) {
+    state.memos = state.memos.filter(m => m.id !== id);
+    save();
+  }
+  function newMemoBase(data) {
+    return Object.assign({
+      id: uid('memo'),
+      text: '',
+      done: false,
+      createdAt: Date.now()
+    }, data);
+  }
+
   /* ---------- Settings ---------- */
   function getSettings() { return state.settings; }
   function saveSettings(patch) {
@@ -509,11 +555,12 @@ ul { margin: 0; padding: 0; list-style: none; }
     load, save, exportJSON, importJSON, markBackup, getLastBackup, getLastSyncAt,
     getTrips, getTrip, saveTrip, deleteTrip, newTripBase,
     getOrders, getOrder, getOrdersByTrip, saveOrder, deleteOrder, newOrderBase, orderTotal,
+    getMemos, getMemo, saveMemo, deleteMemo, newMemoBase,
     getSettings, saveSettings, applyTheme, uid
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -696,7 +743,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1127,7 +1174,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1296,7 +1343,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1629,7 +1676,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1906,7 +1953,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2306,9 +2353,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
     renderDay();
 
-    // 头部操作：看地图 / 复制/导出
+    // 头部操作：备忘录 / 复制/导出
     App.setHeaderActions([
-      UI.el('button', { class: 'icon-btn icon-btn--ghost', title: '查看路线图', html: '🗺️', onclick: () => App.navigate('#/map') }),
+      UI.el('button', { class: 'icon-btn icon-btn--ghost', title: '打开备忘录', html: '📝', onclick: () => App.navigate('#/memo') }),
       UI.el('button', { class: 'icon-btn icon-btn--ghost', title: '导出/分享', html: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7M16 6l-4-4-4 4M12 2v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>', onclick: () => openExportModal(trip) })
     ]);
   }
@@ -2593,7 +2640,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2683,7 +2730,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 08:52:43';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
@@ -2734,9 +2781,12 @@ ul { margin: 0; padding: 0; list-style: none; }
       const fab = document.getElementById('fab');
       if (!fab) return;
       const isTripOrders = section === 'orders' && parts[1] === 'trip' && parts[2];
-      if (section === 'trips' || section === 'map') {
+      if (section === 'trips') {
         fab.hidden = false; fab.textContent = '＋';
         fab.onclick = () => this.navigate('#/trip/new');
+      } else if (section === 'memo') {
+        fab.hidden = false; fab.textContent = '＋';
+        fab.onclick = () => this.addMemo();
       } else if (isTripOrders) {
         fab.hidden = false; fab.textContent = '＋';
         const tripId = parts[2];
@@ -2768,7 +2818,7 @@ ul { margin: 0; padding: 0; list-style: none; }
         else if (hash.indexOf('#/orders/trip/') === 0) this.navigate('#/orders');
         else if (hash.indexOf('/shot') >= 0) this.navigate('#/orders');
         else if (hash === '#/trip/new') this.navigate('#/trips');
-        else if (hash === '#/map') this.navigate('#/trips');
+        else if (hash === '#/memo') this.navigate('#/trips');
         else if (hash === '#/settings') this.navigate('#/trips');
         else history.back();
       });
@@ -2826,9 +2876,9 @@ ul { margin: 0; padding: 0; list-style: none; }
         } else if (parts[0] === 'orders' && parts[2] === 'shot') {
           this.setHeaderTitle('订单截图');
           Orders.shotView(main, parts[1]);
-        } else if (parts[0] === 'map') {
-          this.setHeaderTitle('地图');
-          this.mapView(main);
+        } else if (parts[0] === 'memo') {
+          this.setHeaderTitle('备忘录');
+          this.memoView(main);
         } else if (parts[0] === 'settings') {
           this.setHeaderTitle('我的');
           this.settingsView(main);
@@ -2847,98 +2897,74 @@ ul { margin: 0; padding: 0; list-style: none; }
       }
     },
 
-    /* ---------- 独立地图页 ---------- */
-    mapView(main) {
-      const trips = Store.getTrips();
+    /* ---------- 备忘录页 ---------- */
+    memoView(main) {
       main.innerHTML = '';
-      if (!trips.length) {
-        main.appendChild(UI.el('div', { class: 'empty' }, [
-          UI.el('div', { class: 'empty__emoji', text: '🗺️' }),
-          UI.el('div', { text: '还没有行程' }),
-          UI.el('div', { class: 'empty__tip', text: '先在攻略里创建行程，再来这里看地图' }),
-          UI.el('button', { class: 'btn btn--primary mt', text: '去创建', onclick: () => this.navigate('#/trip/new') })
-        ]));
-        return;
-      }
-      let selectedTripId = this._activeTripId || trips[0].id;
-      let selectedDay = -1; // -1 = 全部
-      let mapMode = 'amap'; // 'amap' | 'sketch'
+      const render = () => {
+        main.innerHTML = '';
+        const memos = Store.getMemos();
+        const pending = memos.filter(m => !m.done);
+        const done = memos.filter(m => m.done);
 
-      const tripChips = UI.el('div', { class: 'chips mb' });
-      trips.forEach(t => {
-        const c = UI.el('button', { class: 'chip' + (t.id === selectedTripId ? ' active' : ''), text: t.name, onclick: () => { selectedTripId = t.id; selectedDay = -1; updateTripChips(); buildDayChips(); renderMap(); } });
-        tripChips.appendChild(c);
-      });
-      main.appendChild(tripChips);
+        if (!memos.length) {
+          main.appendChild(UI.el('div', { class: 'empty' }, [
+            UI.el('div', { class: 'empty__emoji', text: '📝' }),
+            UI.el('div', { text: '还没有备忘事项' }),
+            UI.el('div', { class: 'empty__tip', text: '点右下角 ＋ 添加一条备忘，做完点前面的圆圈勾选' }),
+            UI.el('button', { class: 'btn btn--primary mt', text: '＋ 添加备忘', onclick: () => this.addMemo() })
+          ]));
+          return;
+        }
 
-      const dayChips = UI.el('div', { class: 'chips mb' });
-      main.appendChild(dayChips);
+        const summary = UI.el('div', { class: 'card', style: 'padding:10px 14px' }, [
+          UI.el('div', { class: 'section-title', style: 'margin:0;font-size:14px' }, [
+            document.createTextNode('✅ 完成进度'),
+            UI.el('small', { text: done.length + ' / ' + memos.length })
+          ])
+        ]);
+        main.appendChild(summary);
 
-      const mapBox = UI.el('div', { class: 'map-box', style: 'height:300px' });
-      main.appendChild(mapBox);
-      const modeBtn = UI.el('button', { class: 'btn btn--ghost btn--sm', text: '🎨 手绘地图', onclick: () => { mapMode = (mapMode === 'amap' ? 'sketch' : 'amap'); modeBtn.textContent = mapMode === 'amap' ? '🎨 手绘地图' : '🗺️ 高德地图'; renderMap(); } });
-      main.appendChild(UI.el('div', { class: 'map-toolbar' }, [
-        modeBtn,
-        UI.el('button', { class: 'btn btn--ghost btn--sm', text: '🔍 地点搜索', onclick: () => this.searchFromMap(selectedTripId) })
+        const makeItem = (m) => {
+          const row = UI.el('div', { class: 'memo-item' + (m.done ? ' memo-item--done' : '') }, [
+            UI.el('button', { class: 'memo-check', onclick: () => { m.done = !m.done; Store.saveMemo(m); render(); } }, [
+              m.done ? UI.el('svg', { viewBox: '0 0 24 24', width: '14', height: '14' }, [UI.el('path', { d: 'M5 12l5 5 9-9', fill: 'none', stroke: '#fff', 'stroke-width': '2.5', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' })]) : null
+            ]),
+            UI.el('div', { class: 'memo-text', text: m.text || '' }),
+            UI.el('button', { class: 'memo-delete', onclick: async () => { if (await UI.confirmDialog({ title: '删除备忘', message: '确定删除这条备忘？', danger: true })) { Store.deleteMemo(m.id); render(); } } }, [
+              UI.el('svg', { viewBox: '0 0 24 24', width: '16', height: '16' }, [UI.el('path', { d: 'M18 6L6 18M6 6l12 12', fill: 'none', stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round' })])
+            ])
+          ]);
+          return row;
+        };
+
+        if (pending.length) {
+          main.appendChild(UI.el('div', { class: 'section-title', style: 'font-size:14px;margin:14px 0 8px' }, '待办'));
+          pending.forEach(m => main.appendChild(makeItem(m)));
+        }
+        if (done.length) {
+          main.appendChild(UI.el('div', { class: 'section-title', style: 'font-size:14px;margin:18px 0 8px;color:var(--text-2)' }, '已完成'));
+          done.forEach(m => main.appendChild(makeItem(m)));
+        }
+      };
+      render();
+    },
+
+    addMemo() {
+      const input = UI.el('input', { class: 'input', placeholder: '输入备忘事项，如：带身份证、充电器…' });
+      UI.openModal('添加备忘', UI.el('div', {}, [
+        input,
+        UI.el('div', { class: 'flex mt' }, [
+          UI.el('button', { class: 'btn btn--primary btn--block', text: '保存', onclick: () => {
+            const text = input.value.trim();
+            if (!text) { UI.toast('请输入备忘内容', 'error'); return; }
+            Store.saveMemo(Store.newMemoBase({ text }));
+            UI.closeModal();
+            UI.toast('已添加', 'ok');
+            this.render();
+          } })
+        ])
       ]));
-
-      function updateTripChips() {
-        Array.from(tripChips.children).forEach(c => {
-          c.classList.toggle('active', selectedTripId === c._tripId);
-        });
-      }
-      Array.from(tripChips.children).forEach((c, i) => { c._tripId = trips[i].id; });
-
-      function buildDayChips() {
-        dayChips.innerHTML = '';
-        const trip = Store.getTrip(selectedTripId);
-        const all = UI.el('button', { class: 'chip' + (selectedDay === -1 ? ' active' : ''), text: '全部', onclick: () => { selectedDay = -1; buildDayChips(); renderMap(); } });
-        dayChips.appendChild(all);
-        (trip.daysData || []).forEach((d, i) => {
-          const c = UI.el('button', { class: 'chip' + (selectedDay === i ? ' active' : ''), text: '第' + (i + 1) + '天', onclick: () => { selectedDay = i; buildDayChips(); renderMap(); } });
-          dayChips.appendChild(c);
-        });
-      }
-
-      function renderMap() {
-        const trip = Store.getTrip(selectedTripId);
-        if (mapMode === 'sketch') {
-          MapX.renderSketchMap(mapBox, trip, selectedDay);
-          return;
-        }
-        if (!Store.getSettings().amapKey) {
-          mapBox.innerHTML = '';
-          mapBox.appendChild(UI.el('div', { class: 'map-box__placeholder' }, [UI.el('div', { style: 'font-size:30px' }, '🔑'), UI.el('div', { text: '在「我的」填入高德 Key 后显示地图' })]));
-          return;
-        }
-        MapX.load(Store.getSettings().amapKey).then(() => {
-          mapBox.innerHTML = '';
-          const AMap = window.AMap;
-          if (selectedDay >= 0) {
-            // 按天显示带路线的手绘风格地图
-            MapX.renderTripMap(mapBox, trip, selectedDay);
-            return;
-          }
-          // 全部：合并所有天数的点位
-          const allPts = [];
-          trip.daysData.forEach(d => d.items.forEach(i => { if (i.lng != null) allPts.push(i); }));
-          const map = new AMap.Map(mapBox, { zoom: 11, resizeEnable: true, mapStyle: 'amap://styles/whitesmoke' });
-          map.addControl(new AMap.Scale());
-          if (trip.city) map.setCity(trip.city);
-          if (allPts.length) {
-            allPts.forEach((p, idx) => {
-              const m = new AMap.Marker({ position: [p.lng, p.lat], title: p.title, content: '<div class="amap-route-num">' + (idx + 1) + '</div>' });
-              map.add(m);
-            });
-            map.setFitView(null, false, [60, 60, 60, 60]);
-          }
-        }).catch(e => {
-          mapBox.innerHTML = '';
-          mapBox.appendChild(UI.el('div', { class: 'map-box__placeholder' }, [UI.el('div', { text: '地图加载失败：' + (e && e.message || '') })]));
-        });
-      }
-      renderMap();
-      this._mapSelected = () => selected;
+      setTimeout(() => input.focus(), 100);
     },
 
     searchFromMap(tripId) {
