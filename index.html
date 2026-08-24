@@ -344,7 +344,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -458,6 +458,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       destination: '',
       city: '',
       days: 1,
+      people: 1,
       group: '独自',
       preferences: [],
       emoji: '🧳',
@@ -563,7 +564,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -746,7 +747,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1177,7 +1178,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1334,6 +1335,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       destination: destination,
       city: key || destination,
       days: nDays,
+      people: Number(opts.people) > 0 ? Number(opts.people) : 1,
       group: group || '独自',
       preferences: preferences || [],
       emoji: data.emoji || '🧳',
@@ -1346,7 +1348,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1679,7 +1681,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1801,16 +1803,39 @@ ul { margin: 0; padding: 0; list-style: none; }
     main.innerHTML = '';
 
     // 头部行程信息
-    const header = UI.el('div', { class: 'card' }, [
-      UI.el('div', { class: 'flex', style: 'align-items:center;gap:12px' }, [
+    const header = UI.el('div', { class: 'card' });
+    function renderHeader() {
+      header.innerHTML = '';
+      const total = sumOrders(allList);
+      const people = trip && Number(trip.people) > 0 ? Number(trip.people) : 1;
+      const perPerson = people > 0 ? total / people : total;
+      const peopleInput = trip ? UI.el('input', {
+        class: 'input', type: 'number', min: '1', value: String(people),
+        style: 'width:58px;padding:6px 8px;text-align:center;font-size:14px;border-radius:10px;margin-bottom:4px',
+        onchange: () => {
+          const n = parseInt(peopleInput.value, 10) || 1;
+          trip.people = Math.max(1, n);
+          Store.saveTrip(trip);
+          renderHeader();
+        }
+      }) : null;
+      header.appendChild(UI.el('div', { class: 'flex', style: 'align-items:center;gap:12px' }, [
         UI.el('div', { style: 'font-size:42px' }, trip ? (trip.emoji || '🧳') : '📂'),
         UI.el('div', { style: 'flex:1' }, [
           UI.el('div', { style: 'font-weight:700;font-size:18px', text: trip ? (trip.name || '未命名行程') : '未关联订单' }),
           UI.el('div', { class: 'muted', style: 'font-size:13px;margin-top:2px', text: trip ? ((trip.destination || '') + ' · ' + allList.length + ' 笔订单') : (allList.length + ' 笔未关联订单') })
         ]),
-        UI.el('div', { class: 'list-row__amount', style: 'font-size:20px', text: UI.money(sumOrders(allList)) })
-      ])
-    ]);
+        UI.el('div', { style: 'display:flex;flex-direction:column;align-items:flex-end' }, [
+          trip ? UI.el('div', { style: 'display:flex;align-items:center;gap:4px;font-size:12px;color:var(--text-2);margin-bottom:2px' }, [
+            document.createTextNode('人数'),
+            peopleInput
+          ]) : null,
+          UI.el('div', { class: 'list-row__amount', style: 'font-size:20px;line-height:1.1', text: UI.money(total) }),
+          trip ? UI.el('div', { style: 'font-size:12px;color:var(--text-2);margin-top:2px' }, '人均 ' + UI.money(perPerson)) : null
+        ])
+      ]));
+    }
+    renderHeader();
     main.appendChild(header);
 
     // 分类筛选
@@ -1956,7 +1981,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2133,6 +2158,7 @@ ul { margin: 0; padding: 0; list-style: none; }
     const destInput = UI.el('input', { class: 'input', placeholder: '如：成都 / 杭州 / 厦门', value: '' });
     const nameInput = UI.el('input', { class: 'input', placeholder: '行程名称（选填，默认“目的地N日游”）', value: '' });
     const daysInput = UI.el('input', { class: 'input', type: 'number', min: '1', max: '30', value: '3' });
+    const peopleInput = UI.el('input', { class: 'input', type: 'number', min: '1', value: '1', placeholder: '人数' });
     const dateInput = UI.el('input', { class: 'input', type: 'date', value: UI.fmtDate(Date.now()) });
 
     let group = '独自';
@@ -2149,6 +2175,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '目的地' }), destInput]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '行程名称' }), nameInput]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '出行天数' }), daysInput]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '出行人数' }), peopleInput]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '出发日期' }), dateInput]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '出行人群' }), groupChips]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '偏好（可多选）' }), prefChips]),
@@ -2160,8 +2187,9 @@ ul { margin: 0; padding: 0; list-style: none; }
       if (!dest) { UI.toast('请填写目的地', 'error'); return; }
       const days = Math.max(1, Math.min(30, parseInt(daysInput.value, 10) || 1));
       UI.toast('正在生成…');
+      const people = Math.max(1, parseInt(peopleInput.value, 10) || 1);
       const trip = AI.generate({
-        destination: dest, days, group,
+        destination: dest, days, group, people,
         preferences: Array.from(prefs),
         name: nameInput.value, startDate: dateInput.value,
         arriveAfternoon: afternoon.checked
@@ -2598,7 +2626,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2688,7 +2716,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:41:17';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
