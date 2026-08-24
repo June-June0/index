@@ -344,7 +344,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -563,7 +563,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -746,7 +746,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1177,7 +1177,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1346,7 +1346,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1679,7 +1679,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1956,7 +1956,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2400,49 +2400,12 @@ ul { margin: 0; padding: 0; list-style: none; }
     const isNew = !item;
     const data = item ? JSON.parse(JSON.stringify(item)) : { id: Store.uid('it'), time: '09:00', type: 'attraction', title: '', place: '', lng: null, lat: null, note: '', photos: [], budget: 0, orderId: null };
     const photos = { val: data.photos || [] };
-    const hasKey = !!Store.getSettings().amapKey;
 
     const typeSel = UI.el('select', { class: 'select' }, Object.keys(TYPE_META).map(k =>
       UI.el('option', { value: k, text: TYPE_META[k].icon + ' ' + TYPE_META[k].label, selected: k === data.type ? 'selected' : null })));
     const timeInput = UI.el('input', { class: 'input', type: 'time', value: data.time || '' });
     const titleInput = UI.el('input', { class: 'input', placeholder: '名称，如：故宫博物院', value: data.title || '' });
     const placeInput = UI.el('input', { class: 'input', placeholder: '地点/地址（选填）', value: data.place || '' });
-    const lngInput = UI.el('input', { class: 'input', type: 'number', step: 'any', placeholder: '经度 lng', value: data.lng != null ? String(data.lng) : '', style: 'flex:1;min-width:0' });
-    const latInput = UI.el('input', { class: 'input', type: 'number', step: 'any', placeholder: '纬度 lat', value: data.lat != null ? String(data.lat) : '', style: 'flex:1;min-width:0' });
-    const coordRow = UI.el('div', { class: 'flex', style: 'gap:8px' }, [lngInput, latInput]);
-    const searchLocBtn = hasKey
-      ? UI.el('button', { class: 'btn btn--ghost btn--sm', text: '🔍 用搜索定位', onclick: () => openSearchModal(trip, (p) => {
-          data.lng = p.lng; data.lat = p.lat;
-          if (!data.title) data.title = p.name;
-          if (!data.place) data.place = p.address || '';
-          lngInput.value = p.lng != null ? p.lng : '';
-          latInput.value = p.lat != null ? p.lat : '';
-          titleInput.value = data.title;
-          placeInput.value = data.place;
-        }) })
-      : UI.el('div', { class: 'muted small', text: '在「我的」填入高德 Key 后，可一键搜索定位' });
-    const locBtn = hasKey
-      ? UI.el('button', { class: 'btn btn--ghost btn--sm', text: '📍 获取坐标', onclick: async () => {
-          const kw = placeInput.value.trim();
-          if (!kw) { UI.toast('请先填写地点名称', 'error'); return; }
-          const old = locBtn.textContent; locBtn.textContent = '定位中…'; locBtn.disabled = true;
-          try {
-            await MapX.load(Store.getSettings().amapKey);
-            const res = await MapX.search(trip.city, kw);
-            if (!res.length) { UI.toast('未找到该地点，换个名称或手动填坐标', 'error'); }
-            else {
-              const p = res[0];
-              data.lng = p.lng; data.lat = p.lat;
-              lngInput.value = p.lng != null ? p.lng : '';
-              latInput.value = p.lat != null ? p.lat : '';
-              if (!data.place) placeInput.value = p.address || '';
-              UI.toast('已获取坐标 ✓');
-            }
-          } catch (e) { UI.toast('获取失败，请检查 Key/网络', 'error'); }
-          finally { locBtn.textContent = old; locBtn.disabled = false; }
-        } })
-      : null;
-    const placeRow = UI.el('div', { class: 'flex', style: 'gap:8px' }, [placeInput, locBtn].filter(Boolean));
     const noteInput = UI.el('textarea', { class: 'textarea', placeholder: '备注、Tips（选填）', text: data.note || '' });
     const budgetInput = UI.el('input', { class: 'input', type: 'number', placeholder: '0.00', value: data.budget ? String(data.budget) : '', step: '0.01', min: '0' });
 
@@ -2474,12 +2437,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '类型' }), typeSel]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '时间' }), timeInput]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '名称' }), titleInput]),
-      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '地点' }), placeRow]),
-      UI.el('div', { class: 'field' }, [
-        UI.el('label', { class: 'field__label', text: '坐标（用于地图标注，选填）' }),
-        coordRow,
-        searchLocBtn
-      ]),
+      UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '地点' }), placeInput]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '金额（RMB，选填）' }), budgetInput]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '关联订单' }), orderSel]),
       UI.el('div', { class: 'field' }, [UI.el('label', { class: 'field__label', text: '照片' }), grid]),
@@ -2488,12 +2446,9 @@ ul { margin: 0; padding: 0; list-style: none; }
         isNew ? UI.el('span', {}) : UI.el('button', { class: 'btn btn--danger grow', text: '删除', onclick: async () => { if (await UI.confirmDialog({ title: '删除', message: '确定删除该时段？', danger: true })) { trip.daysData[dIdx].items = trip.daysData[dIdx].items.filter(x => x.id !== data.id); Store.saveTrip(trip); UI.closeModal(); rerender(); } } }),
         UI.el('button', { class: 'btn btn--primary grow', text: isNew ? '添加' : '保存', onclick: () => {
           if (!titleInput.value.trim()) { UI.toast('请填写名称', 'error'); return; }
-          const lng = lngInput.value.trim() === '' ? null : parseFloat(lngInput.value);
-          const lat = latInput.value.trim() === '' ? null : parseFloat(latInput.value);
-          if ((lng !== null && isNaN(lng)) || (lat !== null && isNaN(lat))) { UI.toast('坐标格式不正确', 'error'); return; }
           const updated = {
             id: data.id, time: timeInput.value || '09:00', type: typeSel.value, title: titleInput.value.trim(),
-            place: placeInput.value.trim(), lng: lng, lat: lat, note: noteInput.value.trim(),
+            place: placeInput.value.trim(), lng: null, lat: null, note: noteInput.value.trim(),
             photos: photos.val, budget: parseFloat(budgetInput.value) || 0, orderId: orderSel.value || null
           };
           const arr = trip.daysData[dIdx].items;
@@ -2643,7 +2598,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2733,7 +2688,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:43:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 10:00:16';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
