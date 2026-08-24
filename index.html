@@ -343,7 +343,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -380,7 +380,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       const raw = localStorage.getItem(KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
-        state = Object.assign({ schema: SCHEMA, settings: {}, trips: [], orders: [] }, parsed);
+        state = Object.assign({ schema: SCHEMA, settings: {}, trips: [], orders: [], memos: [] }, parsed);
         state.settings = Object.assign({ ...DEFAULT_SETTINGS }, parsed.settings || {});
         // 兜底：本地已存但为空时，回退到内置默认 Key
         if (!state.settings.amapKey) state.settings.amapKey = DEFAULT_SETTINGS.amapKey;
@@ -425,6 +425,7 @@ ul { margin: 0; padding: 0; list-style: none; }
     state.settings = Object.assign({ ...DEFAULT_SETTINGS }, parsed.settings || {});
     state.trips = Array.isArray(parsed.trips) ? parsed.trips : [];
     state.orders = Array.isArray(parsed.orders) ? parsed.orders : [];
+    state.memos = Array.isArray(parsed.memos) ? parsed.memos : [];
     save();
     return state;
   }
@@ -560,7 +561,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -743,7 +744,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1174,7 +1175,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1343,7 +1344,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1676,7 +1677,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1953,7 +1954,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2640,7 +2641,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2730,7 +2731,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:13:13';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-24 09:30:25';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
@@ -2902,7 +2903,7 @@ ul { margin: 0; padding: 0; list-style: none; }
       main.innerHTML = '';
       const render = () => {
         main.innerHTML = '';
-        const memos = Store.getMemos();
+        const memos = Store.getMemos() || [];
         const pending = memos.filter(m => !m.done);
         const done = memos.filter(m => m.done);
 
