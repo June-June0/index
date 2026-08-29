@@ -163,10 +163,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tl-item__dot--note { border-color: var(--text-2); }
 
 .item-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 11px 12px; }
-.item-card__top { display: flex; align-items: flex-start; gap: 8px; }
+.item-card__top { display: flex; align-items: center; gap: 8px; }
 .item-card__time { font-weight: 800; color: var(--primary-dark); font-size: 14px; min-width: 46px; }
 .item-card__title { font-weight: 700; flex: 1; }
-.item-card__type { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); white-space: nowrap; text-align: center; min-width: 32px; }
+.item-card__type { font-size: 11px; padding: 3px 8px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); white-space: nowrap; text-align: center; min-width: 32px; line-height: 1.2; display: inline-flex; align-items: center; justify-content: center; }
 .item-card__type--food { background: #fff2dc; color: #c9822a; }
 .item-card__type--transport { background: var(--accent-soft); color: #2f9c89; }
 .item-card__type--hotel { background: #efeaff; color: #6a5bd1; }
@@ -365,7 +365,7 @@ body.share-shot .app-main {
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -585,7 +585,7 @@ body.share-shot .app-main {
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -768,7 +768,7 @@ body.share-shot .app-main {
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1199,7 +1199,7 @@ body.share-shot .app-main {
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1369,7 +1369,7 @@ body.share-shot .app-main {
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1702,7 +1702,7 @@ body.share-shot .app-main {
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -2002,7 +2002,7 @@ body.share-shot .app-main {
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2715,7 +2715,7 @@ body.share-shot .app-main {
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2805,7 +2805,7 @@ body.share-shot .app-main {
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
@@ -3283,7 +3283,7 @@ body.share-shot .app-main {
   global.App = App;
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 15:18:17';
 /*!
  * html2canvas 1.4.1 <https://html2canvas.hertzen.com>
  * Copyright (c) 2022 Niklas von Hertzen <https://hertzen.com>
