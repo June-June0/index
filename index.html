@@ -284,11 +284,15 @@ body.share-shot .app-header__back,
 body.share-shot .app-header__actions,
 body.share-shot .item-card__actions,
 body.share-shot .day-head button,
-body.share-shot .bdg svg {
+body.share-shot .bdg svg,
+body.share-shot .chips {
   display: none !important;
 }
 body.share-shot .bdg canvas {
   display: block !important;
+}
+body.share-shot .day-head {
+  justify-content: center !important;
 }
 body.share-shot .app-main {
   padding-bottom: 14px;
@@ -361,7 +365,7 @@ body.share-shot .app-main {
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -581,7 +585,7 @@ body.share-shot .app-main {
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -764,7 +768,7 @@ body.share-shot .app-main {
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1195,7 +1199,7 @@ body.share-shot .app-main {
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1365,7 +1369,7 @@ body.share-shot .app-main {
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1698,7 +1702,7 @@ body.share-shot .app-main {
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1998,7 +2002,7 @@ body.share-shot .app-main {
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2711,7 +2715,7 @@ body.share-shot .app-main {
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2801,7 +2805,7 @@ body.share-shot .app-main {
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
@@ -3279,7 +3283,7 @@ body.share-shot .app-main {
   global.App = App;
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:37:41';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:47:19';
 /*!
  * html2canvas 1.4.1 <https://html2canvas.hertzen.com>
  * Copyright (c) 2022 Niklas von Hertzen <https://hertzen.com>
