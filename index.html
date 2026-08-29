@@ -287,6 +287,9 @@ body.share-shot .day-head button,
 body.share-shot .bdg svg {
   display: none !important;
 }
+body.share-shot .bdg canvas {
+  display: block !important;
+}
 body.share-shot .app-main {
   padding-bottom: 14px;
 }
@@ -358,7 +361,7 @@ body.share-shot .app-main {
   <div id="modalRoot" class="modal-root" hidden></div>
   <div id="toastRoot" class="toast-root" aria-live="polite"></div>
 
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 数据存储层 ===================== */
 (function (global) {
   'use strict';
@@ -578,7 +581,7 @@ body.share-shot .app-main {
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 通用工具 & UI 基础 ===================== */
 (function (global) {
   'use strict';
@@ -761,7 +764,7 @@ body.share-shot .app-main {
   };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 热门城市攻略模板库 ===================== */
 /* cat: culture(人文历史) / nature(自然风光) / hike(徒步) / family(亲子) / photo(出片) / relax(休闲) */
 (function (global) {
@@ -1192,7 +1195,7 @@ body.share-shot .app-main {
   global.CityDB = { CITIES, GENERIC, matchCity, getCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 离线攻略生成引擎 ===================== */
 (function (global) {
   'use strict';
@@ -1362,7 +1365,7 @@ body.share-shot .app-main {
   global.AI = { generate, PREF_OPTIONS, GROUP_OPTIONS, findCity };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 高德地图集成 ===================== */
 (function (global) {
   'use strict';
@@ -1695,7 +1698,7 @@ body.share-shot .app-main {
   global.__navTo = function (lng, lat, name) { MapX.navigate(lng, lat, name); };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 订单管理模块 ===================== */
 (function (global) {
   'use strict';
@@ -1995,7 +1998,7 @@ body.share-shot .app-main {
   global.Orders = { CATS, PLATFORMS, listView, tripOrdersListView, formView, tripOrdersView, shotView, catPill };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 行程核心模块 ===================== */
 (function (global) {
   'use strict';
@@ -2304,6 +2307,7 @@ body.share-shot .app-main {
         const size = 160;
         const cx = size / 2, cy = size / 2, r = 70;
         const svg = UI.el('svg', { viewBox: '0 0 ' + size + ' ' + size, style: 'width:160px;height:160px;margin:0 auto;display:block' });
+        const canvas = UI.el('canvas', { width: size * 2, height: size * 2, style: 'width:160px;height:160px;margin:0 auto;display:none' });
         const cuteFont = '"Nunito", "Quicksand", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
         const n = catEntries.length;
         let startDeg = 0;
@@ -2327,6 +2331,48 @@ body.share-shot .app-main {
         svg.appendChild(UI.el('text', { x: cx, y: cy - 2, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:11px;fill:var(--text-2)' }, [document.createTextNode('当天总花费')]));
         svg.appendChild(UI.el('text', { x: cx, y: cy + 14, 'text-anchor': 'middle', 'dominant-baseline': 'middle', style: 'font-size:14px;font-weight:700;fill:var(--text)' }, [document.createTextNode(UI.money(dayGrand))]));
         wrap.appendChild(svg);
+
+        // canvas 版本（分享截图用，避免 SVG 渲染异常）
+        const ctx = canvas.getContext('2d');
+        ctx.scale(2, 2);
+        let cStart = 0;
+        catEntries.forEach((e) => {
+          const pct = e.value / dayGrand;
+          const end = cStart + pct * Math.PI * 2;
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.arc(cx, cy, r, cStart, end);
+          ctx.closePath();
+          ctx.fillStyle = BUDGET_COLORS[e.cat] || '#b0a8b8';
+          ctx.fill();
+          ctx.strokeStyle = '#fff';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          if (pct >= 0.05) {
+            const mid = cStart + pct * Math.PI;
+            const px = cx + 56 * Math.cos(mid - Math.PI / 2);
+            const py = cy + 56 * Math.sin(mid - Math.PI / 2);
+            ctx.fillStyle = '#fff';
+            ctx.font = '600 10px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(Math.round(pct * 100) + '%', px, py);
+          }
+          cStart = end;
+        });
+        ctx.beginPath();
+        ctx.arc(cx, cy, 42, 0, Math.PI * 2);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+        ctx.fillStyle = '#8a8190';
+        ctx.font = '11px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('当天总花费', cx, cy - 2);
+        ctx.fillStyle = '#3a3340';
+        ctx.font = '700 14px sans-serif';
+        ctx.fillText(UI.money(dayGrand), cx, cy + 14);
+        wrap.appendChild(canvas);
 
         // 图例（按金额从大到小）
         catEntries.forEach(e => {
@@ -2665,7 +2711,7 @@ body.share-shot .app-main {
   global.Itinerary = { tripsView, newView, detailView, buildText };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 云同步（GitHub Gist） ===================== */
 (function (global) {
   'use strict';
@@ -2755,7 +2801,7 @@ body.share-shot .app-main {
   global.Sync = { push, pull, findGist, cfg };
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /* ===================== 主控 / 路由 / 设置 / PWA ===================== */
 (function (global) {
   'use strict';
@@ -3233,7 +3279,7 @@ body.share-shot .app-main {
   global.App = App;
 })(window);
 </script>
-<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:22:59';
+<script>window.__XIAOYOUJI_BUILD__ = '2026-08-29 14:30:30';
 /*!
  * html2canvas 1.4.1 <https://html2canvas.hertzen.com>
  * Copyright (c) 2022 Niklas von Hertzen <https://hertzen.com>
